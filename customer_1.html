@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="import" href="navbar/navbar.html">
   <link rel="stylesheet" href="navbar/Navbar.css"> <!-- Include your styles if necessary -->
   <link rel="stylesheet" href="customer.css">
   <link rel="stylesheet" href="cus.css">
@@ -11,71 +12,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
-  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-
-  <div class="navbar-main">
-    <div class="navbar-top">
-      <h3>
-        Store Map Lookup
-        <div class="vl"></div>
-      </h3>
-      <h4>
-        <img src="navbar/location.png" alt="Location" class='location-icon'/>
-        Paddington
-      </h4>
-    </div>
-
-    <div class='navbar-2'>
-      <div>
-        <img src="navbar/phindrlogo.png" alt="phindr" class='phindr-logo'/>
-      </div>
-
-      <form class='drug-form'>
-        <input type="text" id="username" name="username" placeholder='Search Drug' class='input-field'/>
-        <div class='search-icon'>
-          <img src="navbar\searchIcon.png" alt="Search" />
-        </div>
-      </form>
-
-      <div class='container'>
-        <div class='LoginIcon'>
-          <img src="navbar/loginicon.png" alt='Login' class='login-img' />
-          <h5> Login/Register </h5>
-        </div>
-
-        <div class='BasketIcon'>
-          <img src="navbar/basketicon.png" alt='Basket' class='basket-img' />
-          <h5> Basket </h5>
-        </div>
-      </div>
-    </div>
-
-    <div class='navbar-3'>
-      <h4> Search by Category </h4>
-      <div class="vl2"></div>
-    </div>
-  </div>
-
+  <div id="navbar-container"></div>
+  <script>
+      // Using JavaScript to fetch and inject content
+      fetch('navbar/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+          })
+          .catch(error => console.error('Error fetching navbar:', error));
+  </script>
 </body>
 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-   
-  </head>
 
   <body>
     <div class="container-fluid">
       <div class="row">
         <!-- Brand Info on the Left -->
         <div class="col-md-3 brand-info">
-        
           
           <div class="text">
             <h4>First Aid</h4>
@@ -106,11 +69,9 @@
             <div class="col-md-4 mb-4">
               <div class="card h-100">
                 <img src="product1.jpg" class="card-img-top" alt="Product 1">
-                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Product 1</h5>
                   <p class="card-text flex-grow-1">Price</p>
                   <button type="button" class="buttons">Add to Basket</button>
-                </div>
               </div>
             </div>
         
@@ -118,30 +79,37 @@
             <div class="col-md-4 mb-4">
               <div class="card h-100">
                 <img src="product2.jpg" class="card-img-top" alt="Product 2">
-                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Product 2</h5>
                   <p class="card-text flex-grow-1">Price</p>
                   <button class="buttons">Add to Basket</button>
-                </div>
               </div>
             </div>
         
             <div class="col-md-4 mb-4">
               <div class="card h-100">
                 <img src="product3.jpg" class="card-img-top" alt="Product 3">
-                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Product 3</h5>
                   <p class="card-text flex-grow-1">Price</p>
                   <button class="buttons">Add to Basket</button>
-                </div>
               </div>
             </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <img src="product3.jpg" class="card-img-top" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Baske 4t</button>
+
+              </div>
+            </div>
+
           </div>
         </div>
-    <!-- Bootstrap JS and Popper.js (required for Bootstrap JavaScript components) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      </div>
+        
+   
   </body>
-  </html>
+  
 </html>
