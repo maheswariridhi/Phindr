@@ -24,6 +24,25 @@
     background-color: #f8f9fa;
     padding: 20px;
   }
-  .products {
+
+.products {
     padding: 20px;
-  }
+}
+
+.card {
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.card img {
+  height: 200px; 
+  max-width: 80%; 
+}
+  
+.card-body {
+    text-align: center;
+}
+  
+.btn-primary {
+    width: 100%;
+}
