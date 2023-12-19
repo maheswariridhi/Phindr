@@ -94,6 +94,11 @@
     width: auto; /* Maintain the aspect ratio */
     margin-right: 0px;
     padding-right: 0px;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .search-icon img:hover{
+    transform: scale(1.2) ;
   }
 
 .container {

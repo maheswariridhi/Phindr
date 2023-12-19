@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/navbar/Navbar';
+import StorePage from './components/store_page/storePage';
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
@@ -22,7 +23,7 @@ function App() {
       // If needed, perform cleanup when the component is unmounted
       // For example, revert changes made in the 'useEffect'
     };
-  }, []); // Empty dependency array to ensure the effect runs only once on mount
+  }, []); 
 
   return (
     <div className="App">
@@ -30,6 +31,7 @@ function App() {
         {/* Add additional meta tags or other header elements here */}
       </Helmet>
       <Navbar />
+      <StorePage />
     </div>
   );
 }
