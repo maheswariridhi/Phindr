@@ -8,7 +8,35 @@
     padding-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-align: center;
     
+}
+
+.small-text {
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  
+}
+
+.list {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
 }
 
 .buttons {
@@ -18,6 +46,20 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: #0E6B8D;
+    
+}
+
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
 }
 
 .brand-info {
@@ -25,8 +67,10 @@
     padding: 20px;
   }
 
-.products {
-    padding: 20px;
+.products-title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 .card {
@@ -36,7 +80,7 @@
   
 .card img {
   height: 200px; 
-  max-width: 80%; 
+  max-width: 70%; 
 }
   
 .card-body {
@@ -45,4 +89,29 @@
   
 .btn-primary {
     width: 100%;
+}
+
+.image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+hr.solid {
+  border-top:3px solid #0E6B8D;
+}
+
+.column {
+  float: left;
+  width: 33.333%;
+  padding: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
