@@ -73,8 +73,11 @@
     border: 1px solid black;
 
     border-top: none;
+    border-bottom: none;
+    border-left: none;
+
     width: 334px;
-    height: 750px;
+    height: 100vh;
   }
 
   .filter-container {
@@ -85,4 +88,26 @@
   .check-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .prod-cat {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+  }
+  
+  .item-container {
+    margin: 10px; /* Adjust the margin as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  .item-info {
+    text-align: center;
+    margin-top: 10px;
   }
