@@ -50,7 +50,6 @@ function Navbar() {
           <h4> Search by Category </h4>
           <div className="vl2"></div>
       </div>
-
     </div>
   );
 }

@@ -1,20 +1,37 @@
+.title {
+    position: relative;
+    
+    left: 53%;
+
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-align: center; /* Center the text horizontally */
+    
+    color: #000;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: /* Set to container height */;
+}
+
+
+
 .prod-cat {
     position: relative;
-    left: 200px;
-    top: 100px;
-
+    left: 90px;
+    top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
+    /* Add other styles for the prod-cat if needed */
 }
 
 .product-container {
-    width: 275px; 
-    height: 278px;
+    width: 325px; 
+    height: 428px;
     margin: 10px;
     border-radius: 10px;
-    border: 1px solid #000;
-    background: rgba(217, 217, 217, 1);
+    border: 2px solid #000;
 }
 
 .item1 {
@@ -25,16 +42,24 @@
     text-align: center;
 }
 
+.item-image {
+    width: auto;
+    height: 250px;
+    padding-bottom: 15px;
+}
+
 .item-info h3 {
     padding: 0px;
     margin: 0px;
     color: #000;
     text-align: center;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    padding-bottom: 5px;
 }
 
 .item-info h4 {
@@ -43,7 +68,7 @@
     margin-bottom: 10px;
     text-align: center;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
@@ -55,21 +80,36 @@
     margin-bottom: 10px;
     text-align: center;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    text-decoration: underline;
 }
 
 .item-info button {
-    width: 191px;
+    width: 190px;
     height: 32px;
     flex-shrink: 0;
     color: #FFF;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+    
+    border: 0px;
+    border-radius: 7px;
     background-color: #0E6B8D;
-}
+  
+    /* Transition for a smooth hover effect */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .item-info button:hover {
+    background-color: #fff; /* Change to your desired hover color */
+    color: #0E6B8D;
+    border: #0E6B8D 3px solid;
+
+  }
