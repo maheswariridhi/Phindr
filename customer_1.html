@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="import" href="navbar/navbar.html">
+  <link rel="stylesheet" href="navbar/Navbar.css"> <!-- Include your styles if necessary -->
+  <link rel="stylesheet" href="customer.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  <script>
+      // Using JavaScript to fetch and inject content
+      fetch('navbar/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+          })
+          .catch(error => console.error('Error fetching navbar:', error));
+  </script>
+</body>
+
+
+
+  <body>
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <!-- Brand Info on the Left -->
+        <div class="col-md-3 brand-info">
+          
+          <div class="list">
+            <h4>First Aid</h4>
+            <hr>
+            <h5>Brand:</h5>
+            <hr>
+
+            <form action="/action_page.php">
+
+              <input type="checkbox" id="firstaid1" name="firstaid1" value="Dettol">
+              <label for="vehicle1" class="text"> Dettol</label><br>
+              <input type="checkbox" id="firstaid2" name="vehicle2" value="Elastoplast">
+              <label for="vehicle2" class="text"> Elastoplast</label><br>
+              <input type="checkbox" id="firstaid3" name="firstaid3" value="TCP">
+              <label for="vehicle1" class="text"> TCP</label><br>
+              
+            </form>
+          </div>
+        </div>
+  
+        <!-- Products on the Right -->
+        <div class="col-md-9 products">
+          <div class="text">
+            <h4>Products</h4>
+          </div>
+    
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product1" class="card-img-top mx-auto d-block" alt="Product 1">
+                  <h5 class="card">Product 1</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button type="button" class="buttons">Add to Basket</button>
+              </div>
+            </div>
+        
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product2" class="card-img-topmx-auto d-block" alt="Product 2">
+                <h5 class="card">Product 2</h5>
+                <p class="card-text flex-grow-1">Price</p>
+                <button class="buttons">Add to Basket</button>
+              </div>
+            </div>
+        
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card h-200">
+                <img src="product3.jpg" class="card-img-top mx-auto d-block" alt="Product 3">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text flex-grow-1">Price</p>
+                  <button class="buttons">Add to Basket</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+        
+   
+  </body>
+  
+</html>

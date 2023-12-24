@@ -1,0 +1,156 @@
+.navbar-top {
+    background-color: #D9D9D9;
+    border: #000 solid 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-top h3 {
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.location-icon {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-top h4 {
+    padding: 0;
+    margin: 0;
+    margin-right: 15px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: right;
+    display: flex;
+    align-items: center; 
+}
+
+.vl {
+    margin-left: 10px;
+    border-left: #000 solid 2px;
+    height: 50px;
+}
+
+.phindr-logo {
+    padding-left: 20px;
+    height: 80px;
+    width: auto;
+}
+
+.navbar-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drug-form {
+    position: relative;
+  }
+  
+  .input-field {
+    width: 1000px;
+    height: 30px;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding-right: 40px;
+    outline: none;
+
+    font-size: 20px; /* Adjust the font size as needed */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  /* Add this if you want to style the image */
+  .search-icon img {
+    height: 60px; /* Adjust the height as needed */
+    width: auto; /* Maintain the aspect ratio */
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .LoginIcon,
+  .BasketIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    margin: 0;
+    padding-right: 30px;
+  }
+  
+  .LoginIcon h5,
+  .BasketIcon h5 {
+    padding-top: 10px;
+    margin: 0;
+    
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+.navbar-3 {
+    background-color: rgba(1, 186, 254, 0.30);
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    border: #000 solid 2px;
+}
+  
+.navbar-3 h4 {
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text horizontally */
+
+    padding-left: 37px;
+
+    color: #000;
+
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.vl2 {
+    margin-left: 65px;
+    border-left: #000 solid 2px;
+    height: 64px;
+}

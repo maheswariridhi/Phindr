@@ -1,0 +1,31 @@
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  flex: 0 1 calc(33.333% - 20px); /* Adjust the percentage and margin to fit your design */
+  margin: 10px;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.add-to-basket {
+  background: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
