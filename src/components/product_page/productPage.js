@@ -1,6 +1,5 @@
 //import React, { useEffect, useState } from 'react';
-import './products.css';
-import '../navbar/Navbar.css';
+import './productPage.css';
 import location from '../navbar/location.png';
 
 const ProductPage = () => {
@@ -8,7 +7,7 @@ const ProductPage = () => {
 
   return (
     <div>
-      <div className="grid-top">
+      <div className="grid-top-product">
         {/* Brand Info on the Left */}
         <div>
           <div>
@@ -16,19 +15,17 @@ const ProductPage = () => {
           </div>
         </div>
 
-        <div>
+        <div className='middle-product'>
           <h1 className="products-title">Product Name</h1>
-          <h1 className="title">price</h1>
-          <p className="text">avaliable:</p>
-         
-          <div className="center">
-            <button className="buttons">Add to Basket</button>
-          </div>
+          <h3 className="title-smaller">£</h3>
+          <p className="text-product">avaliable:</p>
+          <button className="buttons-product">Add to Basket</button>
 
-          <div className="center">
-            <img src={location} className="location" alt="location" />
-            <p className="text">Find in store  </p>
-          </div>
+          <p className="text-product" style={{paddingTop: 10}}>
+            <img src={location} className="location-product" alt="location" />
+            Find in store 
+          </p>
+          
           
         </div>
       </div>
@@ -36,20 +33,20 @@ const ProductPage = () => {
       <hr className="solid" />
 
 
-      <div class="grid-container">
-        <div class="grid-item">
-          <p className="text">Product details:</p>
-          <p className="small-text">xxx</p>
+      <div class="grid-bottom-product">
+        <div class="grid-item-product">
+          <p className="text-product">Product details:</p>
+          <p className="small-text-product">xxx</p>
         </div>
 
-        <div class="grid-item">
-          <p className="text">Ingredients:</p>
-          <p className="small-text">xxx</p>
+        <div class="grid-item-product">
+          <p className="text-product">Ingredients:</p>
+          <p className="small-text-product">xxx</p>
         </div>
 
-        <div class="grid-item">
-          <p className="text">Contraindications:</p>
-          <p className="small-text">xxx xxxx xxxx xxx xxx</p></div>  
+        <div class="grid-item-product">
+          <p className="text-product">Contraindications:</p>
+          <p className="small-text-product">xxx xxxx xxxx xxx xxx</p></div>  
         </div>
 
     </div>

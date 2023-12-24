@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import StorePage from './components/store_page/storePage';
 import ProductPage from './components/product_page/productPage';
+import CheckoutPage from './components/checkout_page/checkoutPage';
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
@@ -42,6 +43,10 @@ function App() {
 
             <Route exact path = "/product">
               <ProductPage />
+            </Route>
+
+            <Route exact path = "/checkout">
+              <CheckoutPage />
             </Route>
 
           </Switch>
