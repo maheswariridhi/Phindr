@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import StorePage from './components/store_page/storePage';
+import ProductPage from './components/product_page/productPage';
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
@@ -30,8 +32,24 @@ function App() {
       <Helmet>
         {/* Add additional meta tags or other header elements here */}
       </Helmet>
-      <Navbar />
-      <StorePage />
+      <Router>
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <StorePage />
+            </Route>
+
+            <Route exact path = "/product">
+              <ProductPage />
+            </Route>
+
+          </Switch>
+        </div>
+        
+      </Router>
+        
+        
     </div>
   );
 }
