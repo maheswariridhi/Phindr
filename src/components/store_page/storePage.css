@@ -69,15 +69,21 @@
 }
 
   .page-container {
+    position: relative;
     display: flex;
-    border: 1px solid black;
 
+
+    border: 2px solid black;
     border-top: none;
     border-bottom: none;
     border-left: none;
 
     width: 334px;
-    height: 100vh;
+    height: 10%;
+  }
+
+  .sidebar {
+    position: fixed;
   }
 
   .filter-container {

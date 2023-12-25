@@ -1,20 +1,14 @@
 .title {
     position: relative;
-    
-    left: 53%;
-
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-align: center; /* Center the text horizontally */
+    top: 25px;
+    left: 580px;
     
     color: #000;
     font-family: Inter;
-    font-size: 35px;
+    font-size: 55px;
     font-style: normal;
     font-weight: 300;
-    line-height: /* Set to container height */;
 }
-
-
 
 .prod-cat {
     position: relative;
@@ -43,9 +37,11 @@
 }
 
 .item-image {
+    max-width: 250px;
     width: auto;
     height: 250px;
     padding-bottom: 15px;
+
 }
 
 .item-info h3 {
