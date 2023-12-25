@@ -28,6 +28,18 @@
     border: 2px solid #000;
 }
 
+.addbasket {
+    color: #0E6B8D;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    text-decoration: underline;
+}
+
 .item1 {
     position: relative;
 }

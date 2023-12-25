@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/navbar/Navbar';
 import StorePage from './components/store_page/storePage';
+import LoginPage from './components/login_page/login'
 import ProductPage from './components/product_page/productPage';
 import CheckoutPage from './components/checkout_page/checkoutPage';
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
+
+import './App.css'; // Import the CSS file
+import Login from './components/login_page/login';
 
 function App() {
   useEffect(() => {
@@ -34,20 +38,33 @@ function App() {
       <Helmet>
         {/* Add additional meta tags or other header elements here */}
       </Helmet>
+
       <Router>
-        <Navbar />
-        <StorePage />
+      <div className="App">
+        <Switch>
+          <Route exact path="/login">
+            {/* LoginPage will only be rendered when the path is /login */}
+            <LoginPage />
+          </Route>
 
-        <div className="content">
-          <Routes>
-            <Route exact path="/" element={StorePage} />
+          {/* Navbar is common for all routes */}
+          <Route path="/home">
+            <Navbar />
+            <StorePage />
+          </Route>
 
-            <Route exact path = "/product" element={ProductPage} />
+          <Route path="/product">
+            <Navbar />
+            <ProductPage />
+          </Route>
 
-            <Route exact path = "/checkout" element={CheckoutPage} />
-          </Routes>
-        </div>
-      </Router>
+          <Route exact path="/checkout">
+            <Navbar />
+            <CheckoutPage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
     </div>
   );
 }
