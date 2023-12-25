@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Navbar from './components/navbar/Navbar';
 import StorePage from './components/store_page/storePage';
 import ProductPage from './components/product_page/productPage';
@@ -35,26 +36,18 @@ function App() {
       </Helmet>
       <Router>
         <Navbar />
+        <StorePage />
+
         <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <StorePage />
-            </Route>
+          <Routes>
+            <Route exact path="/" element={StorePage} />
 
-            <Route exact path = "/product">
-              <ProductPage />
-            </Route>
+            <Route exact path = "/product" element={ProductPage} />
 
-            <Route exact path = "/checkout">
-              <CheckoutPage />
-            </Route>
-
-          </Switch>
+            <Route exact path = "/checkout" element={CheckoutPage} />
+          </Routes>
         </div>
-        
       </Router>
-        
-        
     </div>
   );
 }

@@ -1,0 +1,42 @@
+CATEGORY,BRAND,TYPE,,SALE-PRICE,PURCHASE-PRICE,STOCK,LIMIT
+Cold and Flu,Vicks,Vaporub,100g,4.5,3.7,15,0
+Cold and Flu,Vicks,First Defence,15ml,6.8,5,20,0
+Cold and Flu,Gsk,Night Nurse,160ml,9,7.5,30,0
+Cold and Flu,Lemsip,Max,16 caps,4.2,3.7,25,0
+Cold and Flu,Lemsip,Standard,10 sachets,4.5,3.5,25,0
+Cold and Flu,Sudafed,Day and Night,16 caps,4.5,3.2,30,1
+Cold and Flu,Sudafed,Max,16 caps,4.2,3.2,30,1
+Cold and Flu,Benylin,Mucus relief,16 caps,4.8,3.2,20,0
+Cold and Flu,Benylin,4 flu,24 caps,6,4.9,20,0
+Skincare,E45,Psoriasis cream,50ml,20,16,15,0
+Skincare,Eurax,Skin cream,100g,5.7,4.2,15,0
+Skincare,Eucerin,Skin relief cream,50ml,9,7,20,0
+Skincare,Eucerin,Face scrub,100ml,7.5,6,20,0
+Skincare,Dermalex,Psoriasis cream,150ml,30,25,10,0
+Skincare,Dermalex,Repair and Restore,100g,12,10,10,0
+Skincare,Dermalex,Eczema cream,30g,12,9.7,20,0
+Skincare,Dermalex,Eczema cream,100g,25,22.2,5,0
+Skincare,Cetaphil,Moisturising cream,50ml,10,7.6,20,0
+Skincare,Cetaphil,Exfoliating cleanser,180ml,12,10.1,20,0
+Headaches and pain relief,Nurofen,Meltlets,16 caps,4,3.7,40,0
+Headaches and pain relief,Nurofen,Express,16 caps,4,3.5,30,0
+Headaches and pain relief,Nurofen,Max strength,32 caps,7,6.2,25,0
+Headaches and pain relief,Nurofen,Standard,16 caps,4,3.2,30,0
+Headaches and pain relief,Cuprofen ,Max strength,96 caps,11,9,20,1
+Headaches and pain relief,Solpadeine,Headache,16 caps,2,1.6,20,1
+Headaches and pain relief,Anadin,Extra,16 caps,2.3,2,30,1
+Headaches and pain relief,Anadin,Triple action,12 caps,2,1.9,30,1
+Headaches and pain relief,Anadin,Original,16 caps,1.8,1.5,30,1
+Headaches and pain relief,Disprin,Soluble,32 tablets,3.6,2.8,20,1
+Digestion,Dioralyte,Blackcurrant,12 sachets,8,7.3,20,0
+Digestion,Dioralyte,Lemon,12 sachets,8,7.3,20,0
+Digestion,Gaviscon,Chewable,24 tablets,4.2,3.5,25,0
+Digestion,Senokot,Max,10 tablets,3,2.7,10,0
+Digestion,Gaviscon,Advance,300ml,10,8.1,10,0
+Allergy,Benadryl,Relief,24 caps,9,7.1,20,0
+Allergy,Piriteze,tabs,7 tablets,3,2.3,20,0
+Allergy,Beconase,Relief,100 sprays,6,4,20,0
+First aid,Dettol,Antiseptic,500ml,3.2,3,20,0
+First aid,Dettol,Hand sanitizer,500ml,7,6.3,50,0
+First aid,Elastoplast,plasters,20 plasters,3,2,30,0
+First aid,TCP,Liquid,200ml,4,3.2,20,0
