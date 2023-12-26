@@ -6,7 +6,6 @@ import StorePage from './components/store_page/storePage';
 import LoginPage from './components/login_page/login'
 import ProductPage from './components/product_page/productPage';
 import CheckoutPage from './components/checkout_page/checkoutPage';
-import BasketPage from './components/basket/basket'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -44,7 +43,7 @@ function App() {
       <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/login">
+          <Route exact path="/">
             {/* LoginPage will only be rendered when the path is /login */}
             <LoginPage />
           </Route>
@@ -67,7 +66,6 @@ function App() {
 
           <Route exact path="/basket">
             <Navbar />
-            <BasketPage />
           </Route>
         </Switch>
       </div>
