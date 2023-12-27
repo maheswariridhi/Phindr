@@ -6,11 +6,12 @@ import StorePage from './components/store_page/storePage';
 import LoginPage from './components/login_page/login'
 import ProductPage from './components/product_page/productPage';
 import CheckoutPage from './components/checkout_page/checkoutPage';
+import BasketPage from './components/basket/basket'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
-import './App.css'; // Import the CSS file
+import './App.css';
 import Login from './components/login_page/login';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
 
           <Route exact path="/basket">
             <Navbar />
+            <BasketPage />
           </Route>
         </Switch>
       </div>
