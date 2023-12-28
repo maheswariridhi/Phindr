@@ -1,0 +1,99 @@
+.invoice-container {
+    position: relative;
+    top: 150px;
+    left: 100px;
+    
+    height: 920px;
+    border: 0px solid #000;
+    background: rgba(1, 186, 254, 0.30);
+}
+
+.invoice-container h1 {
+    position: absolute;
+    top: 0; /* Align to the top of the container */
+    left: 0; /* Align to the left of the container */
+
+    padding-left: 20px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.invoice-container h2 {
+    position: absolute;
+    top: 12px; /* Align to the top of the container */
+    right: 20px; /* Align to the left of the container */
+
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.invoice-container p{
+    position: relative;
+    top: 90px;
+    left: 50px;
+
+    color: #000;
+
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.product-invoice {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.product-invoice p{
+    padding: 0px;
+    margin: 0px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.invoice-r1 {
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.invoice-r1 p {
+    flex: 0.32;
+
+    color: #000;
+
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.test-class {
+    padding-bottom: 20px;
+}

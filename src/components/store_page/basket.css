@@ -1,3 +1,8 @@
+.Basket-Container {
+    display: flex;
+    flex-direction: row;
+}
+
 .quantity-slide {
     position: relative;
     top: 150px;
