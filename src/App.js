@@ -6,7 +6,7 @@ import StorePage from './components/store_page/storePage';
 import LoginPage from './components/login_page/login'
 import ProductPage from './components/product_page/productPage';
 import CheckoutPage from './components/checkout_page/checkoutPage';
-import BasketPage from './components/basket/basket'
+import BasketPage from './components/store_page/basket'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';

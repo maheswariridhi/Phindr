@@ -11,6 +11,7 @@ function StorePage() {
   }, {});
 
   const [isChecked, setIsChecked] = useState(initialCheckedState);
+  console.log(isChecked);
 
   const handleCheckboxChange = (brand) => {
     setIsChecked((prevChecked) => ({

@@ -5,22 +5,26 @@ import './login.css';
 import PhindrLogo from './phindrlogo.png';
 
 function Login() {
-  const [inputValue, setInputValue] = useState('');
-  const [inputValue2, setInputValue2] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const history = useHistory(); // Initialize useHistory
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
-  const handleInputChange2 = (event) => {
-    setInputValue2(event.target.value);
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
   };
 
-  const handleClick = () => {
-    console.log('Button clicked!');
-    // Redirect to a different page, for example, /dashboard
-    history.push('/home'); // Change '/dashboard' to the desired route
+  const handleLogin = () => {
+    if (email === 'customer@email.com' && password === 'customer1') {
+      console.log('Login successful!');
+      history.push('/home');
+    } else {
+      setErrorMessage('Incorrect username/password. Please try again.');
+    }
   };
 
   return (
@@ -30,20 +34,22 @@ function Login() {
       <h4>E-mail: </h4>
       <input
         type="text"
-        value={inputValue}
-        onChange={handleInputChange}
+        value={email}
+        onChange={handleEmailChange}
         placeholder="E-Mail Address"
       />
 
       <h4>Password: </h4>
       <input
         type="password"
-        value={inputValue2}
-        onChange={handleInputChange2}
+        value={password}
+        onChange={handlePasswordChange}
         placeholder="Password"
       />
 
-      <button onClick={handleClick}>Log in</button>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+      <button onClick={handleLogin}>Log in</button>
 
       <h5>Login as Guest</h5>
     </div>

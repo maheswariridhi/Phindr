@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './Navbar.css';
 
 import locationImage from './location.png';
@@ -40,8 +42,12 @@ function Navbar() {
           </div>
 
           <div className='BasketIcon'>
+
             <img src={basketImg} alt='Basket' className='basket-img' />
-            <h5> Basket </h5>
+            <Link to = "./basket">
+              <h5> Basket </h5>
+            </Link>
+
           </div>
         </div>
       </div>
