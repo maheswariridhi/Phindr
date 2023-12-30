@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/navbar/Navbar';
-import StorePage from './components/store_page/storePage';
-import LoginPage from './components/login_page/login'
-import ProductPage from './components/product_page/productPage';
-import CheckoutPage from './components/checkout_page/checkoutPage';
-import BasketPage from './components/store_page/basket_components/basket'
+import Navbar from './components/CustomerApp/navbar/Navbar';
+import StorePage from './components/CustomerApp/store_page/storePage';
+import LoginPage from './components/CustomerApp/login_page/login'
+import ProductPage from './components/CustomerApp/product_page/productPage';
+import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
+import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';

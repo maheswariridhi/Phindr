@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { AppStateProvider } from './components/store_page/AppStateContext';
+import { AppStateProvider } from './components/CustomerApp/store_page/AppStateContext';
 
 import './index.css';
 import App from './App';
