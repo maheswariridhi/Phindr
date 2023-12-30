@@ -2,8 +2,7 @@
   color: #000;
   font-family: Inter;
   font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: 650;
   line-height: normal;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -14,7 +13,7 @@
 .small-text-product {
 color: #000;
 font-family: Inter;
-font-size: 12px;
+font-size: 16px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -133,3 +132,16 @@ border-top:3px solid #0E6B8D;
  padding-right: 5px;
 }
 
+.image {
+  max-width: 300px;
+  width: auto;
+  max-height: 250px;
+  height: auto;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+}

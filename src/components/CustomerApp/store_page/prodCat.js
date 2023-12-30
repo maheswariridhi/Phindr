@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './prodCat.css';
 import { useAppState } from './AppStateContext';
 import productArray from './products';
 
 const ProdCat = ({ isChecked, handleCheckboxChange }) => {
-  // const { itemAddedToBasket, onAddToBasket } = useAppState();
   const { itemAddedToBasket, onAddToBasket } = useAppState();
-
 
   const brands = ['Cold and Flu', 'Skincare', 'Headaches and pain relief', 'Digestion', 'Allergy', 'First aid'];
 
@@ -23,18 +22,26 @@ const ProdCat = ({ isChecked, handleCheckboxChange }) => {
       <h2 className='title'>Phindr&trade; Products</h2>
       <div className='prod-cat'>
         {products.map((product) => (
+           
           <div key={product.ID} className='product-container'>
+             
             <div className='item-container'>
-              <img
-                src={require(`./product-inventory/phab_img/${product.ID}.jpg`)}
-                alt={product.BRAND}
-                className='item-image'
-              />
+              <Link key={product.ID} to={`/product/${product.ID}`}> 
+                <img
+                  src={require(`./product-inventory/phab_img/${product.ID}.jpg`)}
+                  alt={product.BRAND}
+                  className='item-image'
+                />
+              </Link>
             </div>
+
             <div className='item-info'>
-              <h3>{`${product.BRAND} ${product.TYPE}`}</h3>
+              <Link key={product.ID} to={`/product/${product.ID}`}> 
+                <h3>{`${product.BRAND} ${product.TYPE}`}</h3>
+               </Link>
               <p>{product.QTY}</p>
               <h4>£{product.SPRICE.toFixed(2)}</h4>
+             
 
               {itemAddedToBasket[product.ID] ? (
                 <h4 className='addbasket'>Item Added to Basket</h4>
@@ -43,6 +50,7 @@ const ProdCat = ({ isChecked, handleCheckboxChange }) => {
               )}
             </div>
           </div>
+          
         ))}
       </div>
     </div>

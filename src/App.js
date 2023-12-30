@@ -54,7 +54,7 @@ function App() {
             <StorePage />
           </Route>
 
-          <Route path="/product">
+          <Route path="/product/:ProductId" component={ProductPage}>
             <Navbar />
             <ProductPage />
           </Route>

@@ -8,7 +8,10 @@ const products = [
     SPRICE: 4.5,
     PPRICE: 3.7,
     STOCK: 15,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Vicks VapoRub contains: Menthol and camphor to calm a cough, Eucalyptus and menthol to relieve nose congestion, Eucalyptus to relieve catarrh',
+    INGREDIENTS: 'Turpentine oil, eucalyptus oil, levomenthol, camphor, thymol, cedarwood oil, white soft paraffin, petrolatum',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 2,
@@ -19,7 +22,10 @@ const products = [
     SPRICE: 6.8,
     PPRICE: 5,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'When used at the first signs of a cold, First Defence nasal spray acts at the back of the nose directly where the cold virus takes hold and starts to develop(that is why it is a nasal spray). It traps, inactivates and helps your body naturally remove the cold virus, before it develops into a full blown cold.',
+    INGREDIENTS:'Aqua, Hydroxypropyl Methylcellulose (1%), Succinic Acid (1%), Disodium Succinate (0.44%), PCA (0.35%), Phenethyl Alcohol, Zinc EDTA, Zinc Acetate, Polysorbate 80, Menthol, Camphor, Sodium Saccharin, Eucalyptol.',
+    CONTRAINDICATIONS:'Avoid using in case of injury or nose bleeding' 
   },
   {
     ID: 3,
@@ -30,7 +36,10 @@ const products = [
     SPRICE: 9,
     PPRICE: 7.5,
     STOCK: 30,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Night Nurse Capsules have been specially formulated to provide a complete night-time cold and flu treatment by quickly providing relief from major cold and flu symptoms including: \n \n  -  Headache\n  -  Runny nose\n  -  Dry, tickly cough\n  -  Shivers, aches and pains\n  -  Sore throat pain',
+    INGREDIENTS:'Active ingredient: Each capsule contains Paracetamol 500mg, Promethazine Hydrochloride 10mg, Dextromethorphan Hydrobromide 7.5mg.\n\n  Also contains: Lactose, dimeticone, colloidal anhydrous silica, gelatin, and colours erythrosine (E127), patent blue V (E131), quinoline yellow (E104) and titanium dioxide (E171).',
+    CONTRAINDICATIONS:'Do not take: Do not take: With other flu, cold or decongestant products at night, or with alcohol.If you have liver or kidney disease. Contains paracetamol. Do not take with any other paracetamol-containing products.With other flu, cold or decongestant products at night, or with alcohol.If you have liver or kidney disease.\n\nContains paracetamol. Do not take with any other paracetamol-containing products.',
   },
   {
     ID: 4,
@@ -41,7 +50,10 @@ const products = [
     SPRICE: 4.2,
     PPRICE: 3.7,
     STOCK: 25,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Effective relief for fever, headaches, body aches, blocked nose, sore throat.',
+    INGREDIENTS:'Active ingredients: (per sachet) Paracetamol 1000mg, phenylephrine hydrochloride 12.2mg. Also contains: Ascorbic acid (vitamin C), aspartame, sodium and sucrose. Total sugar content 2g',
+    CONTRAINDICATIONS: ' Do not take if: you are allergic to any ingredient, if you have heart disease, high blood pressure, overactive thyroid, an enlarged prostate, or you are taking or have taken MAOIs (antidepressants) within 14 days, if you are taking other sympathomimetic decongestants, you have phaeochromocytoma. \n Do not take anything else containing paracetamol while taking this medicine.'
   },
   {
     ID: 5,
@@ -52,7 +64,10 @@ const products = [
     SPRICE: 4.5,
     PPRICE: 3.5,
     STOCK: 25,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'For relief of fever, headaches, body aches blocked nose and sore throat.',
+    INGREDIENTS:'Paracetamol and Phenylephrine hydrochloride',
+    CONTRAINDICATIONS:' Do not take with any other paracetamol-containing products.\n\n DO NOT TAKE IF: allergic to any of the ingredients, if you have heart disease or high blood pressure. ' 
   },
   {
     ID: 6,
@@ -63,7 +78,10 @@ const products = [
     SPRICE: 4.5,
     PPRICE: 3.2,
     STOCK: 30,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS:'Sudafed Congestion & Headache Relief Day & Night Capsules with Phenylephrine hydrochloride, Caffeine and Paracetamol, help relieve the symptoms of colds and flu, including stuffy noses, headache, sore throat, fever, aches and pains. The Day capsules can also relieve tiredness and drowsiness.',
+    INGREDIENTS:'Paracetamol, Caffeine, Phenylephrine Hydrochloride',
+    CONTRAINDICATIONS: 'Do not take anything else containing paracetamol while taking this medicine.'
   },
   {
     ID: 7,
@@ -74,7 +92,10 @@ const products = [
     SPRICE: 4.2,
     PPRICE: 3.2,
     STOCK: 30,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS:'Sudafed Sinus Max Strength Capsules with Phenylephrine hydrochloride, Caffeine and Paracetamol, help relieve the symptoms of pain and congestion caused by sinusitis, which include stuffy nose, blocked sinuses, headache, fever, aches and pains. The capsules can also relieve tiredness and drowsiness.',
+    INGREDIENTS:'Paracetamol, Caffeine, Phenylephrine Hydrochloride',
+    CONTRAINDICATIONS: ' Do not take anything else containing paracetamol while taking this medicine.'
   },
   {
     ID: 8,
@@ -85,7 +106,10 @@ const products = [
     SPRICE: 4.8,
     PPRICE: 3.2,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Benylin Mucus Cough Max Honey & Lemon Flavour 100 mg/5 ml Syrup helps to relieve chesty (productive) coughs by thinning and loosening chest mucus (phlegm), making it easier to cough up.',
+    INGREDIENTS:'Guaifenesin. Also contains: Ethanol, glucose and sucrose ',
+    CONTRAINDICATIONS: 'As with all similar medicines, if you are pregnant or breast-feeding, consult your doctor or pharmacist before taking this product.'
   },
   {
     ID: 9,
@@ -96,7 +120,10 @@ const products = [
     SPRICE: 6,
     PPRICE: 4.9,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'BENYLIN® 4 Flu Tablets provide effective relief from flu symptoms including fever, congestion, and aches and pains.',
+    INGREDIENTS:' Paracetamol, diphenhydramine hydrochloride, pseudoephedrine hydrochloride',
+    CONTRAINDICATIONS: ' If you are taking medicines for high blood pressure you should not take Benylin 4 flu.'
   },
   {
     ID: 10,
@@ -107,7 +134,10 @@ const products = [
     SPRICE: 20,
     PPRICE: 16,
     STOCK: 15,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Cream for treatment and prevention of psoriasis and dermatitis symptoms. Scientifically proven to treat symptoms of psoriasis. Reduces scaling, itching, redness, roughness & hardening of the skin. Steroid free. Suitable for long-term use',
+    INGREDIENTS:'Ectoin®, Aqua, Cetearyl Alcohol, Urea, Cetearyl Isononanoate, Glycerin, Simmondsia Chinensis Seed Oil, Hydrogenated Polydecene, Pentylene Glycol, Hydroxyethyl Urea, Panthenol, Cetearyl Glucoside, Lecithin, Allantoin, Xanthan Gum, Ethylhexylglycerin, Sodium Lactate, Sodium Cetearyl Sulfate, Triacetin',
+    CONTRAINDICATIONS: 'Do not use on infected skin. '
   },
   {
     ID: 11,
@@ -118,7 +148,10 @@ const products = [
     SPRICE: 5.7,
     PPRICE: 4.2,
     STOCK: 15,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'A non-greasy, non-staining cream for the relief of itching and skin irritation caused by:\n - Itchy dermatitis \n - Dry eczema \n - Allergic rashes \n - Hives, nettle rashes\n - Chickenpox \n - Insect bites & stings\n - Heat rashes \n - Sunburn \n - Personal itching',
+    INGREDIENTS:'Active ingredients \n Crotamiton \n Also contains: Methyl hydroxybenzoate E218, phenylethyl alcohol, glycerol, triethanolamine, sodium lauryl sulphate, ethylene glycol monostearate, stearyl alcohol, strong ammonia solution, stearic acid, hard paraffin, white beeswax, purified water and Perfume contains: geraniol, citronellol, coumarin, benzyl alcohol (0.0187%), benzyl benzoate (0.0047%), citral, d-limonene, eugenol, linalool.',
+    CONTRAINDICATIONS: 'Eurax Cream is not recommended in pregnancy.'
   },
   {
     ID: 12,
@@ -129,7 +162,10 @@ const products = [
     SPRICE: 9,
     PPRICE: 7,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Natural oatmeal relieves dry, itchy, irritated skin of eczema. Ceramide-3 and Licochalcone enriched formula strengthens the skins barrier and soothes red, irritated skin. Appropriate for adults, children and babies 3 months and older, gentle enough for everyday use.',
+    INGREDIENTS:'Ceramide-3 and Licochalcone',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 13,
@@ -140,7 +176,10 @@ const products = [
     SPRICE: 7.5,
     PPRICE: 6,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'he Eucerin DermoPurifyer Oil Control Scrub is an oil-free skin peel which uses Lactic Acid to help remove impurities without drying out the skin. Suitable for face and body, the exfoliating action of natural micro particles works against dead skin cells, one of the key causes of blackheads and spots, and gently cleanses skin and removes makeup. \n Pores are unclogged, impurities and blackheads are reduced and skin texture is visibly smooth and refined. \n The product has been specially formulated for oily and blemish-prone skin which is not undergoing medication and can be used during pregnancy. \n Clinical studies to prove the effectiveness of the scrub had the following findings: \n - A positive effect on general skin condition \n- Well tolerated by those with blemish and acne-prone skin \n- antibacterial \n- comedolytic \n- non-comedogenic\n - lightly fragranced',
+    INGREDIENTS:'Aqua, Coco Glucoside, Coco-Betaine, Microcrystalline Cellulose, Acrylates-C10-30-Alkyl-Acrylate-Crosspolymer, Lactic Acid, Sodium Chloride, Sodium Hydroxide, Cellulose, Mannitol, Polyquaternium-10, Sodium Benzoate, Phenoxyethanol, Benzophenone-4, Parfum, CI 77289',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 14,
@@ -151,7 +190,10 @@ const products = [
     SPRICE: 30,
     PPRICE: 25,
     STOCK: 10,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'An effective and skin-friendly cream for the treatment of mild and moderate psoriasis. \nHelps to reduce itching and scaling, moisturises and helps to restore the skin barrier. Normalises skin cell production while supporting the skins own repair mechanism to strengthen and restore the skin barrier and replenish moisture levels. \n - Does not contain steroids \n - Appropriate for long-term use \n - Clinically-proven efficacy \n - This product is a medical device',
+    INGREDIENTS:'Purified water, White Petrolatum, Cetearyl alcohol, Paraffinum liquidum, Polysorbatum 60, Ethyl alcohol, Methyl 4-hydroxybenzoate, Modified alumino-silicates + alkaline earth minerals (refered to as MagneoLite Complex) optimised for Psoriasis treatment.',
+    CONTRAINDICATIONS: 'Do not use on severe open wounds.'
   },
   {
     ID: 15,
@@ -162,7 +204,10 @@ const products = [
     SPRICE: 12,
     PPRICE: 10,
     STOCK: 10,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'A breakthrough skin strengthening cream recommended by Nordic Dermatologists for dry to atopic skin. Hydrates and strengthens the skin so well, it even prevents the relapse of eczema. \n - Proven to intensely hydrate and strengthen the skin barrier \n - Supported by 20 years of research and over 20 scientific publications \n - Soothes and softens the skin \n - Protects the skin to help prevent future dryness \n - Hydrates and strengthens so well it even helps to prevent the relapse of eczema \n - Fragrance free \n - This product is a medical device',
+    INGREDIENTS:'Aqua, Caprylic/Capric Triglyceride, Canola Oil, Urea, Propylene Glycol, Cetearyl Alcohol, Glycerin, Dimethicone, Paraffin, Sodium Lactate, Polysorbate 60, Glyceryl Stearate, PEG-100 Stearate, Glyceryl Acrylate/Acrylic Acid Copolymer, Carbomer, Lactic Acid, Critric Acid, Ethylparaben, Methylparaben.',
+    CONTRAINDICATIONS: 'Avoid applying to open wounds, intimate areas, inside the mouth or near the eyes, nose or ears.'
   },
   {
     ID: 16,
@@ -173,7 +218,10 @@ const products = [
     SPRICE: 12,
     PPRICE: 9.7,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'An effective treatment for the most common type of eczema. This rich, non-greasy cream is clinically proven to intensely hydrate the skin while replenishing moisture levels. It also supports the skin’s own repair mechanism to strengthen and restore the skin barrier, leaving it stronger, smoother and more supple. \n - No steroids \n - Appropriate for long-term use \n - Safe to use on the face \n - This product is a medical device',
+    INGREDIENTS:'Skin Identical Ceramide complex, Purified water, Glycerol, Glyceryl Stearate, Cocoglycerides, Cetyl Alcohol, Isopropyl Myrisate, Ceteareth-20, Ceteareth-12, Cetearyl Alcohol, Cetyl Palmitate, Dehydroacetic Acid, Benzyl Alcohol, Modified alumino-silicates + alkaline earth minerals (referred to as MagneoliteTM Complex) optimised for atopic eczema treatment.',
+    CONTRAINDICATIONS: 'Do not use on severe open wounds.'
   },
   {
     ID: 17,
@@ -184,7 +232,10 @@ const products = [
     SPRICE: 25,
     PPRICE: 22.2,
     STOCK: 5,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'An effective treatment for the most common type of eczema. This rich, non-greasy cream is clinically proven to intensely hydrate the skin while replenishing moisture levels. It also supports the skin’s own repair mechanism to strengthen and restore the skin barrier, leaving it stronger, smoother and more supple. \n - No steroids \n - Appropriate for long-term use \n - Safe to use on the face \n - This product is a medical device',
+    INGREDIENTS:'Skin Identical Ceramide complex, Purified water, Glycerol, Glyceryl Stearate, Cocoglycerides, Cetyl Alcohol, Isopropyl Myrisate, Ceteareth-20, Ceteareth-12, Cetearyl Alcohol, Cetyl Palmitate, Dehydroacetic Acid, Benzyl Alcohol, Modified alumino-silicates + alkaline earth minerals (referred to as MagneoliteTM Complex) optimised for atopic eczema treatment.',
+    CONTRAINDICATIONS: 'Do not use on severe open wounds.'
   },
   {
     ID: 18,
@@ -195,7 +246,10 @@ const products = [
     SPRICE: 10,
     PPRICE: 7.6,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:'Cetaphil Moisturising Cream is a rich face and body moisturiser for dry to very dry sensitive skin. It’s clinically proven to nourish and hydrate skin in just 1 day and helps to restore the skins natural moisture barrier in 1 week for immediate and long lasting relief. \n This replenishing, hydrating moisturiser with Sweet Almond Oil, Niacinamide (Vitamin B3), Panthenol (Pro-Vitamin B5) and Vitamin E provides 48 hour hydration and leaves skin feeling smooth, soft and comfortable. Defends against 5 signs of skin sensitivity – dryness, irritation, roughness, tightness and a weakened skin barrier. \n Key benefits \n - Dermatologically tested \n - No added fragrance \n - Does not clog pores \n - Vegan',
+    INGREDIENTS:'Aqua, Glycerin, Petrolatum, Dicaprylyl Ether, Dimethicone, Glyceryl Stearate, Cetyl Alcohol, Helianthus Annuus Seed Oil, PEG-30 Stearate, Panthenol, Niacinamide, Prunus Amygdalus Dulcis Oil, Tocopherol, Tocopheryl Acetate, Pantolactone, Dimethiconol, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Carbomer, Propylene Glycol, BHT, Disodium EDTA, Benzyl Alcohol, Phenoxyethanol, Sodium Hydroxide, Citric Acid ',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 19,
@@ -206,7 +260,10 @@ const products = [
     SPRICE: 12,
     PPRICE: 10.1,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Cetaphil Gentle Exfoliating Cleanser is a daily face wash with a gentle exfoliating action, designed for dry, oily or combination skin. It helps to renew and smooth your skin by removing dead skin cells and daily impurities. \nFormulated with Bamboo Extract, Panthenol (Pro-Vitamin B5) and Vitamin E, this light scrub gently exfoliates to reveal radiant-looking skin without clogging pores or over-drying the skin. It’s gentle enough to be used daily for all skin types. \nDefends against 5 signs of skin sensitivity – dryness, irritation, roughness, tightness and a weakened skin barrier. \nKey benefits\n - Dermatologically tested \n - Maintains skins pH \n - Does not clog pores \n - Vegan',
+    INGREDIENTS: 'Aqua, Cocamidopropyl Betaine, Disodium Cocoamphodiacetate, Glycerin, Coco-Glucoside, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Bambusa Arundinacea Stem Extract, Citric Acid, Heliotropine, Panthenol, Parfum, Phenoxyethanol, Polyquaternium-10, Sodium Benzoate, Sodium Chloride, Sodium Citrate, Sodium Cocoamphoacetate, Sodium Hydroxide, Tocopheryl Acetate, Xanthan Gum',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 20,
