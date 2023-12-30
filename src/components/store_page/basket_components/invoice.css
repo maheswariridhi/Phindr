@@ -3,10 +3,17 @@
     top: 150px;
     left: 100px;
     
-    height: 920px;
+    height: auto;
+    width: 760px;
     border: 0px solid #000;
     background: rgba(1, 186, 254, 0.30);
 }
+
+.product1-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    gap: 20px; /* Adjust the gap between the columns */
+  }
 
 .invoice-container h1 {
     position: absolute;

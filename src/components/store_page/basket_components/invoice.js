@@ -54,6 +54,7 @@ function Invoice({ products, quantities }) {
       <div className='total-cost'>
         <p>Total Cost: £{totalCost.toFixed(2)}</p>
       </div>
+
     </div>
   );
 }

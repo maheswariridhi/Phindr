@@ -6,13 +6,12 @@ import StorePage from './components/store_page/storePage';
 import LoginPage from './components/login_page/login'
 import ProductPage from './components/product_page/productPage';
 import CheckoutPage from './components/checkout_page/checkoutPage';
-import BasketPage from './components/store_page/basket'
+import BasketPage from './components/store_page/basket_components/basket'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
 import './App.css';
-import Login from './components/login_page/login';
 
 function App() {
   useEffect(() => {
