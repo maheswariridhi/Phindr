@@ -4,7 +4,9 @@ import { useAppState } from './AppStateContext';
 import productArray from './products';
 
 const ProdCat = ({ isChecked, handleCheckboxChange }) => {
+  // const { itemAddedToBasket, onAddToBasket } = useAppState();
   const { itemAddedToBasket, onAddToBasket } = useAppState();
+
 
   const brands = ['Cold and Flu', 'Skincare', 'Headaches and pain relief', 'Digestion', 'Allergy', 'First aid'];
 

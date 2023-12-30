@@ -1,4 +1,4 @@
-// store.js
+// Exporting store component
 import { createStore  } from 'redux';
 import basketReducer from './reducers/basketReducer'; // Create this file later
 
