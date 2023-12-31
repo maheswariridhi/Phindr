@@ -25,7 +25,9 @@ function Navbar() {
 
       <div className='navbar-2'>
         <div>
-          <img src={phindrLogo} alt="phindr" className='phindr-logo'/>
+          <Link to = "../home">
+            <img src={phindrLogo} alt="phindr" className='phindr-logo'/>
+          </Link>
         </div>
 
         <form className='drug-form'>
@@ -44,7 +46,7 @@ function Navbar() {
           <div className='BasketIcon'>
 
             <img src={basketImg} alt='Basket' className='basket-img' />
-            <Link to = "./basket">
+            <Link to = "../basket">
               <h5> Basket </h5>
             </Link>
 

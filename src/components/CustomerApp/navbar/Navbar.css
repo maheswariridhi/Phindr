@@ -61,10 +61,11 @@
 
 .drug-form {
     position: relative;
+    width: 100%;
   }
   
   .input-field {
-    width: 900px;
+    width: 90%;
     height: 30px;
     padding: 10px;
     border: 2px solid #000;
@@ -84,7 +85,7 @@
   .search-icon {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 5%;
     transform: translateY(-50%);
   }
   

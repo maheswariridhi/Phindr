@@ -9,7 +9,7 @@ function ProductPage  () {
   
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  //let { ProductId } = useParams();
+  
   let match = useRouteMatch("/product/:ProductId");
   let ProductId = match?.params?.ProductId;
 
@@ -18,7 +18,7 @@ function ProductPage  () {
 
     const foundProduct = productsArray.find((product) => product.ID === Number(ProductId));
     console.log('foundProduct:', foundProduct); // Check the value of foundProduct
-    //ProductId = ProductId || 1; // Default to product 1 if no ID is provided
+   
     // Simulate an asynchronous API call
     const fetchData = async () => {
       try {
@@ -86,21 +86,21 @@ function ProductPage  () {
         <div class="grid-item-product">
           <p className="text-product">Product details:</p>
           {product.DETAILS.split('\n').map((paragraph, index) => (
-          <p className="small-text-product"style ={{textAlign: 'justify'}} key={index}>{paragraph}</p>
+          <p className="small-text-product"style ={{textAlign: 'justify', paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>
 
         <div class="grid-item-product">
           <p className="text-product">Ingredients:</p>
           {product.INGREDIENTS.split('\n').map((paragraph, index) => (
-          <p className="small-text-product"style ={{textAlign: 'justify'}} key={index}>{paragraph}</p>
+          <p className="small-text-product"style ={{textAlign: 'justify', paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>
 
         <div class="grid-item-product">
           <p className="text-product">Contraindications:</p>
           {product.CONTRAINDICATIONS.split('\n').map((paragraph, index) => (
-          <p className="small-text-product"style ={{textAlign: 'justify'}} key={index}>{paragraph}</p>
+          <p className="small-text-product"style ={{textAlign: 'justify' , paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>  
       </div>

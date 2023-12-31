@@ -274,7 +274,10 @@ const products = [
     SPRICE: 4,
     PPRICE: 3.7,
     STOCK: 40,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: ' FOR RELIEF FROM:\n - Headache \n - Feverishness \n - Muscular pain \n - Cold & flu symptoms \n - Period pain \n - Migraine \n - Rheumatic pain \n - Dental pain \n - Backache \n - Neuralgia',
+    INGREDIENTS:'Each tablet contains: Ibuprofen 200mg.',
+    CONTRAINDICATIONS: 'DO NOT TAKE IF YOU: \n - Have (or have had two or more episodes of) a stomach ulcer, perforation or bleeding \n - Are allergic to ibuprofen or any other ingredient of the product, aspirin or other related painkillers \n - Are taking other NSAID painkillers, or aspirin with a daily dose above 75mg \n - Are in the last 3 months of pregnancy'
   },
   {
     ID: 21,
@@ -285,7 +288,10 @@ const products = [
     SPRICE: 4,
     PPRICE: 3.5,
     STOCK: 30,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: ' FOR RELIEF FROM:\n - Headache \n - Feverishness \n - Muscular pain \n - Cold & flu symptoms \n - Period pain \n - Migraine \n - Rheumatic pain \n - Dental pain \n - Backache \n - Neuralgia',
+    INGREDIENTS:'Active ingredients: Each caplet contains Sodium Ibuprofen 256mg (equivalent to Ibuprofen 200mg)\n Also contains: sucrose.',
+    CONTRAINDICATIONS: 'DO NOT TAKE IF YOU: \n - Have (or have had two or more episodes of) a stomach ulcer, perforation or bleeding \n - Are allergic to ibuprofen or any other ingredient of the product, aspirin or other related painkillers \n - Are taking other NSAID painkillers, or aspirin with a daily dose above 75mg \n - Are in the last 3 months of pregnancy'
   },
   {
     ID: 22,
@@ -296,7 +302,10 @@ const products = [
     SPRICE: 7,
     PPRICE: 6.2,
     STOCK: 25,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: ' FOR RELIEF FROM:\n - Headache \n - Feverishness \n - Muscular pain \n - Cold & flu symptoms \n - Period pain \n - Migraine \n - Rheumatic pain \n - Dental pain \n - Backache \n - Neuralgia \n - Dental pain \n - Muscular pain \n - Feverishness \n - Cold and flu symptoms \n - Sore throat \n -Non serious Arthritis pain',
+    INGREDIENTS: 'Active ingredients: each tablet contains Sodium Ibuprofen 512mg (equivalent to Ibuprofen 400mg). \n Also contains: Sucrose.',
+    CONTRAINDICATIONS: 'DO NOT TAKE IF YOU: \n - Have (or have had two or more episodes of) a stomach ulcer, perforation or bleeding \n - Are allergic to ibuprofen or any other ingredient of the product, aspirin or other related painkillers \n - Are taking other NSAID painkillers, or aspirin with a daily dose above 75mg \n - Are in the last 3 months of pregnancy'
   },
   {
     ID: 23,
@@ -307,7 +316,10 @@ const products = [
     SPRICE: 4,
     PPRICE: 3.2,
     STOCK: 30,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS:' FOR RELIEF FROM:\n - Migraine/headache \n - Feverishness \n - Muscular pain \n - Cold & flu symptoms \n - Period pain \n - Rheumatic pain \n - Dental pain \n - Backache \n - Neuralgia',
+    INGREDIENTS:'Active ingredients: Each tablet contains Ibuprofen 200mg and about 12.7mg of sodium. \n Also contains: Sucrose. ',
+    CONTRAINDICATIONS: 'DO NOT TAKE IF YOU: \n - Have (or have had two or more episodes of) a stomach ulcer, perforation or bleeding \n - Are allergic to ibuprofen or any other ingredient of the product, aspirin or other related painkillers \n - Are taking other NSAID painkillers, or aspirin with a daily dose above 75mg \n - Are in the last 3 months of pregnancy'
   },
   {
     ID: 24,
@@ -318,7 +330,10 @@ const products = [
     SPRICE: 11,
     PPRICE: 9,
     STOCK: 20,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS: 'Cuprofen maximum strength tablets provide fasting acting, powerful relief from pain caused by a toothache, headaches, period pains and much more. Cuprofen can also give effective relief from colds and flu in just one tablet.',
+    INGREDIENTS:'Active ingredients: Each tablet contains Ibuprofen 400mg. ',
+    CONTRAINDICATIONS: 'Cuprofen should however not be taken alongside other NSAIDs such as: \n - Ibuprofen containing medication \n - Naproxen \n - Diclofenac \n - High-doses of aspirin'
   },
   {
     ID: 25,
@@ -329,7 +344,10 @@ const products = [
     SPRICE: 2,
     PPRICE: 1.6,
     STOCK: 20,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS:'Solpadeine Headache Soluble Tablets contain a dual action formula of Paracetamol and Caffeine for fast and effective pain relief. The soluble tablets get to work 2x faster than Paracetamol alone. \n - PARACETAMOL relieves your pain symptoms \n - CAFFEINE helps speed up the absorption of Paracetamol \n Solpadeine Headache Soluble Tablets are suitable for headaches, migraine, backache, toothache, rheumatic pain and dysmenorrhoea (period pain), and relief of the symptoms of colds, flu, and sore throats.',
+    INGREDIENTS: 'Active Ingredients: Each effervescent tablet contains the active ingredients Paracetamol 500mg, Caffeine 65mg. \n Also contains: Sorbitol (E420).',
+    CONTRAINDICATIONS: ' Do not take with any other paracetamol-containing products. \n Avoid too much caffeine in drinks like coffee and tea when taking these tablets.'
   },
   {
     ID: 26,
@@ -340,7 +358,10 @@ const products = [
     SPRICE: 2.3,
     PPRICE: 2,
     STOCK: 30,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS: 'Anadin Extra. For relief from: \n - Headache \n - Migraine \n - Period Pain \n - Back Pain \n - Muscle ache & pain \n - Rheumatic pain \n - Fever \n - Toothache \n - Cold & flu symptoms \n Also provides relief from: lower back pain, stiffness, siatica, sprains, strains, joint swelling, neuralgia, fibrositis and a sore throat.',
+    INGREDIENTS: 'Active Ingredients: Aspirin 300mg, Paracetamol 200mg and Caffeine 45mg. \n Also Contains: maize starch, microcrystalline cellulose (E460), hydrogenated vegetable oil, hydroxypropyl methylcellulose (E646), polyethylene glycol, pregelatinised starch and povidone.',
+    CONTRAINDICATIONS: 'Do not take anything else containing paracetamol while taking this medicine.'
   },
   {
     ID: 27,
@@ -351,7 +372,10 @@ const products = [
     SPRICE: 2,
     PPRICE: 1.9,
     STOCK: 30,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS: 'For relief from: headache, migraine, period pain, back pain, muscle ache & pain, rheumatic pain, fever, toothache, cold & flu symptoms. \n Also provides relief from: lower back pain, stiffness, sciatica, sprains, strains, joint swelling, neuralgia, fibrositis and a sore throat.',
+    INGREDIENTS: ' Each film-coated tablet contains: Aspirin 300mg, Paracetamol 200mg and Caffeine 45mg.',
+    CONTRAINDICATIONS: 'Do not take anything else containing paracetamol while taking this medicine.'
   },
   {
     ID: 28,
@@ -362,7 +386,10 @@ const products = [
     SPRICE: 1.8,
     PPRICE: 1.5,
     STOCK: 30,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS: 'Anadin Original Pain Relief Tablets 12 Pack is a dual action formula containing aspirin and caffeine to provide fast and effective relief from headaches and migraines. It also helps to reduce joint swelling, neuralgia, feverishness, stiffness, sciatica, lumbago, fibrositis, sore throat, and rheumatic pain.',
+    INGREDIENTS: 'Each caplet contains 325mg of aspirin and 15mg of caffeine.',
+    CONTRAINDICATIONS: 'Anadin Original is not suitable for those who have: \n - Stomach ulcers, perforation, or bleeding \n - Haemophilia (blood that does not clot well) \n - Gout \n - Late-stage pregnancy or are breastfeeding \n - Asthma \n - Dehydration \n - Allergic disease \n - Liver or kidney problems \n - G-6-PD deficiency (a hereditary condition leading to low red blood cell counts)'
   },
   {
     ID: 29,
@@ -373,7 +400,10 @@ const products = [
     SPRICE: 3.6,
     PPRICE: 2.8,
     STOCK: 20,
-    LIMIT: 1
+    LIMIT: 1,
+    DETAILS: 'Disprin Soluble Tablets are used for fast and effective pain relief associated with headaches, migraines, toothaches, period pain, and sore throats. It can also be used to reduce temperature and inflammation in rheumatic pain.',
+    INGREDIENTS: 'Active Ingredients: Aspirin 300 mg. \n Other ingredients: Each tablet contains Aspirin PH Eur 300mg, Calcium carbonate, Maize starch, Citric acid anhydrous, Talc, Sodium lauryl sulphate, Saccharin, Crospovidone and Lime flavour.',
+    CONTRAINDICATIONS: 'Do not take if you have, or have ever had, a stomach ulcer or haemophilia.'
   },
   {
     ID: 30,
@@ -384,7 +414,10 @@ const products = [
     SPRICE: 8,
     PPRICE: 7.3,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Dioralyte Relief Blackcurrant is recommended for the replacement of essential body water and salts in the treatment of acute diarrhoea. \n During diarrhoea the body loses water and salts and Dioralyte Relief Blackcurrant replaces these whilst at the sametime helping watery stools return to normal more rapidly. Early use is important to avoid dehydration, especially inthe young and elderly.',
+    INGREDIENTS: 'Active Ingredients: Each Sachet Contains Pre-Cooked Rice Powder 6G, Sodium Citrate 580Mg, Sodium Chloride 350Mg And Potassium Chloride 300Mg. \n Also Contains: Aspartame, Hypromellose, Blackcurrant  Avour And Ethanol.',
+    CONTRAINDICATIONS: 'If you suffer from phenylketonuria you should not use Dioralyte Relief Blackcurrant. If you are suffering from intestinal obstruction, kidney or liver disease, or a condition where your body salts are disturbed or you are on a low potassium or sodium diet ask your doctor before using Dioralyte Relief Blackcurrant.'
   },
   {
     ID: 31,
@@ -395,7 +428,10 @@ const products = [
     SPRICE: 8,
     PPRICE: 7.3,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Dioralyte is indicated for the replacement of essential body water and salts in the treatment of acute diarrhoea in infants, children and adults. Early use is important to avoid dehydration, particularly in the young and elderly. \n Dioralyte contains glucose and salts (these are Sodium chloride, Potassium chloride and Disodium hydrogen citrate). The powder is mixed with water before taking.',
+    INGREDIENTS: 'Active Ingredients: Each sachet contains Sodium Chloride 0.47g, Potassium Chloride 0.30g, Glucose 3.56g, Disodium Hydrogen Citrate 0.53g. \n Also contains: Silicon dioxide, Saccharin Sodium, Citrus flavour (Lemon and lime).',
+    CONTRAINDICATIONS: 'If you are suffering from intestinal obstruction, diabetes, kidney or liver failure, or are on a low potassium or sodium diet, ask your doctor or pharmacist before using Dioralyte. \n Do not use more or less than 200 ml of water. If you do, the drink will become too weak or too strong. It will not work as well. You may also upset the balance of salts in your body.'
   },
   {
     ID: 32,
@@ -406,7 +442,10 @@ const products = [
     SPRICE: 4.2,
     PPRICE: 3.5,
     STOCK: 25,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Gaviscon Peppermint Flavour Tablets bring relief from the pain and discomfort of heartburn and acid indigestion, which for example, can occur after meals or during pregnancy. This product belongs to a group of medicines called "reflux suppressants", which form a protective layer on top of the stomach contents to prevent stomach acid escaping from the stomach where it works into the food pipe causing pain and discomfort.',
+    INGREDIENTS: 'Each Chewable Tablet contains 250mg Sodium Alginate, 133.5mg Sodium Hydrogen Carbonate and 80mg Calcium Carbonate',
+    CONTRAINDICATIONS: 'Contains sodium and calcium. If you have been advised to follow a diet restricted in either of these salts please consult your doctor before taking this product. \n If you have phenylketonuria, note that this product is sweetened with aspartame (E951), a source of phenylalanine.'
   },
   {
     ID: 33,
@@ -417,7 +456,10 @@ const products = [
     SPRICE: 3,
     PPRICE: 2.7,
     STOCK: 10,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Senokot Max Strength Tablets Adult is an effective laxative made with natural Senna Fruit (pods), standardised to contain a constant amount of active ingredient in each dose. For the short-term relief of occasional constipation. Laxatives do not affect the number of calories absorbed from food. This means they do not help with weight loss.',
+    INGREDIENTS: 'Active ingredient: Each tablet contains powdered Alexandrian Senna fruit (pods) (Cassia senna L. (C. acutifolia Delile)), and Tinnevelly Senna fruit (pods) (Cassia angustifolia Vahl) equivalent to 15mg hydroxyahthracene glycosides, calculated as senoise B. \n Also contains: Lactose.',
+    CONTRAINDICATIONS: 'Do not take this product if you: \n - are allergic to any of the ingredients \n - have bowel or stomach problems \n - are pregnant or breast-feeding \n - have a kidney or heart condition \n - are under 18 years of age'
   },
   {
     ID: 34,
@@ -428,7 +470,10 @@ const products = [
     SPRICE: 10,
     PPRICE: 8.1,
     STOCK: 10,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Extra Strenght Formula - Gaviscon Advance has double the concentration of sodium alginate of Gaviscon Original so that it forms a strong and resilient raft. This raft forms a protective barrier over the stomach contents to help soothe the burning sensation in your chest.\n Gets to Work Instantly - Gaviscon Advance formulation gets to work in seconds to create a protective barrier that lasts up to 4 hours.',
+    INGREDIENTS: 'Active ingredients: Each 10 ml contains sodium alginate 1000 mg and potassium hydrogen carbonate 200 mg \n Also contains: sodium, potassium, calcium, methyl (E218) and propyl (E216) para-hydroxybenzoates.',
+    CONTRAINDICATIONS: 'Do not take this product if you: \n - are allergic to any of the ingredients \n - have bowel or stomach problems \n - are pregnant or breast-feeding \n - have a kidney or heart condition \n - are under 18 years of age'
   },
   {
     ID: 35,
@@ -439,7 +484,10 @@ const products = [
     SPRICE: 9,
     PPRICE: 7.1,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Active in 15 minutes on skin allergies lasts 8 hours \n Works to relieve the symptoms of hay fever and other allergic conditions such as pet, skin or dust allergies. \n These symptoms include: \n - Itchy, runny nose \n - Itchy, watery eyes \n - Sneezing \n - Urticaria (hives & itchy skin rash)',
+    INGREDIENTS: 'Each capsule contains: Acrivastine 8 mg. The capsules also contain lactose.',
+    CONTRAINDICATIONS: 'Consult your doctor or pharmacist if you have an underlying medical condition, are taking any other medication or complementary therapy, or if symptoms persist \n Seek advice before using if you are pregnant, planning to become pregnant, breastfeeding or suffer from allergies'
   },
   {
     ID: 36,
@@ -450,7 +498,10 @@ const products = [
     SPRICE: 3,
     PPRICE: 2.3,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Relief from the symptoms of: \n - Hayfever \n - Skin Allergies \n - Pet Allergies \n - Mould Spore Allergies \n - House Dust Mite Allergies',
+    INGREDIENTS: 'Active Ingredients: Each tablet contains cetirizine hydrochloride 10mg. \n Also contains: lactose - see leaflet for further advice.',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 37,
@@ -461,7 +512,10 @@ const products = [
     SPRICE: 6,
     PPRICE: 4,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Beconase hayfever Relief nasal spray for adults is a highly effective medication for treating hay fever. Unlike tablets, it works right where the problem starts, in the nose. It contains belcometasone and has an anti-inflammatory action which quickly starts to reduce inflammation and swelling in the nose. The product brings relief from allergy symptoms such as: Nasal congestion, watery eyes, runny nose, sneezing, itchy eyes, itchy nose, red eyes and sinus discomfort. \n For optimum results, Beconase should be sprayed twice into each nostril every morning and night. \n Can provide up to 24hr relief (when used twice daily) from the 8 symptoms of hay fever \n - Sneezing \n - Itchy nose \n - Runny nose \n - Red eyes \n - Itchy eyes \n - Watery eyes \n - Sinus discomfort \n - Nasal decongestion \n All day and all night relief. Non-drowsy.',
+    INGREDIENTS: 'Active ingredients: Contains 50 micrograms Beclometasone Dipropionate per spray \n Also contains: Microcrystalline Cellulose, Sodium Carboxymethylcellulose, Dextrose, Polysorbate 80, Purified Water, Preservatives: Benzalkonium Chloride, Phenylethylalcohol',
+    CONTRAINDICATIONS: 'Consult your doctor or pharmacist if you have an underlying medical condition, are taking any other medication or complementary therapy, or if symptoms persist \n Seek advice before using if you are pregnant, planning to become pregnant, breastfeeding or suffer from allergies'
   },
   {
     ID: 38,
@@ -472,7 +526,10 @@ const products = [
     SPRICE: 3.2,
     PPRICE: 3,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Dettol Liquid is an effective concentrated antiseptic solution that kills bacteria and protects against the germs which can cause infection and illness. It can be used for antiseptic cleansing of minor wounds caused by cuts, bites, grazes, insect stings; for dandruff, spots and pimples and if medically advised, for personal hygiene.',
+    INGREDIENTS: 'Active ingredients: Dettol liquid contains Chloroxylenol 4.8% w/v as the active substance. \n Also contains: Pine oil, Isopropyl alcohol, Caramel, Water and Caustic Soda Solution.',
+    CONTRAINDICATIONS: 'Do not use Dettol Liquid: \n - On eczema or similar dry skin conditions \n - If you are allergic to Chloroxylenol or any of the other ingredients'
   },
   {
     ID: 39,
@@ -483,7 +540,10 @@ const products = [
     SPRICE: 7,
     PPRICE: 6.3,
     STOCK: 50,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'KILLS 99.9 Percent OF BACTERIA and VIRUSES – Simple, fast and effective, Dettol Instant Hand Sanitiser helps you travel with confidence.',
+    INGREDIENTS: 'Per 100g Of Product Contains 67.45g Ethanol',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 40,
@@ -494,17 +554,24 @@ const products = [
     SPRICE: 3,
     PPRICE: 2,
     STOCK: 30,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Elastoplast Flexible XL plasters offer a larger size and surface area for better wound coverage. \n Made from a breathable material that flexes with movement, these plasters are best suited to knees and elbows, helping to protect wounds and prevent contamination. \n The non-stick wound pad helps to protect and cushion the wound, whilst a strong adhesive ensures that the plaster stays in place.',
+    INGREDIENTS: '',
+    CONTRAINDICATIONS: 'None known'
   },
   {
     ID: 41,
+    CATEGORY: 'First aid',
     BRAND: 'TCP',
     TYPE: 'Liquid',
     QTY: '200ml',
     SPRICE: 4,
     PPRICE: 3.2,
     STOCK: 20,
-    LIMIT: 0
+    LIMIT: 0,
+    DETAILS: 'Soothes pain, fights infection. For sore throats, mouth ulcers, cuts, grazes, bites, stings & spots.',
+    INGREDIENTS: 'Active ingredients: Halogenated phenols 0.68% w/v and Phenol 0.175% w/v. \n Also contains: Glycerol, concentrated phosphoric acid, E104 (quinoline yellow), water.',
+    CONTRAINDICATIONS: 'Consult your doctor or pharmacist if you have an underlying medical condition, are taking any other medication or complementary therapy, or if symptoms persist \n Seek advice before using if you are pregnant, planning to become pregnant, breastfeeding or suffer from allergies'
   }
 ]
 
