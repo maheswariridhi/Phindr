@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/CustomerApp/navbar/Navbar';
@@ -36,6 +36,13 @@ function App() {
     };
   }, []); 
 
+  const [searchValue, setSearchValue] = useState('');
+
+  // Function to handle changes in the search input
+  const handleSearchChange = (value) => {
+    setSearchValue(value);
+  };
+
   return (
     <div className="App">
       <Helmet>
@@ -52,8 +59,10 @@ function App() {
 
           {/* Navbar is common for all routes */}
           <Route path="/home">
-            <Navbar />
-            <StorePage />
+            <Navbar onSearchChange={handleSearchChange} />
+
+            <StorePage searchValue={searchValue} />
+            
           </Route>
 
           <Route path="/product/:ProductId" component={ProductPage}>
