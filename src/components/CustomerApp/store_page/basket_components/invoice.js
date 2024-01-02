@@ -2,6 +2,8 @@ import React from 'react';
 import './basket.css';
 import './invoice.css';
 
+import { useHistory } from 'react-router-dom';
+
 function Invoice({ products, quantities }) {
   function generateRandomSerialNumber() {
     const randomNumber = Math.floor(Math.random() * 900000) + 100000;
@@ -18,6 +20,12 @@ function Invoice({ products, quantities }) {
 
   // Initialize total cost
   let totalCost = 0;
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/map'); // Replace '/another-page' with the path of the page you want to navigate to
+  };
 
   return (
     <div className='invoice-container'>
@@ -55,6 +63,9 @@ function Invoice({ products, quantities }) {
         <p>Total Cost: £{totalCost.toFixed(2)}</p>
       </div>
 
+      <button className='my-button' onClick={handleClick}>
+        Collect from Store
+      </button>
     </div>
   );
 }

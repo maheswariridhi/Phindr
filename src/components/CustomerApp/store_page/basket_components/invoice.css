@@ -104,3 +104,21 @@
 .test-class {
     padding-bottom: 20px;
 }
+
+.my-button {
+    width: 100px;
+    position: relative;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+
+    background-color: #fff; 
+    border: #000 solid 2px;
+
+    color: #000; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border: none; 
+    border-radius: 5px; 
+  }

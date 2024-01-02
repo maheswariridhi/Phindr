@@ -23,6 +23,8 @@ function Basket() {
   const indexesArray = Object.keys(itemAddedToBasket).map(Number);
   const products = productsArray.filter((product) => indexesArray.includes(product.ID));
 
+  console.log(products);
+
   const handleQuantityChange = (productId, value, limit) => {
     setQuantities((prevQuantities) => {
       const newQuantities = {
@@ -57,7 +59,10 @@ function Basket() {
         </div>
 
         <Invoice products={products} quantities={quantities} />
+          
       </div>
+      
+            
     </div>
   );
 }

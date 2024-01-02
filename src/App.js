@@ -7,6 +7,7 @@ import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+import MapPage from './components/CustomerApp/store_page/basket_components/map'
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -67,6 +68,11 @@ function App() {
           <Route exact path="/basket">
             <Navbar />
             <BasketPage />
+          </Route>
+
+          <Route exact path="/map">
+            <Navbar />
+            <MapPage />
           </Route>
         </Switch>
       </div>
