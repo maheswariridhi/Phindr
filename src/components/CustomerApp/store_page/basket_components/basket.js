@@ -10,13 +10,14 @@ import ProductItem from './ProductItem'; // Import the new component
 function Basket() {
   const [quantities, setQuantities] = useState(() => {
     const initialQuantities = {};
-
+  
     productsArray.forEach((product) => {
-      initialQuantities[product.ID] = 0;
+      initialQuantities[product.ID] = 1; // Set the default value to 1
     });
-
+  
     return initialQuantities;
   });
+  
 
   const { itemAddedToBasket } = useAppState();
 

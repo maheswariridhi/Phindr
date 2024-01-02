@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './basket.css';
 import './invoice.css';
 
 import { useHistory } from 'react-router-dom';
 
-function Invoice({ products, quantities }) {
-  const [randomSerialNumber, setRandomSerialNumber] = useState('');
+function InvoiceCopy({ products, quantities }) {
+  function generateRandomSerialNumber() {
+    const randomNumber = Math.floor(Math.random() * 900000) + 100000;
+    return '100537' + randomNumber;
+  }
 
-  useEffect(() => {
-    // Generate the random serial number once when the component mounts
-    const generateRandomSerialNumber = () => {
-      const randomNumber = Math.floor(Math.random() * 900000) + 100000;
-      return '100537' + randomNumber;
-    };
-
-    setRandomSerialNumber(generateRandomSerialNumber());
-  }, []); // The empty dependency array ensures this effect runs only once
+  const randomSerialNumber = generateRandomSerialNumber();
 
   const today = new Date();
   const year = today.getFullYear();
@@ -28,13 +23,6 @@ function Invoice({ products, quantities }) {
 
   const history = useHistory();
 
-  const handleClick = () => {
-    history.push('/store-checkout');
-  };
-
-  const handleClick1 = () => {
-    history.push('/checkout');
-  };
 
   return (
     <div className='invoice-container'>
@@ -67,19 +55,13 @@ function Invoice({ products, quantities }) {
         })}
       </div>
 
+      {/* Display the total cost after mapping through all products */}
       <div className='total-cost'>
         <p>Total Cost: £{totalCost.toFixed(2)}</p>
       </div>
 
-      <button className='my-button' onClick={handleClick}>
-        Collect from Store
-      </button>
-
-      <button className='my-button' onClick={handleClick1}>
-        Online Checkout
-      </button>
     </div>
   );
 }
 
-export default Invoice;
+export default InvoiceCopy;

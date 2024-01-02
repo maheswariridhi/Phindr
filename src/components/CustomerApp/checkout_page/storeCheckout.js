@@ -6,7 +6,8 @@ import productsArray from '../store_page/products'
 import { useAppState } from '../store_page/AppStateContext';
 import { useHistory } from 'react-router-dom';
 
-const CheckoutPage = () => {
+const StoreCheckoutPage = () => {
+
     const [quantities, setQuantities] = useState(() => {
         const initialQuantities = {};
     
@@ -21,11 +22,11 @@ const CheckoutPage = () => {
     
       const indexesArray = Object.keys(itemAddedToBasket).map(Number);
       const products = productsArray.filter((product) => indexesArray.includes(product.ID));
-      
+    
       const history = useHistory();
 
       const handleClick = () => {
-        history.push('/home'); // Replace '/another-page' with the path of the page you want to navigate to
+        history.push('/map'); // Replace '/another-page' with the path of the page you want to navigate to
       };
 
 
@@ -52,26 +53,6 @@ const CheckoutPage = () => {
                         <p className="text-checkout">Last Name</p>
                         <form className='checkout-form'>
                             <input type="text" id="last-name" name="last-name" placeholder='...' className='input-field-checkout'/>
-                        </form>
-                    </div>
-                </div>
-
-                <p className="text-checkout">Address </p>
-                <form className='checkout-form'>
-                    <input type="text" id="address" name="address" placeholder='...' className='input-field-checkout'/>
-                </form>
-
-                <div className='grid-equal'>
-                    <div>
-                        <p className="text-checkout">City</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="city" name="city" placeholder='...' className='input-field-checkout'/>
-                        </form>
-                    </div>
-                    <div>
-                        <p className="text-checkout">Postcode</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="postcode" name="postcode" placeholder='...' className='input-field-checkout'/>
                         </form>
                     </div>
                 </div>
@@ -131,10 +112,11 @@ const CheckoutPage = () => {
             <InvoiceCopy products={products} quantities={quantities} />
         </div>
         <button className='checkout-button' onClick={handleClick}>
-            Checkout and Return Home
+            Checkout and View Store Map
         </button>
+
         </div>
     )
 }
 
-export default CheckoutPage;
+export default StoreCheckoutPage;
