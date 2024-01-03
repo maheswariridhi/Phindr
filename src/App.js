@@ -12,7 +12,7 @@ import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
-
+import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
@@ -116,7 +116,11 @@ function App() {
             </div>
             
           </Route>
-
+          <div className='AdminPages'>
+              <div>
+                <InventoryDashboard/>  
+              </div>
+            </div>
         </Switch>
       </div>
     </Router>
