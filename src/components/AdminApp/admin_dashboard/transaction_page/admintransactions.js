@@ -7,10 +7,13 @@ const AdminDashboard = () => {
       <div className="content">
         <header className="content-header">
             <div className="header-title-container">
-                <h1 className="transaction-history-title">Transaction History</h1>
                 <img src={locationImage} alt="Location" className="location-icon"/>
+                <h1 className="transaction-history-title">Transaction History</h1>
+                
             </div>
-            </header>
+        </header>
+       
+          
 
         <div className="table-container">
           <table className="transaction-table">

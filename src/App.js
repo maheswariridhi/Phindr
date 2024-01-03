@@ -1,6 +1,7 @@
 import React, { useEffect , useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import './App.css';
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
 import LoginPage from './components/CustomerApp/login_page/login'
@@ -10,6 +11,7 @@ import BasketPage from './components/CustomerApp/store_page/basket_components/ba
 import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
+import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -93,9 +95,28 @@ function App() {
           </Route>
           
           <Route exact path="/AdminHome">
-            <AdminNavbar />
+            <div className='AdminPages'>
+              <div>
+                <AdminNavbar />  
+              </div>
+
+            </div>
             
           </Route>
+
+          <Route exact path="/AdminTransaction">
+            
+            <div className='AdminPages'>
+              <div>
+                <AdminNavbar />  
+              </div>
+              <div>
+                <AdminDashboard/>  
+              </div>
+            </div>
+            
+          </Route>
+
         </Switch>
       </div>
     </Router>
