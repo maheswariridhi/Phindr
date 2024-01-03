@@ -14,6 +14,10 @@ import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
+import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
+import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
+import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
+
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
@@ -68,6 +72,16 @@ function App() {
 
             <StorePage searchValue={searchValue} />
             
+          </Route>
+
+          <Route path="/pharmacist-home">
+            <PharmacistNavbar />
+            <PharmacistStorePage />
+          </Route>
+
+          <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
+            <PharmacistNavbar />
+            <PharmacistProductPage />
           </Route>
 
           <Route path="/product/:ProductId" component={ProductPage}>

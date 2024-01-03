@@ -1,0 +1,119 @@
+.Box-Text {
+    display: flex;
+    width: 295px;
+    height: 63px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    padding: 0px;
+    margin: 0px;
+    padding-left: 37px;
+    
+    border: 2px solid #000;
+    border-top: none;
+    border-right: none;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Box-Text1 {
+    display: flex;
+    width: 295px;
+    
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    padding: 0px;
+    margin: 0px;
+    padding-top: 20px;
+    padding-left: 37px;
+    
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+
+}
+
+.page-container label {
+    padding-left: 50px;
+    padding-top: 5px;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;  
+}
+
+.custom-checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px; /* Adjust as needed */
+  }
+
+.check-container {
+    display: flex;
+    flex-direction: column;
+}
+
+  .page-container {
+    position: relative;
+    display: flex;
+
+
+    border: 2px solid black;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+
+    width: 334px;
+    height: 10%;
+  }
+
+  .sidebar {
+    position: fixed;
+  }
+
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .check-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prod-cat {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+  }
+  
+  .item-container {
+    margin: 10px; /* Adjust the margin as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  .item-info {
+    text-align: center;
+    margin-top: 10px;
+  }

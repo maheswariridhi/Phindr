@@ -1,0 +1,123 @@
+.title {
+    position: relative;
+    top: 25px;
+    left: 580px;
+    
+    color: #000;
+    font-family: Inter;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.prod-cat {
+    position: relative;
+    left: 90px;
+    top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /* Add other styles for the prod-cat if needed */
+}
+
+.product-container {
+    width: 325px; 
+    height: 428px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.viewmap {
+    color: #0E6B8D;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    text-decoration: underline;
+}
+
+.item1 {
+    position: relative;
+}
+
+.item-info {
+    text-align: center;
+}
+
+.item-image {
+    max-width: 250px;
+    width: auto;
+    height: 250px;
+    padding-bottom: 15px;
+
+}
+
+.item-info h3 {
+    padding: 0px;
+    margin: 0px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    padding-bottom: 5px;
+}
+
+.item-info h4 {
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.item-info p {
+    color: #000;
+    margin-top: 00px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    text-decoration: underline;
+}
+
+.item-info button {
+    width: 190px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+    border: 0px;
+    border-radius: 7px;
+    background-color: #0E6B8D;
+  
+    /* Transition for a smooth hover effect */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .item-info button:hover {
+    background-color: #fff; /* Change to your desired hover color */
+    color: #0E6B8D;
+    border: #0E6B8D 3px solid;
+
+  }
