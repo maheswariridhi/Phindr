@@ -1,0 +1,21 @@
+{
+    "customerDetails": [
+      {
+        "id": "0",
+        "email": "customer@email.com",
+        "firstname": "Dummy",
+        "lastname": "Customer",
+        "address": "South Kensington",
+        "city": "London",
+        "postcode": "SW7 2AZ",
+        "phonenumber": "1234567890",
+        "cardname": "Customer",
+        "cardnumber": "87654321",
+        "expirydate": "12/24",
+        "sercuritycode": "321"
+
+      }
+    ]
+
+    
+  }

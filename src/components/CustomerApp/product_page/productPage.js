@@ -5,8 +5,12 @@ import location from '../navbar/location.png';
 import productsArray from '../store_page/products';
 import { useRouteMatch } from 'react-router-dom';
 
+import { useAppState } from '../store_page/AppStateContext';
+
+
 function ProductPage  () {
-  
+  const { itemAddedToBasket, onAddToBasket } = useAppState();
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -68,8 +72,13 @@ function ProductPage  () {
         <h1 className="products-title">{`${product.BRAND} ${product.TYPE}`}</h1>
           <h3 className="text-product">{`£${product.SPRICE.toFixed(2)}`}</h3>
           <p className="text-product">{`Available: ${product.STOCK}`} </p>
-          <button className="buttons-product">Add to Basket</button>
 
+          {itemAddedToBasket[product.ID] ? (
+                <h4 className='addbasket'>Item Added to Basket</h4>
+              ) : (
+                <button className="buttons-product" onClick={() => onAddToBasket(product.ID)}>Add to Basket</button>
+              )}
+          
           <p className="text-product" style={{paddingTop: 10}}>
             <img src={location} className="location-product" alt="location" />
             Find in store 

@@ -1,11 +1,123 @@
+import InvoiceCopy from '../store_page/basket_components/invoiceCopy';
 import './checkoutPage.css';
+import React, { useEffect, useState } from 'react';
+
+import productsArray from '../store_page/products'
+import { useAppState } from '../store_page/AppStateContext';
+import { useHistory } from 'react-router-dom';
 
 const CheckoutPage = () => {
-    return (
-        <div className='grid-container'>
-            <div>
+    
+    //below doesnt work
+    // const [email, setEmail] = useState('');
+    // const [firstname, setFirstName] = useState('');
+    // const [lastname, setLastName] = useState('');
+    // const [address, setAddress] = useState('');
+    // const [city, setCity] = useState('');
+    // const [postcode, setPostcode] = useState('');
+    // const [phonenumber, setPhoneNumber] = useState('');
+    // const [cardname, setCardName] = useState('');
+    // const [cardnumber, setCardNumber] = useState('');
+    // const [expirydate, setExpiryDate] = useState('');
+    // const [securitycode, setSecurityCode] = useState('');
 
-                <h3 className="text-checkout" style={{paddingTop: 40}}>Contact</h3>
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const customerDetails = {
+    //         email,
+    //         firstname,
+    //         lastname,
+    //         address,
+    //         city,
+    //         postcode,
+    //         phonenumber,
+    //         cardname,
+    //         cardnumber,
+    //         expirydate,
+    //         securitycode
+    //     };
+    
+    //     try {
+    //         const response = await fetch('http://localhost:8000/customerDetails', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(customerDetails)
+    //         });
+    
+    //         if (response.ok) {
+    //             console.log('Customer details added successfully');
+    //             // You may perform additional actions here if needed
+    //         } else {
+    //             console.error('Failed to add customer details');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+
+    //     console.log(customerDetails);
+    // };
+
+    // useEffect(() => {
+    //     const form = document.querySelector('form');
+    //     const createCustomer = async (e) => {
+    //         e.preventDefault();
+    //         const customer = {
+    //             email: form.email.value,
+    //             firstname: form.firstname.value,
+    //             lastname: form.lastname.value,
+    //             address: form.address.value,
+    //             city: form.city.value,
+    //             postcode: form.postcode.value,
+    //             phonenumber: form.phonenumber.value,
+    //             cardname: form.cardname.value,
+    //             cardnumber: form.cardnumber.value,
+    //             expirydate: form.expirydate.value,
+    //             securitycode: form.securitycode.value
+    //         }
+    //         await fetch('http://localhost:3000/checkout', {
+    //             method: 'POST',
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify(customer)
+    //         })
+    //         window.location.replace('/');
+    //     }
+
+    //     form.addEventListener('submit', createCustomer);
+
+    //     return () => {
+    //         form.removeEventListener('submit', createCustomer);
+    //     }
+    // }, []);
+    // // above doesn't work
+    
+
+
+    const [quantities, setQuantities] = useState(() => {
+        const initialQuantities = {};
+    
+        productsArray.forEach((product) => {
+          initialQuantities[product.ID] = 0;
+        });
+    
+        return initialQuantities;
+      });
+    
+      const { itemAddedToBasket } = useAppState();
+    
+      const indexesArray = Object.keys(itemAddedToBasket).map(Number);
+      const products = productsArray.filter((product) => indexesArray.includes(product.ID));
+      
+      const history = useHistory();
+
+      const handleClick1 = () => {
+        history.push('/home'); // Replace '/another-page' with the path of the page you want to navigate to
+      };
+
+
+      return (
+        <div className='grid-container1'>
+          <div>
+          <h3 className="text-checkout" style={{paddingTop: 40}}>Contact</h3>
                 <p className="text-checkout">Email</p>
                 <form className='checkout-form'>
                     <input type="text" id="email" name="email" placeholder='...' className='input-field-shorter'/>
@@ -75,31 +187,21 @@ const CheckoutPage = () => {
                     <form className='checkout-form'>
                         <input type="number" id="" name="address" placeholder='...' className='input-field-shorter'/>
                     </form>
-                
-
-            </div>
-
-
-            <div className='grid-basket'>
-                <div>
-                    <h3 className="text-checkout" style={{paddingTop: 40}}>Your Basket </h3> 
-                    <div className='grid-basket-product'>
-                        <p className="text-checkout">Product Name</p>
-                        <p className="text-checkout">£</p>
-                        <p className='text-checkout'>Quantity: </p> 
-
-                    </div> 
-                    <hr className="solid-small" />  
-                </div>
-
-                <div className='center-items'>
-                    <button className="button-checkout">Confirm Purchase</button>    
-                </div>
-                
-            
-            </div>
+          </div>
+      
+          {/* <div className='center-items'>
+            <button className="button-checkout">Confirm Purchase</button>    
+          </div> */}
+      
+          <div className='invoice-1'>
+            <InvoiceCopy products={products} quantities={quantities} />
+          </div>
+          
+          <button className='checkout-button' onClick={handleClick1}>
+            Checkout and go back to Home
+          </button>
         </div>
-    )
+      )
 }
 
 export default CheckoutPage;

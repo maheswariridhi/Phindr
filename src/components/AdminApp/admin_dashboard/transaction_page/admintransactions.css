@@ -1,0 +1,152 @@
+.admin-dashboard {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header-title-container {
+    display: flex;
+    justify-content: space-between; /* Add space between flex items */
+    padding: 15px; /* Adjust padding as needed */
+  }
+  
+  .transaction-history-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .location-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 22px; /* Adjust padding as needed */
+    width: 20; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+  }
+
+  .admin-icon{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 50px;
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .sidebar {
+    width: 250px;
+    background-color: #B3CED9;
+    color: black;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .phindr-logo {
+    width: 217px;
+    height: 57px;
+    margin-left:-30px;
+    margin-bottom: 30px;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-left: 5px solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .menu a:hover {
+    border-left: 5px solid #18BC9C;
+    background-color: #569bb4;
+  }
+  
+  .admin-logout {
+    position: absolute;
+    bottom: 0;
+    width: 250px; /* Same as sidebar width */
+  }
+  
+  .logout-button{
+    margin-left: 163px;
+    margin-bottom: 51px;
+    height:30px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .logout-button img {
+    width: 55px; /* Adjust the width of the logout button's image as needed */
+    height: 18px; /* Adjust the height of the logout button's image as needed */
+    margin-left: 9px;
+    margin-bottom: 6px;
+  }
+
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .content-header {
+    display: flex;
+    /*justify-content: space-between;*/
+    padding-right: 90px;
+    margin-bottom: 5%;
+  }
+
+
+  .table-container {
+    background-color: #ECF0F1;
+    padding: 20px;
+    padding-top: 0px;
+    width: 85%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transaction-table th,
+  .transaction-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    /* Customize the width and height of the table cells */
+    width: 200px; /* Change the width as needed */
+    height: 60px; /* Change the height as needed */
+  }
+  
+  
+  .see-more {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #006084;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  .see-more:hover {
+    background-color: #0c85b1;
+  }
+  

@@ -1,0 +1,124 @@
+.inventory-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Add space between flex items */
+    padding: 15px; /* Adjust padding as needed */
+    
+  }
+  
+  .inventory-title {
+    position: absolute;
+    top: 0;
+    margin-left: 670px;
+    display: flex;
+    align-items: center;
+  }
+
+  
+  .location-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 22px; /* Adjust padding as needed */
+    width: 20; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+  }
+  
+  .search-and-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align the sorting and search to the right */
+    margin-bottom: 9px; /* Space below the search-and-sort section */
+    margin-right: 2%;
+  }
+
+  .search-and-sort input[type="search"] {
+    width: 30%; /* Adjust percentage as needed for a responsive width */
+  }
+  
+  .sort-options {
+    margin-right: 20px; /* Space to the right of the sort options */
+    
+  }
+
+  .sort-by-label {
+    margin-right: 20px; /* Increase this value to create more space */
+  }
+  
+  .sort-options label {
+    margin-right: 10px; /* Space between each sort option */
+    color: #2C3E50; /* Text color for the sort labels */
+    font-size: 16px; /* Font size for the sort labels */
+  }
+  
+  .sort-options input[type="checkbox"] {
+    margin-right: 5px; /* Space to the left of the checkbox label text */
+  }
+  
+  .sort-by-text {
+    margin-right: 10px; /* Adjust spacing as needed */
+    font-weight: bold;
+  }
+
+ 
+
+    
+  .inventory-table {
+    background-color: black;
+    width: 77%;
+    border-collapse: collapse;
+    background-color: #ECF0F1; /* Background color for the table */
+    margin-left: 294px;
+  }
+  
+  .inventory-table th, .inventory-table td {
+    text-align: left;
+    padding: 12px 8px; /* Padding inside each table cell */
+    border-bottom: 1px solid #ddd; /* Border color for the bottom of each cell */
+    border-color: black;
+  }
+  
+  .inventory-table th {
+    background-color: #B3CED9; /* Background color for table headers */
+    color: black; /* Text color for table headers */
+    width: 50px;
+    border-color: black;
+  }
+  
+  .stock-level {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff; /* Text color for stock levels */
+  }
+  
+  .low-stock {
+    background-color: #e74c3c; /* Background color indicating low stock */
+  }
+  
+  /* Style for other stock level indicators */
+  .normal-stock {
+    background-color: #2ecc71; /* Example background color indicating normal stock */
+  }
+  
+  .instruction-text {
+    text-align: right;
+    margin-right: 500px;
+    color: #2C3E50; /* Text color for the instruction text */
+    margin-top: 10px; /* Space above the instruction text */
+  }
+  
+  /* Styles for the search input */
+  .search-and-sort input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc; /* Border color for the search input */
+    border-radius: 4px; /* Border radius for the search input */
+    margin-left: 10px; /* Space to the left of the search input */
+  }
+  

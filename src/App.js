@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
@@ -7,14 +8,23 @@ import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+
 import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
 import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
 import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
+
+import MapPage from './components/CustomerApp/store_page/basket_components/map'
+import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
+import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
+import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
+import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
+import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
 import './App.css';
+
 
 function App() {
   useEffect(() => {
@@ -37,6 +47,13 @@ function App() {
     };
   }, []); 
 
+  const [searchValue, setSearchValue] = useState('');
+
+  // Function to handle changes in the search input
+  const handleSearchChange = (value) => {
+    setSearchValue(value);
+  };
+
   return (
     <div className="App">
       <Helmet>
@@ -53,8 +70,10 @@ function App() {
 
           {/* Navbar is common for all routes */}
           <Route path="/home">
-            <Navbar />
-            <StorePage />
+            <Navbar onSearchChange={handleSearchChange} />
+
+            <StorePage searchValue={searchValue} />
+            
           </Route>
 
           <Route path="/pharmacist-home">
@@ -77,10 +96,52 @@ function App() {
             <CheckoutPage />
           </Route>
 
+          <Route exact path="/store-checkout">
+            <Navbar />
+            <StoreCheckoutPage />
+          </Route>
+
           <Route exact path="/basket">
             <Navbar />
             <BasketPage />
           </Route>
+
+          <Route exact path="/map">
+            <Navbar />
+            <MapPage />
+          </Route>
+
+          <Route exact path="/records">
+            <RecordsPage />
+          </Route>
+          
+          <Route exact path="/AdminHome">
+            <div className='AdminPages'>
+              <div>
+                <AdminNavbar />  
+              </div>
+
+            </div>
+            
+          </Route>
+
+          <Route exact path="/AdminTransaction">
+            
+            <div className='AdminPages'>
+              <div>
+                <AdminNavbar />  
+              </div>
+              <div>
+                <AdminDashboard/>  
+              </div>
+            </div>
+            
+          </Route>
+          <div className='AdminPages'>
+              <div>
+                <InventoryDashboard/>  
+              </div>
+            </div>
         </Switch>
       </div>
     </Router>

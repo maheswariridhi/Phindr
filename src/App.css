@@ -2,3 +2,9 @@
     max-width: 1980px;
     margin: auto;
 }
+
+.AdminPages {
+    display: flex;
+    grid-template-columns: 25% 75%;
+    margin: 0;
+}

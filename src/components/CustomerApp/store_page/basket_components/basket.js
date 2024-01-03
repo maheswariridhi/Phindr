@@ -10,18 +10,21 @@ import ProductItem from './ProductItem'; // Import the new component
 function Basket() {
   const [quantities, setQuantities] = useState(() => {
     const initialQuantities = {};
-
+  
     productsArray.forEach((product) => {
-      initialQuantities[product.ID] = 0;
+      initialQuantities[product.ID] = 1; // Set the default value to 1
     });
-
+  
     return initialQuantities;
   });
+  
 
   const { itemAddedToBasket } = useAppState();
 
   const indexesArray = Object.keys(itemAddedToBasket).map(Number);
   const products = productsArray.filter((product) => indexesArray.includes(product.ID));
+
+  console.log(products);
 
   const handleQuantityChange = (productId, value, limit) => {
     setQuantities((prevQuantities) => {
@@ -57,7 +60,10 @@ function Basket() {
         </div>
 
         <Invoice products={products} quantities={quantities} />
+          
       </div>
+      
+            
     </div>
   );
 }
