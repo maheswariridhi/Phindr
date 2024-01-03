@@ -4,10 +4,11 @@ import './productPage.css';
 import location from '../navbar/location.png';
 import productsArray from '../store_page/products';
 import { useRouteMatch } from 'react-router-dom';
+import categoryImages from '../mapfinder/categoryimage';
 
-function ProductPage  () {
+function PharmacistProductPage  () {
   
-  const [product, setProduct] = useState(null);
+  const [pproduct, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   
   let match = useRouteMatch("/pproduct/:ProductId");
@@ -16,7 +17,7 @@ function ProductPage  () {
   useEffect(() => {
     console.log('ProductId:', ProductId); // Check the value of ProductId
 
-    const foundProduct = productsArray.find((product) => product.ID === Number(ProductId));
+    const foundProduct = productsArray.find((pproduct) => pproduct.ID === Number(ProductId));
     console.log('foundProduct:', foundProduct); // Check the value of foundProduct
    
     // Simulate an asynchronous API call
@@ -45,9 +46,11 @@ function ProductPage  () {
     return <p>Loading...</p>; // or a loading spinner
   }
 
-  if (!product) {
+  if (!pproduct) {
     return <p>Product not found</p>; // or redirect to a 404 page
   }
+
+  const categoryImage = categoryImages[pproduct.CATEGORY]; // Get category image
 
   return (
     <div>
@@ -56,19 +59,19 @@ function ProductPage  () {
         <div>
           <div>
           <img
-                src={require(`../store_page/product-inventory/phab_img/${product.ID}.jpg`)}
-                alt={product.BRAND}
+                src={require(`../store_page/product-inventory/phab_img/${pproduct.ID}.jpg`)}
+                alt={pproduct.BRAND}
                 className='image'
                 
               />
+          <img src={categoryImage} alt={pproduct.CATEGORY} className="category-image" />
           </div>
         </div>
 
         <div className='middle-product'>
-        <h1 className="products-title">{`${product.BRAND} ${product.TYPE}`}</h1>
-          <h3 className="text-product">{`£${product.SPRICE.toFixed(2)}`}</h3>
-          <p className="text-product">{`Available: ${product.STOCK}`} </p>
-          <button className="buttons-product">Add to Basket</button>
+        <h1 className="products-title">{`${pproduct.BRAND} ${pproduct.TYPE}`}</h1>
+          <h3 className="text-product">{`£${pproduct.SPRICE.toFixed(2)}`}</h3>
+          <p className="text-product">{`Available: ${pproduct.STOCK}`} </p>
 
           <p className="text-product" style={{paddingTop: 10}}>
             <img src={location} className="location-product" alt="location" />
@@ -85,21 +88,21 @@ function ProductPage  () {
       <div class="grid-bottom-product">
         <div class="grid-item-product">
           <p className="text-product">Product details:</p>
-          {product.DETAILS.split('\n').map((paragraph, index) => (
+          {pproduct.DETAILS.split('\n').map((paragraph, index) => (
           <p className="small-text-product"style ={{textAlign: 'justify', paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>
 
         <div class="grid-item-product">
           <p className="text-product">Ingredients:</p>
-          {product.INGREDIENTS.split('\n').map((paragraph, index) => (
+          {pproduct.INGREDIENTS.split('\n').map((paragraph, index) => (
           <p className="small-text-product"style ={{textAlign: 'justify', paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>
 
         <div class="grid-item-product">
           <p className="text-product">Contraindications:</p>
-          {product.CONTRAINDICATIONS.split('\n').map((paragraph, index) => (
+          {pproduct.CONTRAINDICATIONS.split('\n').map((paragraph, index) => (
           <p className="small-text-product"style ={{textAlign: 'justify' , paddingBottom: '5px'}} key={index}>{paragraph}</p>
         ))}
         </div>  
@@ -111,4 +114,4 @@ function ProductPage  () {
   );
 };
 
-export default ProductPage;
+export default PharmacistProductPage;

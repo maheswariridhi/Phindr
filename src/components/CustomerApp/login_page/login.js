@@ -22,6 +22,9 @@ function Login() {
     if (email === 'customer@email.com' && password === 'customer1') {
       console.log('Login successful!');
       history.push('/home');
+    } else if (email === 'pharmacist@email.com' && password === 'pharmacist1') {
+      console.log('Pharmacist login successful!');
+      history.push('/pharmacist-home');
     } else {
       setErrorMessage('Incorrect username/password. Please try again.');
     }

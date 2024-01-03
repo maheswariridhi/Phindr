@@ -7,6 +7,9 @@ import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
+import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
+import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -52,6 +55,16 @@ function App() {
           <Route path="/home">
             <Navbar />
             <StorePage />
+          </Route>
+
+          <Route path="/pharmacist-home">
+            <PharmacistNavbar />
+            <PharmacistStorePage />
+          </Route>
+
+          <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
+            <PharmacistNavbar />
+            <PharmacistProductPage />
           </Route>
 
           <Route path="/product/:ProductId" component={ProductPage}>
