@@ -9,11 +9,13 @@ import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
 import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
+import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
 import './App.css';
+
 
 function App() {
   useEffect(() => {
@@ -88,6 +90,11 @@ function App() {
           <Route exact path="/map">
             <Navbar />
             <MapPage />
+          </Route>
+          
+          <Route exact path="/AdminHome">
+            <AdminNavbar />
+            
           </Route>
         </Switch>
       </div>
