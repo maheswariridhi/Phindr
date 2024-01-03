@@ -1,0 +1,37 @@
+.records-container {
+    margin-top: 20px;
+}
+
+.table-title {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+}
+
+.records-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border: 1px solid black;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.record-log:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.status-cell{
+    background: rgba(152, 205, 134, 0.50);
+}

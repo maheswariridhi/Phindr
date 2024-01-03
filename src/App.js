@@ -1,7 +1,7 @@
 import React, { useEffect , useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import './App.css';
+
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
 import LoginPage from './components/CustomerApp/login_page/login'
@@ -10,6 +10,7 @@ import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
 import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
+import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
@@ -92,6 +93,10 @@ function App() {
           <Route exact path="/map">
             <Navbar />
             <MapPage />
+          </Route>
+
+          <Route exact path="/records">
+            <RecordsPage />
           </Route>
           
           <Route exact path="/AdminHome">
