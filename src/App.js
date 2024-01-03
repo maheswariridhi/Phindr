@@ -8,15 +8,17 @@ import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+
+import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
+import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
+import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
+
 import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
 import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
-import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
-import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
-import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
