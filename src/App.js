@@ -1,22 +1,29 @@
 import React, { useEffect , useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import './App.css';
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
 import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+
+import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
+import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
+import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
+
 import MapPage from './components/CustomerApp/store_page/basket_components/map'
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
+import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
+
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
 import './App.css';
+import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
 
 
 function App() {
@@ -69,6 +76,16 @@ function App() {
             
           </Route>
 
+          <Route path="/pharmacist-home">
+            <PharmacistNavbar />
+            <PharmacistStorePage />
+          </Route>
+
+          <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
+            <PharmacistNavbar />
+            <PharmacistProductPage />
+          </Route>
+
           <Route path="/product/:ProductId" component={ProductPage}>
             <Navbar />
             <ProductPage />
@@ -93,6 +110,10 @@ function App() {
             <Navbar />
             <MapPage />
           </Route>
+
+          <Route exact path="/records">
+            <RecordsPage />
+          </Route>
           
           <Route exact path="/AdminHome">
             <div className='AdminPages'>
@@ -116,11 +137,17 @@ function App() {
             </div>
             
           </Route>
-          <div className='AdminPages'>
-              <div>
-                <InventoryDashboard/>  
-              </div>
-            </div>
+
+            
+            {/* Admin Dashboard Routes */}
+            <Route path="/admin/inventory" component={InventoryDashboard} />
+            <Route path="/admin/order-inventory" component={OrderInventory} />
+            <Route path="/admin/admintransactionpage" component={AdminDashboard} />
+        
+            {/* Default route */}
+            <Route exact path="/">
+              <Redirect to="/login" /> {/* Change this if your login path is different */}
+          </Route>
         </Switch>
       </div>
     </Router>
