@@ -9,8 +9,14 @@ export const OrdersProvider = ({ children }) => {
     setOrders([...orders, order]);
   };
 
+  const removeOrder = (index) => {
+    const updatedOrders = [...orders];
+    updatedOrders.splice(index, 1); // Remove the order at the specified index
+    setOrders(updatedOrders);
+  };
+
   return (
-    <OrdersContext.Provider value={{ orders, addOrder }}>
+    <OrdersContext.Provider value={{ orders, addOrder, removeOrder }}>
       {children}
     </OrdersContext.Provider>
   );

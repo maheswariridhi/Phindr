@@ -74,7 +74,8 @@
   .order-form {
     display: flex;
     flex-direction: column;
-    margin-top: 5%
+    margin-top: 5%;
+    border-color: black;
   }
   
   .order-form label {
@@ -85,13 +86,15 @@
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
+    border-color: black;
     border-radius: 4px;
   }
   
   .order-form button {
     padding: 10px;
-    background-color: #3498db;
-    color: white;
+    background-color: #B3CED9;
+    border-color: black;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -99,5 +102,13 @@
   
   .order-form button:hover {
     background-color: #2980b9;
+    border-color: black;
   }
-  
+
+  .pending-order-button {
+    position: absolute;
+    color: #B3CED9;
+    border-color: black;
+    bottom: 10px; /* Adjust the value as needed for your desired vertical position */
+    right: 10px; /* Adjust the value as needed for your desired horizontal position */
+  }
