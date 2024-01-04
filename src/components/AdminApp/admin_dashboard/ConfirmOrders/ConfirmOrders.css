@@ -1,0 +1,45 @@
+.confirm-orders {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .confirm-orders-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .confirm-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .confirm-orders-table th,
+  .confirm-orders-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .confirm-orders-total {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  
+  .confirm-orders-confirm-btn {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .confirm-orders-confirm-btn:hover {
+    background-color: #2980b9;
+  }
+  

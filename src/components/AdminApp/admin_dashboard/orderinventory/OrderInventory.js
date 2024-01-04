@@ -1,23 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // Added useContext here
 import './OrderInventory.css'; 
 import { useHistory, useLocation } from 'react-router-dom';
-import backButtonImage from './back-button.png'; // Update the path as needed
-import locationImage from '../../admin_dashboard/location.png'; 
+import backButtonImage from './back-button.png'; // Ensure this path is correct
+import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
+import { OrdersContext } from './OrdersContext'; // Since OrdersContext is in the same directory
+
+// ... rest of your OrderInventory component
+
 
 const OrderInventory = () => {
   const [quantity, setQuantity] = useState('');
   const history = useHistory();
   const location = useLocation();
   const product = location.state?.product;
-
+  const { addOrder } = useContext(OrdersContext);
+  
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };
 
+
   const handlePlaceOrder = () => {
-    console.log(`Order placed for quantity: ${quantity} of ${product.NAME}`);
-    // Here you would typically call an API to place the order
+    const newOrder = {
+      name: `${product.BRAND}, ${product.TYPE}`,
+      quantity: parseInt(quantity, 10),
+      cost: parseFloat(product.PRICE) * parseInt(quantity, 10)
+    }
+    addOrder(newOrder); // Add the order to the context
+
   };
+
 
   const handleBack = () => {
     history.goBack();

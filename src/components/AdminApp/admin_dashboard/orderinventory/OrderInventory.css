@@ -29,7 +29,7 @@
   .inventory-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 10%;
+    margin-top: 0%;
   }
   
   .inventory-table th {
@@ -66,6 +66,7 @@
   .order-form {
     display: flex;
     flex-direction: column;
+    margin-top: 5%
   }
   
   .order-form label {
