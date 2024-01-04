@@ -1,20 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import './ConfirmOrders.css';
 import { OrdersContext } from '../orderinventory/OrdersContext';
 
 const ConfirmOrders = () => {
-  const { orders, removeOrder } = useContext(OrdersContext); // Get the orders and removeOrder function from the context
-  const [totalCost, setTotalCost] = useState(0); // State to store the total cost
+  const { orders, removeOrder, addTransaction } = useContext(OrdersContext); // Add addTransaction
+  const [totalCost, setTotalCost] = useState(0);
+  const [isConfirmed, setIsConfirmed] = useState(false); // State to track confirmation
+  const history = useHistory(); // Initialize history
 
-  // Calculate the total cost whenever orders change
+  const handleConfirm = () => {
+    const transaction = {
+      date: new Date().toLocaleDateString(),
+      transactionId: Math.floor(Math.random() * 100000), // Generate a unique ID
+      items: orders,
+      totalCost: totalCost,
+      status: 'pending', // Set the status to 'pending'
+    };
+    addTransaction(transaction); // Add the transaction to the context
+
+    orders.forEach((_, index) => {
+      removeOrder(index);
+    });
+    setIsConfirmed(true);
+  };
+
   useEffect(() => {
     const newTotalCost = orders.reduce((sum, order) => sum + order.cost, 0);
     setTotalCost(newTotalCost);
   }, [orders]);
 
   const handleDeleteOrder = (index) => {
-    // Call the removeOrder function from the context to remove the order at the specified index
     removeOrder(index);
+  };
+
+  const handleGoToTransactions = () => {
+    history.push('/admin/transactions'); // Navigate to the Transactions page
   };
 
   return (
@@ -28,7 +49,7 @@ const ConfirmOrders = () => {
             <th>Items</th>
             <th>Quantity</th>
             <th>Cost</th>
-            <th>Action</th> {/* Add a new column for the delete button */}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +59,6 @@ const ConfirmOrders = () => {
               <td>{order.quantity}</td>
               <td>${order.cost.toFixed(2)}</td>
               <td>
-                {/* Add a delete button with an onClick handler */}
                 <button onClick={() => handleDeleteOrder(index)}>Delete</button>
               </td>
             </tr>
@@ -48,7 +68,16 @@ const ConfirmOrders = () => {
       <div className="confirm-orders-total">
         <strong>Total Cost:</strong> ${totalCost.toFixed(2)}
       </div>
-      <button className="confirm-orders-confirm-btn">Confirm</button>
+      {!isConfirmed ? (
+        <button onClick={handleConfirm} className="confirm-orders-confirm-btn">
+          Confirm
+        </button>
+      ) : (
+        <p className="confirmation-message">Confirmed!</p>
+      )}
+      <button onClick={handleGoToTransactions} className="go-to-transactions-button">
+        Go to Transactions
+      </button>
     </div>
   );
 };

@@ -1,23 +1,23 @@
-import React from 'react';
-import './admintransactions.css'; // Ensure this CSS file is created and linked
-import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
+import React, { useContext } from 'react';
+import './admintransactions.css';
+import locationImage from '../../admin_dashboard/location.png';
+import { OrdersContext } from '../orderinventory/OrdersContext';
 
-const AdminDashboard = () => {
+const AdminTransactions = () => {
+  const { transactions } = useContext(OrdersContext);
+
   return (
-      <div className="content">
-        <header className="content-header">
-            <div className="header-title-container">
-                <img src={locationImage} alt="Location" className="location-icon"/>
-                <h1 className="transaction-history-title">Transaction History</h1>
-                
-            </div>
-        </header>
-       
-          
+    <div className="content">
+      <header className="content-header">
+        <div className="header-title-container">
+          <img src={locationImage} alt="Location" className="location-icon" />
+          <h1 className="transaction-history-title">Transaction History</h1>
+        </div>
+      </header>
 
-        <div className="table-container">
-          <table className="transaction-table">
-            {/* Table headers */}
+      <div className="table-container">
+        <table className="transaction-table">
+          <thead>
             <tr>
               <th>Date</th>
               <th>Transaction ID</th>
@@ -25,21 +25,34 @@ const AdminDashboard = () => {
               <th>Total Cost</th>
               <th>Status</th>
             </tr>
-            {/* Table rows and data */}
-            {/* Add your data here */}
-            <tr>
-              <td>01/01/2024</td>
-              <td>123456</td>
-              <td>Item Name</td>
-              <td>$100.00</td>
-              <td>Completed</td>
-            </tr>
-            {/* Add more rows as needed */}
-          </table>
-          <button className="see-more">See more</button>
-        </div>
+          </thead>
+          <tbody>
+            {transactions.map((transaction, index) => (
+              <tr key={index}>
+                <td>{transaction.date}</td>
+                <td>{transaction.transactionId}</td>
+                <td>
+                  {transaction.items.map((item, itemIndex) => (
+                    <p key={itemIndex}>
+                      {item.name} x {item.quantity} (${item.cost.toFixed(2)})
+                    </p>
+                  ))}
+                </td>
+                <td>
+                  {transaction.items.map((item, itemIndex) => (
+                    <p key={itemIndex}>
+                      ${(item.quantity * item.cost).toFixed(2)}
+                    </p>
+                  ))}
+                </td>
+                <td>{transaction.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+    </div>
   );
 };
 
-export default AdminDashboard;
+export default AdminTransactions;
