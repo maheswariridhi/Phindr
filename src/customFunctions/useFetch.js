@@ -1,3 +1,5 @@
+// iamshaunjp (2020). Complete-React-Tutorial. GitHub. https://github.com/iamshaunjp/Complete-React-Tutorial
+
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
