@@ -10,6 +10,10 @@
     margin-bottom: 20px;
   }
   
+  .place-order-button {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
   .inventory-title {
     margin-top:2%;
   }
@@ -19,6 +23,10 @@
     /* Add additional styles for the back button */
   }
   
+  .added-to-orders-text {
+    text-align: center; /* Horizontal centering */
+    margin-top: 10px; /* Adjust the margin as needed for vertical centering */
+  }
   
   .inventory-details {
     background-color: #ECF0F1;
