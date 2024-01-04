@@ -1,32 +1,11 @@
 import { format } from "date-fns";
-import { useEffect, useState } from "react";
 
 import './recordsPage.css';
-import { isPending } from "q";
+import useFetch from "../../../customFunctions/useFetch";
 
 const RecordsPage = () => {
-    const [records, setRecords] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [errorMsg, setErrorMsg] = useState(null);
 
-    useEffect(() => {
-        fetch('http://localhost:8000/customerOrderRecords')
-            .then(res => {
-                if(!res.ok) {
-                    throw Error('Cannot fetch data for that resource');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setRecords(data);
-                setIsLoading(false);
-                setErrorMsg(null);
-            })
-            .catch(err => {
-                setErrorMsg(err.message);
-                setIsLoading(false);
-            })
-    }, []);
+    const { data: records, isLoading, errorMsg } = useFetch('http://localhost:8000/customerOrderRecords');
 
     
     return ( 
