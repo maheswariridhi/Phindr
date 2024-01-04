@@ -7,6 +7,8 @@ import LoginPage from './components/CustomerApp/login_page/login'
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
+import ConfirmationPage from './components/CustomerApp/checkout_page/confirmationPage'; 
+import { SalesProvider } from './components/SalesContext';
 
 import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
 import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
@@ -59,6 +61,7 @@ function App() {
   };
 
   return (
+    <SalesProvider>
     <OrdersProvider>
 
       <div className="App">
@@ -100,6 +103,11 @@ function App() {
           <Route exact path="/checkout">
             <Navbar />
             <CheckoutPage />
+          </Route>
+
+          <Route path="/confirmation">
+          <Navbar />
+            <ConfirmationPage />
           </Route>
 
           <Route exact path="/store-checkout">
@@ -163,6 +171,7 @@ function App() {
     </Router>
     </div>
     </OrdersProvider>
+    </SalesProvider>
   );
 }
 

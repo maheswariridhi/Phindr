@@ -1,17 +1,20 @@
-import React from 'react';
-import './DailySalesReport.css'; // Make sure to create and import the CSS file
-import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
+import React, { useContext } from 'react'; // Ensure useContext is imported like this
+import './DailySalesReport.css';
+import locationImage from '../../admin_dashboard/location.png';
+import { SalesContext } from '../../../SalesContext'; // Adjust this path as necessary
 
 const DailySalesReport = () => {
-  // Dummy data for the daily sales report
-  const salesData = new Array(24).fill(null).map((_, index) => ({
-    time: `${index}:00-${index + 1}:00`,
-    sales: Math.floor(Math.random() * 100) // Random sales amount for demonstration
-  }));
+    const { sales } = useContext(SalesContext);
+    const { salesData } = useContext(SalesContext); // Correctly placed inside the component
 
-  // Calculate the total sales
-  const totalSales = salesData.reduce((sum, { sales }) => sum + sales, 0);
-
+    const today = new Date().setHours(0, 0, 0, 0);
+  
+    const todaysSales = sales.filter((sale) =>
+      new Date(sale.date).setHours(0, 0, 0, 0) === today
+    );
+  
+    const totalSales = todaysSales.reduce((sum, sale) => sum + sale.totalCost, 0);
+  
   return (
     <div className="daily-sales-report">
       <header className="daily-sales-report-header">

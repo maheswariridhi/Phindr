@@ -1,0 +1,26 @@
+.confirmation-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .confirmation-message {
+    text-align: center;
+  }
+  
+  .go-home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50; /* Green background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .go-home-button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  
