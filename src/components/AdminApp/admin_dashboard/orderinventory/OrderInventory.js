@@ -10,6 +10,7 @@ import { OrdersContext } from './OrdersContext'; // Since OrdersContext is in th
 
 const OrderInventory = () => {
   const [quantity, setQuantity] = useState('');
+  const [orderAdded, setOrderAdded] = useState(false); // State variable for message visibility
   const history = useHistory();
   const location = useLocation();
   const product = location.state?.product;
@@ -20,16 +21,16 @@ const OrderInventory = () => {
   };
 
 
+ 
   const handlePlaceOrder = () => {
     const newOrder = {
       name: `${product.BRAND}, ${product.TYPE}`,
       quantity: parseInt(quantity, 10),
-      cost: parseFloat(product.PRICE) * parseInt(quantity, 10)
-    }
+      cost: parseFloat(product.PRICE) * parseInt(quantity, 10),
+    };
     addOrder(newOrder); // Add the order to the context
-
+    setOrderAdded(true); // Update state to show message
   };
-
 
   const handleBack = () => {
     history.goBack();
@@ -39,12 +40,13 @@ const OrderInventory = () => {
     return <div>No product data available.</div>;
   }
 
+
   return (
     <div className="order-inventory">
       <header className="inventory-header">
-        <img src={backButtonImage} alt="Back" className="back-button" onClick={handleBack}/>
-        <img src={locationImage} alt="Location" className="location-icon"/>
-        <h1 className="inventory-title">  Order Inventory</h1>
+        <img src={backButtonImage} alt="Back" className="back-button" onClick={handleBack} />
+        <img src={locationImage} alt="Location" className="location-icon" />
+        <h1 className="inventory-title">Order Inventory</h1>
         {/* User info could be shown here */}
       </header>
       <div className="inventory-details">
@@ -79,7 +81,10 @@ const OrderInventory = () => {
             value={quantity}
             onChange={handleQuantityChange}
           />
-          <button onClick={handlePlaceOrder}>Place Order</button>
+          <button onClick={handlePlaceOrder} className="place-order-button">
+            Place Order
+            </button>          
+            {orderAdded && <p className="added-to-orders-text">Added to Pending Orders</p>}
         </div>
       </div>
     </div>
