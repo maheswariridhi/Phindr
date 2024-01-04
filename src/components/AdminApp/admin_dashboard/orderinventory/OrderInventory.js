@@ -62,8 +62,12 @@ const OrderInventory = () => {
               <td>{product.CATEGORY}</td>
             </tr>
             <tr>
+              <th>Drug Brand</th>
+              <td>{`${product.BRAND}`}</td>
+            </tr>
+            <tr>
               <th>Drug Name</th>
-              <td>{`${product.BRAND}, ${product.TYPE}`}</td>
+              <td>{`${product.TYPE}`}</td>
             </tr>
             <tr>
             <th>Stock Levels</th>
