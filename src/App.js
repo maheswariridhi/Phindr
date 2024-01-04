@@ -1,20 +1,21 @@
-import React, { useEffect , useState } from 'react';
+// Import React and hooks
+import React, { useEffect, useState } from 'react';
+// Import necessary components from react-router-dom for routing
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+// Import components for various pages in the application
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
-import LoginPage from './components/CustomerApp/login_page/login'
+import LoginPage from './components/CustomerApp/login_page/login';
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
-import ConfirmationPage from './components/CustomerApp/checkout_page/confirmationPage'; 
-import { SalesProvider } from './components/SalesContext';
 
 import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
 import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
 import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
 
-import MapPage from './components/CustomerApp/store_page/basket_components/map'
+import MapPage from './components/CustomerApp/store_page/basket_components/map';
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';
 import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
@@ -22,60 +23,52 @@ import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_pa
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
 import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinventory/OrdersContext'; 
 import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
-import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
-import ItemSales from './components/AdminApp/admin_dashboard/item_sales/ItemSalesReport';
-import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/DailySalesReport';
+import AdminTransactions from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 
 
 import { Helmet } from 'react-helmet';
+// Import the logo for the favicon
 import PhindrLogo from './phindr.png';
 
+// Import global styles
 import './App.css';
+import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
+
 
 function App() {
+  // Hook to set the page title and favicon on component mount
   useEffect(() => {
-    // Change website title
     document.title = 'Phindr | Medical Care for Everyone';
-
-    // Change favicon dynamically
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
-
-    // Use the actual path or URL of the image for the favicon
-    link.href = PhindrLogo;
-
+    link.href = PhindrLogo; // Set favicon
     document.head.appendChild(link);
+  }, []); // Empty dependency array means this runs once on mount
 
-    return () => {
-      // If needed, perform cleanup when the component is unmounted
-      // For example, revert changes made in the 'useEffect'
-    };
-  }, []); 
-
+  // State hook for search value
   const [searchValue, setSearchValue] = useState('');
 
-  // Function to handle changes in the search input
+  // Handler for search input changes
   const handleSearchChange = (value) => {
     setSearchValue(value);
   };
 
+  // Return the JSX for the app
   return (
-    <SalesProvider>
     <OrdersProvider>
+<div className="App">
+      <Helmet>
+        {/* Add additional meta tags or other header elements here */}
+      </Helmet>
 
+      <Router>
       <div className="App">
-            <Helmet>
-              {/* Add additional meta tags or other header elements here */}
-            </Helmet>
-
-        <Router>
-        <div className="App">
-          <Switch>
-            <Route exact path="/">
-              {/* LoginPage will only be rendered when the path is /login */}
-              <LoginPage />
-            </Route>
+        <Switch>
+          <Route exact path="/">
+            {/* LoginPage will only be rendered when the path is /login */}
+            <LoginPage />
+          </Route>
 
           {/* Navbar is common for all routes */}
           <Route path="/home">
@@ -103,11 +96,6 @@ function App() {
           <Route exact path="/checkout">
             <Navbar />
             <CheckoutPage />
-          </Route>
-
-          <Route path="/confirmation">
-          <Navbar />
-            <ConfirmationPage />
           </Route>
 
           <Route exact path="/store-checkout">
@@ -156,11 +144,9 @@ function App() {
             {/* Admin Dashboard Routes */}
             <Route path="/admin/inventory" component={InventoryDashboard} />
             <Route path="/admin/order-inventory" component={OrderInventory} />
-            <Route path="/admin/transactions" component={AdminDashboard} />
+            <Route path="/admin/admintransactionpage" component={AdminDashboard} />
             <Route path="/admin/confirm-orders" component={ConfirmOrders} />
-            <Route path="/admin/item-sales" component={ItemSales} />
-            <Route path="/admin/daily-sales" component={DailySalesReport} />
-
+            <Route path="/admin/transactions" component={AdminTransactions} />
 
             {/* Default route */}
             <Route exact path="/">
@@ -170,9 +156,9 @@ function App() {
       </div>
     </Router>
     </div>
-    </OrdersProvider>
-    </SalesProvider>
+    </OrdersProvider> 
   );
 }
 
+// Export the App component for use in index.js
 export default App;
