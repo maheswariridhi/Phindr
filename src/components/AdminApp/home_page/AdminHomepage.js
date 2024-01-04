@@ -1,10 +1,12 @@
 import React from "react";
 import './AdminHomepage.css';
 import locationImage from '../admin_dashboard/location.png';
+import AdminNavbar from "../navbar/AdminNavbar";
 
 const AdminHomepage = () => {
     return (
         <div >
+            
             <img src={locationImage} alt="Location" className="location-icon"/>
             <div className="lowest_stock">
                 <p>lowest stock</p>

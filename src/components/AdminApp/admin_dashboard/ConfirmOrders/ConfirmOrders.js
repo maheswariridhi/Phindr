@@ -35,7 +35,7 @@ const ConfirmOrders = () => {
   };
 
   const handleGoToTransactions = () => {
-    history.push('/admin/transactions'); // Navigate to the Transactions page
+    history.push('/admin-transactions'); // Navigate to the Transactions page
   };
 
   return (

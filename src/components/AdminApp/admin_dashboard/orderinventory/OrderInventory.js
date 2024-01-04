@@ -16,7 +16,7 @@ const OrderInventory = () => {
   const { addOrder } = useContext(OrdersContext);
 
   const handleGoToPendingOrders = () => {
-    history.push('/admin/confirm-orders'); // Replace '/confirm-orders' with the actual path of your ConfirmOrders page
+    history.push('/admin-confirm-orders'); // Replace '/confirm-orders' with the actual path of your ConfirmOrders page
   };
   
   

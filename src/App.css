@@ -3,8 +3,23 @@
     margin: auto;
 }
 
-.AdminPages {
+.AdminLayout {
     display: flex;
-    grid-template-columns: 25% 75%;
     margin: 0;
+}
+
+.AdminNavbar {
+    width: 25%;
+    
+}
+
+.AdminPages {
+    flex: 1;
+    
+}
+
+.scrollable {
+    overflow: auto;
+    height: 100vh;
+    width: auto;
 }

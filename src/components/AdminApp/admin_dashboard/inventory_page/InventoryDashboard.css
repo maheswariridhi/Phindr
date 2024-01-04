@@ -1,13 +1,17 @@
 .inventory-dashboard {
     font-family: Arial, sans-serif;
     padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   
   .content-header {
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Add space between flex items */
-    padding: 15px; /* Adjust padding as needed */
+    justify-content: space-between;
+  
     
   }
   
@@ -15,24 +19,25 @@
     color:black;
   }
   .inventory-title {
-    position: absolute;
+    position: relative;
     top: 0;
-    margin-left: 670px;
+    left: 35%;
     display: flex;
     align-items: center;
     margin-top:2%;
+    padding: 0px;
   }
 
 
   .location-icon {
-    position: absolute;
+    position: relative;
     top: 0;
-    right: 0;
+    left: 70%;;
+    text-align: right;
     display: flex;
-    align-items: center;
-    padding: 22px; /* Adjust padding as needed */
-    width: 20; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
+     /* Adjust padding as needed */
+    width: 15%; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
   }
   
   .search-and-sort {

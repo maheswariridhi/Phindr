@@ -24,6 +24,10 @@ import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_
 import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinventory/OrdersContext'; 
 import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
 import AdminTransactions from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
+//import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
+import ItemSales from './components/AdminApp/admin_dashboard/item_sales/ItemSalesReport';
+import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/DailySalesReport';
+import AdminHomepage from './components/AdminApp/home_page/AdminHomepage';
 
 
 import { Helmet } from 'react-helmet';
@@ -33,6 +37,7 @@ import PhindrLogo from './phindr.png';
 // Import global styles
 import './App.css';
 import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
+import { SalesProvider } from './components/SalesContext';
 
 
 function App() {
@@ -56,107 +61,180 @@ function App() {
 
   // Return the JSX for the app
   return (
+    <SalesProvider>
     <OrdersProvider>
-<div className="App">
-      <Helmet>
-        {/* Add additional meta tags or other header elements here */}
-      </Helmet>
-
-      <Router>
+    
       <div className="App">
-        <Switch>
-          <Route exact path="/">
-            {/* LoginPage will only be rendered when the path is /login */}
-            <LoginPage />
-          </Route>
+        <Helmet>
+          {/* Add additional meta tags or other header elements here */}
+        </Helmet>
 
-          {/* Navbar is common for all routes */}
-          <Route path="/home">
-            <Navbar onSearchChange={handleSearchChange} />
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/">
+                {/* LoginPage will only be rendered when the path is /login */}
+                <LoginPage />
+              </Route>
 
-            <StorePage searchValue={searchValue} />
-            
-          </Route>
+              {/* Navbar is common for all routes */}
+              <Route path="/home">
+                <Navbar onSearchChange={handleSearchChange} />
 
-          <Route path="/pharmacist-home">
-            <PharmacistNavbar />
-            <PharmacistStorePage />
-          </Route>
+                <StorePage searchValue={searchValue} />
+                
+              </Route>
 
-          <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
-            <PharmacistNavbar />
-            <PharmacistProductPage />
-          </Route>
+              <Route path="/pharmacist-home">
+                <PharmacistNavbar />
+                <PharmacistStorePage />
+              </Route>
 
-          <Route path="/product/:ProductId" component={ProductPage}>
-            <Navbar />
-            <ProductPage />
-          </Route>
+              <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
+                <PharmacistNavbar />
+                <PharmacistProductPage />
+              </Route>
 
-          <Route exact path="/checkout">
-            <Navbar />
-            <CheckoutPage />
-          </Route>
+              <Route path="/product/:ProductId" component={ProductPage}>
+                <Navbar />
+                <ProductPage />
+              </Route>
 
-          <Route exact path="/store-checkout">
-            <Navbar />
-            <StoreCheckoutPage />
-          </Route>
+              <Route exact path="/checkout">
+                <Navbar />
+                <CheckoutPage />
+              </Route>
 
-          <Route exact path="/basket">
-            <Navbar />
-            <BasketPage />
-          </Route>
+              <Route exact path="/store-checkout">
+                <Navbar />
+                <StoreCheckoutPage />
+              </Route>
 
-          <Route exact path="/map">
-            <Navbar />
-            <MapPage />
-          </Route>
+              <Route exact path="/basket">
+                <Navbar />
+                <BasketPage />
+              </Route>
 
-          <Route exact path="/records">
-            <RecordsPage />
-          </Route>
-          
-          <Route exact path="/AdminHome">
-            <div className='AdminPages'>
-              <div>
+              <Route exact path="/map">
+                <Navbar />
+                <MapPage />
+              </Route>
+
+              <Route exact path="/records">
+                <RecordsPage />
+              </Route>
+              
+              <Route exact path="/admin-home">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
                 <AdminNavbar />  
               </div>
-
+              <div className="AdminPages">
+                <AdminHomepage/>
+              </div>
             </div>
-            
           </Route>
 
-          <Route exact path="/AdminTransaction">
-            
-            <div className='AdminPages'>
-              <div>
+          <Route exact path="/admin-transactions">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
                 <AdminNavbar />  
               </div>
-              <div>
+              <div className="AdminPages">
                 <AdminDashboard/>  
               </div>
             </div>
+          </Route>
+
+          <Route exact path="/admin-inventory" >
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <InventoryDashboard/>  
+                </div>
+              </div>
+            </div>
+          </Route>
+
+          <Route exact path="/admin-order-inventory">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <OrderInventory/>  
+                </div>
+              </div>
+            </div>
             
           </Route>
+
+          <Route exact path="/admin-confirm-orders">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <ConfirmOrders/>  
+                </div>
+              </div>
+            </div>
+          </Route>
+
+          <Route exact path="/admin-daily-sales">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <DailySalesReport/>  
+                </div>
+              </div>
+            </div>
+          </Route>
+
+          <Route exact path="/admin-item-sales">
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <ItemSales/>  
+                </div>
+              </div>
+            </div>
+          </Route>
+
+          
 
             
             {/* Admin Dashboard Routes */}
+            {/*  
             <Route path="/admin/inventory" component={InventoryDashboard} />
             <Route path="/admin/order-inventory" component={OrderInventory} />
-            <Route path="/admin/admintransactionpage" component={AdminDashboard} />
+            <Route path="/admin/transactions" component={AdminDashboard} />
             <Route path="/admin/confirm-orders" component={ConfirmOrders} />
-            <Route path="/admin/transactions" component={AdminTransactions} />
+            <Route path="/admin/item-sales" component={ItemSales} />
+            <Route path="/admin/daily-sales" component={DailySalesReport} />
+             */}
 
-            {/* Default route */}
-            <Route exact path="/">
-              <Redirect to="/login" /> {/* Change this if your login path is different */}
-          </Route>
-        </Switch>
+                {/* Default route */}
+                <Route exact path="/">
+                  <Redirect to="/login" /> {/* Change this if your login path is different */}
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </div>
-    </Router>
-    </div>
     </OrdersProvider> 
+    </SalesProvider>
   );
 }
 

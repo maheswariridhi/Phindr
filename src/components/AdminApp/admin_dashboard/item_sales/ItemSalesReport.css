@@ -14,9 +14,7 @@
     font-size: 24px;
   }
   
-  .location-icon {
-    /* Adjust as per your styling */
-  }
+  
   
   .sales-report-controls {
     display: flex;
@@ -24,9 +22,7 @@
     margin-bottom: 20px;
   }
   
-  .sales-report-controls input[type="search"] {
-    /* Styling for the search input */
-  }
+ 
   
   .sales-report-table {
     width: 100%;

@@ -10,7 +10,7 @@ const InventoryDashboard = () => {
   const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
 
   const handleRowClick = (product) => {
-    history.push('/admin/order-inventory', { product });
+    history.push('/admin-order-inventory', { product });
   };  
 
   const handleSearchChange = (event) => {
@@ -29,7 +29,7 @@ const InventoryDashboard = () => {
   return (
     <div className="inventory-dashboard">
       <header className="content-header">
-        <h1 className="inventory-title">Inventory</h1>
+        <h1 className="inventory-title" >Inventory</h1>
         <img src={locationImage} alt="Location" className="location-icon"/>
       </header>
       <div className="search-and-sort">
