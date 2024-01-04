@@ -18,6 +18,8 @@ import RecordsPage from './components/PharmacistApp/records_page/recordsPage';
 import AdminNavbar from './components/AdminApp/navbar/AdminNavbar';
 import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
+import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinventory/OrdersContext'; 
+import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -55,18 +57,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Helmet>
-        {/* Add additional meta tags or other header elements here */}
-      </Helmet>
+    <OrdersProvider>
 
-      <Router>
       <div className="App">
-        <Switch>
-          <Route exact path="/">
-            {/* LoginPage will only be rendered when the path is /login */}
-            <LoginPage />
-          </Route>
+            <Helmet>
+              {/* Add additional meta tags or other header elements here */}
+            </Helmet>
+
+        <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              {/* LoginPage will only be rendered when the path is /login */}
+              <LoginPage />
+            </Route>
 
           {/* Navbar is common for all routes */}
           <Route path="/home">
@@ -143,7 +147,8 @@ function App() {
             <Route path="/admin/inventory" component={InventoryDashboard} />
             <Route path="/admin/order-inventory" component={OrderInventory} />
             <Route path="/admin/admintransactionpage" component={AdminDashboard} />
-        
+            <Route path="/admin/confirm-orders" component={ConfirmOrders} />
+
             {/* Default route */}
             <Route exact path="/">
               <Redirect to="/login" /> {/* Change this if your login path is different */}
@@ -152,6 +157,7 @@ function App() {
       </div>
     </Router>
     </div>
+    </OrdersProvider>
   );
 }
 
