@@ -28,8 +28,9 @@ const CheckoutPage = () => {
   
           // Record the transaction
           recordSale({
-              date: new Date(),
-              totalCost: totalCost
+            items: itemAddedToBasket, // Include details of items sold
+            totalCost: totalCost,
+            timestamp: new Date() // You can also put this logic inside recordSale method
           });
   
           // Redirect to confirmation page or display a success message

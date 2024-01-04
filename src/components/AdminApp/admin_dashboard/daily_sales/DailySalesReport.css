@@ -1,44 +1,54 @@
 .daily-sales-report {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .daily-sales-report-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .daily-sales-report-header h1 {
-    font-size: 24px;
-  }
-  
-  .location-icon {
-    /* Adjust as per your styling */
-  }
-  
-  .daily-sales-report-content {
-    /* Additional styling as needed */
-  }
-  
-  .daily-sales-report-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ECF0F1;
-  }
-  
-  .daily-sales-report-table th,
-  .daily-sales-report-table td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .daily-sales-report-total {
-    margin-top: 20px;
-    text-align: right;
-  }
-  
-  /* Additional CSS styles as needed */
-  
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%; /* Adjust width as needed */
+  background-color: #ECF0F1;
+  padding: 20px;
+}
+
+.daily-sales-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.daily-sales-report-title {
+  font-size: 24px; /* Adjust size as needed */
+}
+
+.location-icon {
+  width: 13%; /* Adjust the width as needed */
+  height: 5%; /* Adjust the height as needed */
+}
+
+.daily-sales-report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.daily-sales-report-table th,
+.daily-sales-report-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.total-sales {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 20px; /* Adjust size as needed */
+}
+
+/* Additional styles to match the screenshot provided */
+.daily-sales-report-table th {
+  background-color: #3498DB;
+  color: white;
+}
+
+.daily-sales-report-table td {
+  background-color: #D6EAF8;
+}

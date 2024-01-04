@@ -1,47 +1,51 @@
-import React, { useContext } from 'react'; // Ensure useContext is imported like this
-import './DailySalesReport.css';
-import locationImage from '../../admin_dashboard/location.png';
-import { SalesContext } from '../../../SalesContext'; // Adjust this path as necessary
+// DailySalesReport.js
+import React, { useContext } from 'react';
+import { SalesContext } from '../../../SalesContext';
+import './DailySalesReport.css'; // CSS for styling
+import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
 
 const DailySalesReport = () => {
-    const { sales } = useContext(SalesContext);
-    const { salesData } = useContext(SalesContext); // Correctly placed inside the component
+  const { sales } = useContext(SalesContext);
+  
+  // Function to group sales by hour and calculate the total for each hour
+  const groupSalesByHour = (sales) => {
+    const salesByHour = {};
+    sales.forEach((sale) => {
+      const hour = sale.timestamp.getHours();
+      if (!salesByHour[hour]) {
+        salesByHour[hour] = 0;
+      }
+      salesByHour[hour] += sale.totalCost;
+    });
+    return salesByHour;
+  };
 
-    const today = new Date().setHours(0, 0, 0, 0);
-  
-    const todaysSales = sales.filter((sale) =>
-      new Date(sale.date).setHours(0, 0, 0, 0) === today
-    );
-  
-    const totalSales = todaysSales.reduce((sum, sale) => sum + sale.totalCost, 0);
-  
+  const salesByHour = groupSalesByHour(sales);
+
   return (
     <div className="daily-sales-report">
       <header className="daily-sales-report-header">
-        <h1>Daily Sales Report</h1>
-        <img src={locationImage} alt="Location" className="location-icon"/>
+        <h1 className="daily-sales-report-title">Daily Sales Report</h1>
+        <img src={locationImage} alt="Location" className="location-icon" />
       </header>
-      <div className="daily-sales-report-content">
-        <table className="daily-sales-report-table">
-          <thead>
-            <tr>
-              <th>Date/Time</th>
-              <th>Sales</th>
+      {/* Generate the table rows for each hour */}
+      <table>
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Sales</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(salesByHour).map(([hour, total], index) => (
+            <tr key={index}>
+              <td>{`${hour}:00-${parseInt(hour) + 1}:00`}</td>
+              <td>£{total.toFixed(2)}</td>
             </tr>
-          </thead>
-          <tbody>
-            {salesData.map((item, index) => (
-              <tr key={index}>
-                <td>{item.time}</td>
-                <td>£{item.sales.toFixed(2)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="daily-sales-report-total">
-          <strong>Total Sales:</strong> £{totalSales.toFixed(2)}
-        </div>
-      </div>
+          ))}
+        </tbody>
+      </table>
+      {/* You can add a row for total sales of the day if needed */}
     </div>
   );
 };

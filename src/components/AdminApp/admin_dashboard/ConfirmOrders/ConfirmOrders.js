@@ -57,7 +57,7 @@ const ConfirmOrders = () => {
             <tr key={index}>
               <td>{order.name}</td>
               <td>{order.quantity}</td>
-              <td>${order.cost.toFixed(2)}</td>
+              <td>£{order.cost.toFixed(2)}</td>
               <td>
                 <button onClick={() => handleDeleteOrder(index)}>Delete</button>
               </td>
