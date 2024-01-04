@@ -34,14 +34,14 @@ const AdminTransactions = () => {
                 <td>
                   {transaction.items.map((item, itemIndex) => (
                     <p key={itemIndex}>
-                      {item.name} x {item.quantity} (${item.cost.toFixed(2)})
+                      {item.name} x {item.quantity} (£{item.cost.toFixed(2)})
                     </p>
                   ))}
                 </td>
                 <td>
                   {transaction.items.map((item, itemIndex) => (
                     <p key={itemIndex}>
-                      ${(item.quantity * item.cost).toFixed(2)}
+                      £{(item.quantity * item.cost).toFixed(2)}
                     </p>
                   ))}
                 </td>
