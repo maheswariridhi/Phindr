@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+//import { format } from "date-fns";
 import { useEffect, useState } from "react";
 
 import './recordsPage.css';
@@ -47,7 +47,7 @@ const RecordsPage = () => {
                 {records.map((record) => (
                     <tr className="record-log" key={record.id}>
                         <td>{ record.id }</td>
-                        <td>{ format(record.date, 'dd-MMM-yyyy HH:mm') }</td>
+                        <td>{ (record.date, 'dd-MMM-yyyy HH:mm') }</td>
                         <td>{ record.type }</td>
                         <td>{ record.contact }</td>
                         <td>{ record.items }</td>

@@ -14,7 +14,7 @@ function ProductPage  () {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   
-  let match = useRouteMatch("/pproduct/:ProductId");
+  let match = useRouteMatch("/product/:ProductId");
   let ProductId = match?.params?.ProductId;
 
   useEffect(() => {

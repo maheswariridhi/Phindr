@@ -24,7 +24,7 @@ function PharmacistProductPage  () {
     const fetchData = async () => {
       try {
        
-        const foundProduct = productsArray.find((product) => product.ID === Number(ProductId));
+        const foundProduct = productsArray.find((pproduct) => pproduct.ID === Number(ProductId));
 
         if (foundProduct) {
           setProduct(foundProduct);
