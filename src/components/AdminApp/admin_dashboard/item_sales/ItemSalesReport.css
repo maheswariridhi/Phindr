@@ -1,0 +1,45 @@
+.sales-report {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .sales-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sales-report-header h1 {
+    font-size: 24px;
+  }
+  
+  .location-icon {
+    /* Adjust as per your styling */
+  }
+  
+  .sales-report-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .sales-report-controls input[type="search"] {
+    /* Styling for the search input */
+  }
+  
+  .sales-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ECF0F1;
+  }
+  
+  .sales-report-table th,
+  .sales-report-table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Additional CSS styles as needed */
+  

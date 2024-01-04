@@ -21,6 +21,9 @@ import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_
 import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinventory/OrdersContext'; 
 import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
 import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
+import ItemSales from './components/AdminApp/admin_dashboard/item_sales/ItemSalesReport';
+import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/DailySalesReport';
+
 
 import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
@@ -147,6 +150,9 @@ function App() {
             <Route path="/admin/order-inventory" component={OrderInventory} />
             <Route path="/admin/transactions" component={AdminDashboard} />
             <Route path="/admin/confirm-orders" component={ConfirmOrders} />
+            <Route path="/admin/item-sales" component={ItemSales} />
+            <Route path="/admin/daily-sales" component={DailySalesReport} />
+
 
             {/* Default route */}
             <Route exact path="/">
