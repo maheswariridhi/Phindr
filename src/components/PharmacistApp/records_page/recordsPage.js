@@ -1,20 +1,40 @@
 import { format } from "date-fns";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import './recordsPage.css';
+import { isPending } from "q";
 
 const RecordsPage = () => {
-    const [records, setRecords] = useState([
-        { id: 1, date: new Date(2024, 0, 1, 14, 20), type: "click collect", contact: "Mr John Smith", items: [1, 2, 3, 4], totalPrice: 22.5, status: "Paid"},
-        { id: 2, date: new Date(2023, 10, 11, 23, 45), type: "click collect", contact: "Mr Tom Holland", items: [4, 5], totalPrice: 10.4, status: "Completed"},
-        { id: 3, date: new Date(2024, 0, 2, 3, 4), type: "delivery", contact: "Ms Joe", items: [6, 7, 8], totalPrice: 17.0, status: "Unpaid"}
-    ]);
+    const [records, setRecords] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:8000/customerOrderRecords')
+            .then(res => {
+                if(!res.ok) {
+                    throw Error('Cannot fetch data for that resource');
+                }
+                return res.json();
+            })
+            .then(data => {
+                setRecords(data);
+                setIsLoading(false);
+                setErrorMsg(null);
+            })
+            .catch(err => {
+                setErrorMsg(err.message);
+                setIsLoading(false);
+            })
+    }, []);
 
     
     return ( 
         <div className="records-container">
             <h1 className="table-title">Customer Orders</h1>
-            <table className="records-table">
+            {isLoading && <div className="loading-msg-div">Loading...</div>}
+            {errorMsg && <div className="error-msg-div">{ errorMsg }</div>}
+            {records && <table className="records-table">
                 <tr>
                     <th>Order Number</th>
                     <th>Order Date</th>
@@ -35,9 +55,9 @@ const RecordsPage = () => {
                         <td className="status-cell">{ record.status }</td>
                     </tr>
                 ))}
-            </table>
+            </table>}
         </div>
     );
 }
- 
+
 export default RecordsPage;

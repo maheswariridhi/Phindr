@@ -1,0 +1,31 @@
+{
+    "customerOrderRecords": [
+        {
+            "id": 1,
+            "date": "2023-12-31T14:20:00.000Z",
+            "type": "click-collect",
+            "contact": "Mr John Smith",
+            "itemIDs": [1, 2, 3, 4],
+            "totalPrice": 22.5,
+            "status": "Paid"
+        },
+        {
+            "id": 2,
+            "date": "2023-11-11T23:45:56.789Z",
+            "type": "click-collect",
+            "contact": "Mr Nettles Holloway",
+            "itemIDs": [4, 5],
+            "totalPrice": 10.4,
+            "status": "Completed"
+        },
+        {
+            "id": 3,
+            "date": "2024-01-02T03:04:05.420Z",
+            "type": "delivery",
+            "contact": "Ms Joe",
+            "itemIDs": [6, 7, 8],
+            "totalPrice": 17.0,
+            "status": "Unpaid"
+        }
+    ]
+}
