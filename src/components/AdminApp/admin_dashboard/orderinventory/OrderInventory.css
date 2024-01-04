@@ -1,0 +1,95 @@
+.order-inventory {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .inventory-title {
+    margin-top:2%;
+  }
+  
+  .back-button {
+    cursor: pointer;
+    /* Add additional styles for the back button */
+  }
+  
+  
+  .inventory-details {
+    background-color: #ECF0F1;
+    padding: 20px;
+    margin-top: 5%;
+  }
+  
+  .inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0%;
+  }
+  
+  .inventory-table th {
+    text-align: left;
+    padding: 12px;
+    background-color: #B3CED9;
+    color: black;
+  }
+  
+  .inventory-table td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  .stock-level {
+    color: black; /* Default text color */
+    /* Other styling for stock-level */
+  }
+  
+  .low-stock {
+    background-color: #e74c3c; /* Example background color indicating low stock */
+    color: white; /* Text color for low stock for contrast */
+    /* Additional styling for low-stock */
+  }
+  
+  /* If you have other stock level indicators, define them here */
+  .normal-stock {
+    background-color: #2ecc71; /* Background color for normal stock */
+    color: black; /* Text color for normal stock */
+    /* Additional styling for normal-stock */
+  }
+  
+  
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%
+  }
+  
+  .order-form label {
+    margin-bottom: 5px;
+  }
+  
+  .order-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .order-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .order-form button:hover {
+    background-color: #2980b9;
+  }
+  

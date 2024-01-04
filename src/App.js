@@ -1,6 +1,5 @@
 import React, { useEffect , useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Navbar from './components/CustomerApp/navbar/Navbar';
 import StorePage from './components/CustomerApp/store_page/storePage';
@@ -24,6 +23,7 @@ import { Helmet } from 'react-helmet';
 import PhindrLogo from './phindr.png';
 
 import './App.css';
+import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
 
 
 function App() {
@@ -137,11 +137,17 @@ function App() {
             </div>
             
           </Route>
-          <div className='AdminPages'>
-              <div>
-                <InventoryDashboard/>  
-              </div>
-            </div>
+
+            
+            {/* Admin Dashboard Routes */}
+            <Route path="/admin/inventory" component={InventoryDashboard} />
+            <Route path="/admin/order-inventory" component={OrderInventory} />
+            <Route path="/admin/admintransactionpage" component={AdminDashboard} />
+        
+            {/* Default route */}
+            <Route exact path="/">
+              <Redirect to="/login" /> {/* Change this if your login path is different */}
+          </Route>
         </Switch>
       </div>
     </Router>

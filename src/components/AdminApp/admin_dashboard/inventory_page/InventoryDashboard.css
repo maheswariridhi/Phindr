@@ -11,15 +11,19 @@
     
   }
   
+  .stock-level{
+    color:black;
+  }
   .inventory-title {
     position: absolute;
     top: 0;
     margin-left: 670px;
     display: flex;
     align-items: center;
+    margin-top:2%;
   }
 
-  
+
   .location-icon {
     position: absolute;
     top: 0;
@@ -67,15 +71,24 @@
     font-weight: bold;
   }
 
- 
-
     
   .inventory-table {
     background-color: black;
-    width: 77%;
+    width: 50%; /* Adjust the width as needed */
     border-collapse: collapse;
-    background-color: #ECF0F1; /* Background color for the table */
-    margin-left: 294px;
+    background-color: #ECF0F1;
+    margin: 0 auto; /* Centers the table in the parent container */
+  }
+  
+
+  .inventory-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:50%
+  }
+  
+  .inventory-table tbody tr:hover {
+    background-color: #f2f2f2; /* Light grey background on hover */
   }
   
   .inventory-table th, .inventory-table td {
@@ -95,7 +108,7 @@
   .stock-level {
     padding: 5px 10px;
     border-radius: 5px;
-    color: #fff; /* Text color for stock levels */
+    color: black; /* Text color for stock levels */
   }
   
   .low-stock {
