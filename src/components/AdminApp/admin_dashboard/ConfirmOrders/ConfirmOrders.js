@@ -15,7 +15,7 @@ const ConfirmOrders = () => {
       transactionId: Math.floor(Math.random() * 100000), // Generate a unique ID
       items: orders,
       totalCost: totalCost,
-      status: 'pending', // Set the status to 'pending'
+      status: 'Pending', // Set the status to 'pending'
     };
     addTransaction(transaction); // Add the transaction to the context
 
