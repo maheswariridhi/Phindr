@@ -108,3 +108,18 @@ input::placeholder {
 .login-container button:active {
     background-color: #2980b9; /* Change the background color when the button is clicked */
 }
+
+
+.guest-button {
+    width: 100px; /* Set the width to your desired size */
+    height: 30px; /* Set the height to your desired size */
+    /* You can also adjust other styles like padding, font-size, etc. */
+    padding: 10px; /* Adjust padding if needed */
+    font-size: 16px; /* Adjust font-size if needed */
+    font-size: 10%
+  }
+
+  .guest-button:hover {
+    text-decoration: underline; /* Underline on hover (optional) */
+  }
+  

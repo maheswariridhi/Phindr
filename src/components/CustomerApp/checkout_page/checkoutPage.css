@@ -157,3 +157,8 @@ div.box {
 .form-container1 {
   width: 50%;
 }
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory
 
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import './login.css';
 import PhindrLogo from './phindrlogo.png';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../authContext';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const history = useHistory(); // Initialize useHistory
-
+  const { login } = useContext(AuthContext);
+  const history = useHistory();
+  
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -18,12 +20,19 @@ function Login() {
     setPassword(event.target.value);
   };
 
+ // Handler for guest login
+ const handleGuestLogin = () => {
+  history.push('/home');
+};
+
+  
   const handleLogin = () => {
+    // ... existing login logic ...
     if (email === 'customer@email.com' && password === 'customer1') {
-      console.log('Login successful!');
+      login({ type: 'customer' });
       history.push('/home');
     } else if (email === 'pharmacist@email.com' && password === 'pharmacist1') {
-      console.log('Pharmacist login successful!');
+      login({ type: 'pharmacist' });
       history.push('/pharmacist-home');
     } else if (email === 'admin@email.com' && password === 'admin1') {
       console.log('Admin login successful!');
@@ -56,8 +65,7 @@ function Login() {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <button onClick={handleLogin}>Log in</button>
-
-      <h5>Login as Guest</h5>
+      <button className="guest-button" onClick={handleGuestLogin}>Login as Guest</button>
     </div>
   );
 }

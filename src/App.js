@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 // Import necessary components from react-router-dom for routing
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { AuthProvider } from './components/CustomerApp/authContext';
 
 // Import components for various pages in the application
 import Navbar from './components/CustomerApp/navbar/Navbar';
@@ -10,7 +11,7 @@ import LoginPage from './components/CustomerApp/login_page/login';
 import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
-
+import ConfirmationPage from './components/CustomerApp/checkout_page/confirmationPage';
 import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
 import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
 import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
@@ -61,9 +62,10 @@ function App() {
 
   // Return the JSX for the app
   return (
+
     <SalesProvider>
     <OrdersProvider>
-    
+    <AuthProvider> 
       <div className="App">
         <Helmet>
           {/* Add additional meta tags or other header elements here */}
@@ -118,6 +120,11 @@ function App() {
               <Route exact path="/map">
                 <Navbar />
                 <MapPage />
+              </Route>
+
+              <Route exact path="/confirmation">
+                <Navbar />
+                <ConfirmationPage />
               </Route>
 
               <Route exact path="/records">
@@ -212,18 +219,33 @@ function App() {
             </div>
           </Route>
 
-          
+          <Route exact path="/admin-inventory" >
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <DailySalesReport/>  
+                </div>
+              </div>
+            </div>
+          </Route>
 
-            
-            {/* Admin Dashboard Routes */}
-            {/*  
-            <Route path="/admin/inventory" component={InventoryDashboard} />
-            <Route path="/admin/order-inventory" component={OrderInventory} />
-            <Route path="/admin/transactions" component={AdminDashboard} />
-            <Route path="/admin/confirm-orders" component={ConfirmOrders} />
-            <Route path="/admin/item-sales" component={ItemSales} />
-            <Route path="/admin/daily-sales" component={DailySalesReport} />
-             */}
+          <Route exact path="/admin-inventory" >
+            <div className='AdminLayout'>
+              <div className="AdminNavbar">
+                <AdminNavbar />  
+              </div>
+              <div className="AdminPages">
+                <div className='scrollable'>
+                  <ItemSales/>  
+                </div>
+              </div>
+            </div>
+          </Route>
+          
+          <Route path="/login" component={LoginPage} />
 
                 {/* Default route */}
                 <Route exact path="/">
@@ -233,6 +255,7 @@ function App() {
           </div>
         </Router>
       </div>
+    </AuthProvider>
     </OrdersProvider> 
     </SalesProvider>
   );

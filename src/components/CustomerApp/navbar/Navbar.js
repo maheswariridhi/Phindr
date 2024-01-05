@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 import locationImage from './location.png';
 import phindrLogo from './phindrlogo.png';
 import loginImg from './loginicon.png';
 import basketImg from './basketicon.png';
 import searchIcon from './searchIcon.png';
+import { AuthContext } from '../authContext';
+
+
 
 function Navbar({ onSearchChange }) {
   const [searchValue, setSearchValue] = useState('');
+  const { user, logout } = useContext(AuthContext);
+  const history = useHistory();
 
+  const handleLogout = () => {
+    logout();
+    history.push('');
+  };
+
+  
+  
   // Function to handle changes in the search input
   const handleSearchChange = (event) => {
     const newValue = event.target.value;
@@ -31,14 +43,12 @@ function Navbar({ onSearchChange }) {
   return (
     <div className="navbar-main">
       <div className="navbar-top">
-        <h3>
-          Store Map Lookup
-          <div className="vl"></div>
-        </h3>
-        <h4>
+
+        <Link to="/map" className="store-map-lookup-button">
+          <h3>Store Map Lookup</h3>
           <img src={locationImage} alt="Location" className='location-icon'/>
-          Paddington
-        </h4>
+        </Link>
+        <div className="vl"></div>
       </div>
 
       <div className='navbar-2'>
@@ -64,10 +74,17 @@ function Navbar({ onSearchChange }) {
         </form>
 
         <div className='container'>
-          <div className='LoginIcon'>
-            <img src={loginImg} alt='Login' className='login-img' />
-            <h5> Login/Register </h5>
-          </div>
+
+        <div className='LoginIcon'>
+      <img src={loginImg} alt='Login' className='login-img' />
+      {user ? (
+        <h5 onClick={logout}>Logout</h5>
+      ) : (
+        <Link to="/login">
+          <h5>Login/Register</h5>
+        </Link>
+      )}
+    </div>
 
           <div className='BasketIcon'>
             <img src={basketImg} alt='Basket' className='basket-img' />
