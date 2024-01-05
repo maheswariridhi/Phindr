@@ -5,7 +5,7 @@ import useFetch from "../../../customFunctions/useFetch";
 
 const RecordsPage = () => {
 
-    const { data: records, isLoading, errorMsg } = useFetch('http://localhost:8000/customerOrderRecords');
+    const { data: records, isLoading, errorMsg } = useFetch('http://localhost:8000/test');
 
     
     return ( 

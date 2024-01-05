@@ -7,6 +7,22 @@ import { useAppState } from '../store_page/AppStateContext';
 import { useHistory } from 'react-router-dom';
 
 const CheckoutPage = () => {
+    const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [postcode, setPostcode] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [cardName, setCardName] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expiryMonth, setExpiryMonth] = useState('');
+    const [expiryYear, setExpiryYear] = useState('');
+    const [securityCode, setSecurityCode] = useState('');
+
+    const [isLoading, setIsLoading] = useState(false);
+
+
     const { recordSale } = useContext(SalesContext); // This should be inside the component
 
     const [quantities, setQuantities] = useState(() => {
@@ -17,126 +33,240 @@ const CheckoutPage = () => {
         });
     
         return initialQuantities;
-      });
+    });
     
-      const calculateTotalCost = (items) => {
+    const calculateTotalCost = (items) => {
         return items.reduce((total, item) => total + (item.price * item.quantity), 0);
-      };      
-      const handleConfirmPurchase = () => {
-          // Assuming you have a way to calculate the total cost of the basket
-          const totalCost = calculateTotalCost(); // This function should be implemented
-  
-          // Record the transaction
-          recordSale({
+    };     
+    
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        /* // Assuming you have a way to calculate the total cost of the basket
+        const totalCost = calculateTotalCost(); // This function should be implemented */
+        const totalCost = 12.34;
+
+        const date = new Date();
+
+        const isDelivery = true;
+        const status = "Paid";
+
+        const record = {
+            address,
+            cardName,
+            cardNumber,
+            city,
+            date,
+            email,
+            expiryMonth,
+            expiryYear,
+            firstName,
+            isDelivery,
+            lastName,
+            phoneNumber,
+            postcode,
+            securityCode,
+            status,
+            totalCost
+        };
+
+        // Record the transaction
+        recordSale({
             items: itemAddedToBasket, // Include details of items sold
             totalCost: totalCost,
             timestamp: new Date() // You can also put this logic inside recordSale method
           });
-  
-          // Redirect to confirmation page or display a success message
-          history.push('/confirmation'); // Update with the correct path
-      };
 
-      const { itemAddedToBasket } = useAppState();
+        fetch('http://localhost:8000/customerOrderRecords', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record)
+        }).then(() => {
+            console.log("New data added");
+            setIsLoading(false);
+        })
+
+        // Redirect to confirmation page or display a success message
+        history.push('/confirmation'); // Update with the correct path
+    };
+
+    const { itemAddedToBasket } = useAppState();
+
+    const indexesArray = Object.keys(itemAddedToBasket).map(Number);
+    const products = productsArray.filter((product) => indexesArray.includes(product.ID));
     
-      const indexesArray = Object.keys(itemAddedToBasket).map(Number);
-      const products = productsArray.filter((product) => indexesArray.includes(product.ID));
-      
-      const history = useHistory();
+    const history = useHistory();
 
-      const handleClick1 = () => {
-        history.push('/home'); // Replace '/another-page' with the path of the page you want to navigate to
-      };
+    const handleClick1 = () => {
+    history.push('/home'); // Replace '/another-page' with the path of the page you want to navigate to
+    };
 
 
-      return (
-        <div className='grid-container1'>
-          <div>
-          <h3 className="text-checkout" style={{paddingTop: 40}}>Contact</h3>
-                <p className="text-checkout">Email</p>
-                <form className='checkout-form'>
-                    <input type="text" id="email" name="email" placeholder='...' className='input-field-shorter'/>
-                </form>
-           
-
+    return (
+        <div className="grid-container1">
+            <form className='checkout-form' onSubmit={handleSubmit}>
+                <h3 className="text-checkout" style={{paddingTop: 40}}>Contact</h3>
+                <label>Email</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder='...'
+                    className='input-field-shorter'
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                
                 <h3 className="text-checkout" style={{paddingTop :20}}>Shipping address </h3>
                 <div className='grid-equal'>
                     <div>
-                        <p className="text-checkout">First Name</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="first-name" name="first-email" placeholder='...' className='input-field-checkout' />
-                        </form>
+                        <label>First Name</label>
+                        <input 
+                            type="text"
+                            id="first-name"
+                            name="firstName"
+                            placeholder='...'
+                            className='input-field-checkout'
+                            required
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
                     </div>
                     <div>
-                        <p className="text-checkout">Last Name</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="last-name" name="last-name" placeholder='...' className='input-field-checkout'/>
-                        </form>
+                        <label>Last Name</label>
+                        <input 
+                            type="text" 
+                            id="last-name"
+                            name="lastName"
+                            placeholder='...'
+                            className='input-field-checkout'
+                            required
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
                     </div>
                 </div>
-
-                <p className="text-checkout">Address </p>
-                <form className='checkout-form'>
-                    <input type="text" id="address" name="address" placeholder='...' className='input-field-checkout'/>
-                </form>
-
+                <label>Address</label>
+                <input 
+                    type="text" 
+                    id="address" 
+                    name="address" 
+                    placeholder='...' 
+                    className='input-field-checkout'
+                    required
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
                 <div className='grid-equal'>
                     <div>
-                        <p className="text-checkout">City</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="city" name="city" placeholder='...' className='input-field-checkout'/>
-                        </form>
+                        <label>City</label>
+                        <input 
+                            type="text" 
+                            id="city" 
+                            name="city" 
+                            placeholder='...' 
+                            className='input-field-checkout'
+                            required
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
                     </div>
                     <div>
-                        <p className="text-checkout">Postcode</p>
-                        <form className='checkout-form'>
-                            <input type="text" id="postcode" name="postcode" placeholder='...' className='input-field-checkout'/>
-                        </form>
+                        <label>Postcode</label>
+                        <input 
+                            type="text" 
+                            id="postcode" 
+                            name="postcode" 
+                            placeholder='...' 
+                            className='input-field-checkout'
+                            required
+                            value={postcode}
+                            onChange={(e) => setPostcode(e.target.value)}
+                        />
                     </div>
                 </div>
+                <label>Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="phone-number" 
+                    name="phoneNumber" 
+                    placeholder='...'
+                    className='input-field-shorter'
+                    required
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                />
 
-                <p className="text-checkout">Phone Number </p>
-                <form className='checkout-form'>
-                    <input type="text" id="phone-number" name="phone-number" placeholder='...' className='input-field-shorter'/>
-                </form>
-                
-                <h3 className="text-checkout" style={{paddingTop :20}}>Payment Method </h3>
+                <h3 className="text-checkout" style={{paddingTop :20}}>Payment Method</h3>
                 <p className='text-checkout'>Pay With Card</p>
-
                 <div style = {{alignContent: 'center'}}>
-                    <p className="text-checkout">Name On Card </p>
-                    <form className='checkout-form'>
-                        <input type="text" id="card-name" name="card-name" placeholder='Card holder' className='input-field-shorter' />
-                    </form>
+                    <label>Name On Card</label>
+                    <input 
+                        type="text" 
+                        id="card-name" 
+                        name="cardName" 
+                        placeholder='Card holder' 
+                        className='input-field-shorter' 
+                        required
+                        value={cardName}
+                        onChange={(e) => setCardName(e.target.value)}
+                    />
                 </div>
-                    <p className="text-checkout">Card Number </p>
-                    <form className='checkout-form'>
-                        <input type="number" id="card-number" name="card-number" placeholder='...' className='input-field-shorter'/>
-                    </form>
-                    
-                    <p className="text-checkout">Expiry date </p>
-                    <form className='checkout-form'>
-                        <input type="number" id="address" name="address" placeholder='...' className='input-field-shorter'/>
-                    </form>
-                    <p className="text-checkout">Security Code </p>
-                    <form className='checkout-form'>
-                        <input type="number" id="" name="address" placeholder='...' className='input-field-shorter'/>
-                    </form>
-                    </div>
-                
-                    {/* <div className='center-items'>
-                        <button className="button-checkout">Confirm Purchase</button>    
-                    </div> */}
-                
-                    <div className='invoice-1'>
-                        <InvoiceCopy products={products} quantities={quantities} />
-                    </div>
-                    
-                    <button className='checkout-button' onClick={handleConfirmPurchase}>
-                Confirm Purchase
-                </button>
-                </div>
-  );
+                <label>Card Number</label>
+                <input 
+                    type="number" 
+                    id="card-number" 
+                    name="cardNumber" 
+                    placeholder='...' 
+                    className='input-field-shorter'
+                    required
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                />
+                <label>Expiry date</label>
+                <input 
+                    type="number" 
+                    id="exp-month" 
+                    name="expiryMonth" 
+                    placeholder='MM' 
+                    className='input-field-shorter'
+                    required
+                    value={expiryMonth}
+                    onChange={(e) => setExpiryMonth(e.target.value)}
+                />
+                <p>/</p>
+                <input 
+                    type="number" 
+                    id="exp-year" 
+                    name="expiryYear" 
+                    placeholder='YY' 
+                    className='input-field-shorter'
+                    required
+                    value={expiryYear}
+                    onChange={(e) => setExpiryYear(e.target.value)}
+                />
+                <label>Security Code</label>
+                <input 
+                    type="number" 
+                    id="security-code" 
+                    name="securityCode" 
+                    placeholder='000' 
+                    className='input-field-shorter'
+                    required
+                    value={securityCode}
+                    onChange={(e) => setSecurityCode(e.target.value)}
+                />
+                { !isLoading && <button className='checkout-button'>Confirm Purchase</button> }
+                { isLoading && <button className='checkout-button' disabled>Processing...</button> }
+            </form>
+            <div className='invoice-1'>
+                    <InvoiceCopy products={products} quantities={quantities} />
+            </div>
+        </div>
+    );
 };
 
 export default CheckoutPage;
