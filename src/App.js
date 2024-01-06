@@ -132,7 +132,8 @@ function App() {
                 <ConfirmationPage />
               </Route>
 
-              <Route exact path="/records">
+              <Route exact path="/orders">
+                <PharmacistNavbar />
                 <RecordsPage />
               </Route>
               
