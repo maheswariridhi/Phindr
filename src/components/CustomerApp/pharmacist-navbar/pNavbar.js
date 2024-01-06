@@ -49,7 +49,7 @@ function PharmacistNavbar() {
           <h4> Search by Category </h4>
         </Link>
         <div className="vl2"></div>
-        <Link to="/map" className="navbar-section">
+        <Link to="/pharmacist-map" className="navbar-section">
           <h4> Store Map Lookup </h4>
         </Link>
         <div className="vl2"></div>

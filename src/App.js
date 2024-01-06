@@ -97,6 +97,11 @@ function App() {
                 <PharmacistProductPage />
               </Route>
 
+              <Route exact path="/pharmacist-map">
+                <PharmacistNavbar />
+                <MapPage />
+              </Route>
+
               <Route path="/product/:ProductId" component={ProductPage}>
                 <Navbar />
                 <ProductPage />
