@@ -2,22 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './pprodCat.css';
 import productArray from './pproducts';
-import pproducts from './pproducts';
 
-const PharmacistProdCat = ({ isChecked }) => {
+const PharmacistProdCat = ({ isChecked = {}, searchValue = '' }) => {
   const brands = ['Cold and Flu', 'Skincare', 'Headaches and pain relief', 'Digestion', 'Allergy', 'First aid'];
   const visibleBrands = brands.filter((brand) => isChecked[brand]);
 
-  const products = Object.entries(productArray)
-    .filter(([key, value]) => visibleBrands.length === 0 || visibleBrands.includes(value.CATEGORY))
-    .map(([key, value]) => ({ key, ...value }));
+  console.log('searchValue:', searchValue);
+  const searchInput = searchValue.toLowerCase();
 
+  // Updated filtering logic to include search input
+  const filteredProducts = Object.entries(productArray)
+    .filter(([key, value]) => visibleBrands.length === 0 || visibleBrands.includes(value.CATEGORY))
+    .filter(([key, value]) => value.BRAND.toLowerCase().includes(searchInput))
+    .map(([key, value]) => ({ key, ...value }));
 
   return (
     <div className='parent-product'>
       <h2 className='title'>Phindr&trade; Products</h2>
       <div className='prod-cat'>
-        {pproducts.map((pproduct) => (
+        {filteredProducts.map((pproduct) => (
           <Link key={pproduct.ID} to={`/pproduct/${pproduct.ID}`} className='product-container'>
             <div className='item-container'>
               <img
