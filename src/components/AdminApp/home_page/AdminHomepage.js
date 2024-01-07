@@ -4,6 +4,10 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import locationImage from '../admin_dashboard/location.png';
 import AdminNavbar from "../navbar/AdminNavbar";
 
+import LowStock from './LowStock';
+import TrendingStock from "./TrendStock";
+import CostChart from "./CostChart";
+
 const AdminHomepage = () => {
     return (
         <div >
@@ -12,11 +16,19 @@ const AdminHomepage = () => {
             <img src={locationImage} alt="Location" className="location-icon-admin"/>
             <div className="lowest_stock">
                 <p className="dashboard-title-box">Lowest stock</p>
+                <div className="low-container">
+                    <LowStock className="low-stock"/>
+
+                </div>
             </div>
 
             <div className="grid-row">
                 <div className="daily_stats">
-                    <p className="dashboard-title-box">Daily stats</p>
+                    <p className="dashboard-title-box">Daily Analytics</p>
+                    <div className="low-container">
+                    <   TrendingStock />
+                    <   CostChart />
+                    </div>
                 </div>
 
                 <div className="stacked-boxes">

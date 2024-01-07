@@ -30,20 +30,7 @@
     
 }
 
-.lowest_stock{
-    display: flex;
-    width:96%;       
-    height: 100%;
-    padding-bottom: 15%;        /* Adjust the padding as needed later on */
-    margin-bottom: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 5%;
-    border-radius: 10px;
-    border: 1px solid rgba(1, 187, 254, 0.722);
-    background-color: rgba(1, 186, 254, 0.30);
-    
-}
+
 
 .dashboard-title{
     font-family: Inter;
@@ -124,18 +111,7 @@
     height: 4%; /* Adjust the height as needed */
   }
 
-  .dashboard-title-box{
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
 
-    color: black;
-    margin-top: 15px;
-    padding-left: 15px;
-    text-align: center;  
-  }
 
   .view-all{
     font-family: Inter;
@@ -164,3 +140,58 @@
     background-color: #000; /* Set the color of the line */
     margin: 0; /* Adjust the margin as needed */
 }
+
+.lowest_stock{
+    display: flex;
+    flex-direction: column;
+    width:96%;       
+    height: 100%;
+    padding-bottom: 4%;        /* Adjust the padding as needed later on */
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: 1px solid rgba(1, 187, 254, 0.722);
+    background-color: rgba(1, 186, 254, 0.30);
+    
+}
+
+.low-container {
+    margin: 25px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+}
+
+
+.daily_stats {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    padding-bottom: 35%;        /* Adjust the padding as needed later on */
+    margin-bottom: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid rgba(1, 187, 254, 0.722);
+    background-color: rgba(1, 186, 254, 0.30);
+    border-radius: 10px;
+}
+.dashboard-title-box{
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    color: black;
+    margin-top: 15px;
+    padding-left: 15px;
+    text-align: center;  
+
+    text-decoration: underline;
+  }
