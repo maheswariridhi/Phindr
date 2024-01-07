@@ -29,6 +29,13 @@ const CheckoutPage = () => {
     const [city, setCity] = useState('');
     const [postcode, setPostcode] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [cardName, setCardName] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expiryMonth, setExpiryMonth] = useState('');
+    const [expiryYear, setExpiryYear] = useState('');
+    const [securityCode, setSecurityCode] = useState('');
+
+    const [isLoading, setIsLoading] = useState(false);
     const [showErrorMessage, setShowErrorMessage] = useState(false); // New state for error message visibility
 
     // Function to calculate the total cost of items in the basket
@@ -54,20 +61,45 @@ const CheckoutPage = () => {
         }
 
         setShowErrorMessage(false); // Hide error message if all fields are filled
+        setIsLoading(true); // Show loading message and disable check out button
 
-        // Calculate the total cost and record the sale
+        // Calculate the total cost, set time of transaction, isDelivery and status
         const totalCost = calculateTotalCost();
-        recordSale({
-            items: productsArray.map(product => ({
-                id: product.ID,
-                name: product.BRAND,
-                quantity: quantities[product.ID],
-                price: product.SPRICE
-            })),
-            totalCost: totalCost,
-            customer: { email, firstName, lastName, address, city, postcode, phoneNumber },
-            timestamp: new Date()
-        });
+        const date = new Date()
+        const isDelivery = true;
+        const status = "Paid";
+
+        // Create object that stores all the data of the sale
+        const record = {
+            address,
+            cardName,
+            cardNumber,
+            city,
+            date,
+            email,
+            expiryMonth,
+            expiryYear,
+            firstName,
+            isDelivery,
+            lastName,
+            phoneNumber,
+            postcode,
+            quantities,
+            securityCode,
+            status,
+            totalCost
+        };
+
+        // Record the sale to the database
+        fetch('http://localhost:8000/customerOrderRecords', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record)
+        }).then(() => {
+            console.log("New data added");
+            setIsLoading(false);
+        })
+        
 
         // Redirect to confirmation page
         history.push('/confirmation');
@@ -158,21 +190,78 @@ const CheckoutPage = () => {
                     onChange={(e) => setPhoneNumber(e.target.value)}
                 />
 
-                {/* Invoice Copy Component */}
-                <div className='invoice-1'>
-                    <InvoiceCopy products={products} quantities={quantities} />
+                {/* Bank Details Section */}
+                <h3 className="text-checkout" style={{paddingTop :20}}>Payment Method</h3>
+                <p className='text-checkout'>Pay With Card</p>
+                <div style = {{alignContent: 'center'}}>
+                    <input 
+                        type="text" 
+                        id="card-name" 
+                        name="cardName" 
+                        placeholder='Name On Card' 
+                        className='input-field-shorter' 
+                        value={cardName}
+                        onChange={(e) => setCardName(e.target.value)}
+                    />
                 </div>
+                <input 
+                    type="number" 
+                    id="card-number" 
+                    name="cardNumber" 
+                    placeholder='Card Number' 
+                    className='input-field-shorter'
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                />
+                <input 
+                    type="number" 
+                    id="exp-month" 
+                    name="expiryMonth" 
+                    placeholder='MM'
+                    maxLength={2} 
+                    className='input-field-shorter'
+                    value={expiryMonth}
+                    onChange={(e) => setExpiryMonth(e.target.value)}
+                />
+                <p>/</p>
+                <input 
+                    type="number" 
+                    id="exp-year" 
+                    name="expiryYear" 
+                    placeholder='YY'
+                    maxLength={2} 
+                    className='input-field-shorter'
+                    value={expiryYear}
+                    onChange={(e) => setExpiryYear(e.target.value)}
+                />
+                <input 
+                    type="number" 
+                    id="security-code" 
+                    name="securityCode" 
+                    placeholder='000'
+                    maxLength={3} 
+                    className='input-field-shorter'
+                    value={securityCode}
+                    onChange={(e) => setSecurityCode(e.target.value)}
+                />
 
                 {/* Display error message if fields are not filled */}
-                {showErrorMessage && (
+                { !showErrorMessage && (<div className="error-message"></div>) }
+                { showErrorMessage && (
                     <div className="error-message">
                         Please enter all fields.
                     </div>
-                )}
+                ) }
 
                 {/* Checkout button */}
-                <button type="submit" className='checkout-button'>Confirm Purchase</button>
+                { !isLoading && <button className='checkout-button'>Confirm Purchase</button> }
+                { isLoading && <button className='checkout-button' disabled>Processing...</button> }
             </form>
+
+            {/* Invoice Copy Component */}
+            <div className='invoice-1'>
+                    <InvoiceCopy products={products} quantities={quantities} />
+            </div>
         </div>
     );
 };

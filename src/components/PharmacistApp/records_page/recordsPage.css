@@ -1,5 +1,6 @@
 .records-container {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .loading-msg-div {
@@ -43,6 +44,15 @@ td {
     background-color: #f2f2f2;
 }
 
-.status-cell{
+.items-list {
+    font-size: large;
+    line-height: 2;
+}
+
+.completed-status-cell{
     background: rgba(152, 205, 134, 0.50);
+}
+
+.paid-status-cell{
+    background: rgba(226, 208, 105, 0.623);
 }

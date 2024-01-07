@@ -634,7 +634,7 @@
       "isDelivery": true,
       "status": "Completed",
       "totalCost": 0,
-      "quantities": {"1": 0},
+      "quantities": {"1": 1},
       "id": 0
     },
     {
@@ -654,7 +654,7 @@
       "isDelivery": false,
       "status": "Completed",
       "totalCost": 22.22,
-      "quantities": {"1": 0},
+      "quantities": {"2": 2},
       "id": 1
     },
     {
@@ -674,7 +674,7 @@
       "isDelivery": false,
       "status": "Paid",
       "totalCost": 11.11,
-      "quantities": {"1": 0},
+      "quantities": {"3": 3},
       "id": 2
     },
     {
@@ -694,7 +694,7 @@
       "isDelivery": true,
       "status": "Paid",
       "totalCost": 60.11,
-      "quantities": {"1": 0},
+      "quantities": {"4": 4},
       "id": 3
     },
     {
@@ -711,7 +711,7 @@
       "lastName": "Dedede",
       "phoneNumber": "98989898",
       "postcode": "777 777",
-      "quantities": {"1": 0},
+      "quantities": {"5": 5},
       "securityCode": "998",
       "status": "Paid",
       "totalCost": 12.34,
@@ -733,7 +733,7 @@
       "postcode": "SW7 2AZ",
       "quantities": {
         "1": 0,
-        "2": 0,
+        "2": 1,
         "3": 0,
         "4": 0,
         "5": 0,
@@ -743,10 +743,10 @@
         "9": 0,
         "10": 0,
         "11": 0,
-        "12": 0,
+        "12": 2,
         "13": 0,
         "14": 0,
-        "15": 0,
+        "15": 1,
         "16": 0,
         "17": 0,
         "18": 0,
