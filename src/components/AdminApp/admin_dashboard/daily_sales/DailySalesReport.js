@@ -3,9 +3,11 @@ import React, { useContext } from 'react';
 import { SalesContext } from '../../../SalesContext';
 import './DailySalesReport.css'; // CSS for styling
 import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
+import useFetch from '../../../../customFunctions/useFetch';
 
 const DailySalesReport = () => {
   const { sales } = useContext(SalesContext);
+  const { data } = useFetch('http://localhost:8000/customerOrderRecords');  // Fetch data from database
   
   // Function to group sales by hour and calculate the total for each hour
   const groupSalesByHour = (sales) => {
