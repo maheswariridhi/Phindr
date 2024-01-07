@@ -29,6 +29,12 @@ const AdminHomepage = () => {
                     <   TrendingStock />
                     <   CostChart />
                     </div>
+
+                    <p className="dashboard-title-box">Gross Analytics</p>
+                    <div className="low-container">
+                    <   TrendingStock />
+                    <   CostChart />
+                    </div>
                 </div>
 
                 <div className="stacked-boxes">
