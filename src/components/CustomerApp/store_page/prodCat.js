@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import './prodCat.css';
 import { useAppState } from './AppStateContext';
 import productArray from './products';
+import useFetch from '../../../customFunctions/useFetch';
 
 const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
+  const { data } = useFetch('http://localhost:8000/products');  // Get drug data from database
   const { itemAddedToBasket, onAddToBasket } = useAppState();
 
   console.log("Hello" + searchValue);
