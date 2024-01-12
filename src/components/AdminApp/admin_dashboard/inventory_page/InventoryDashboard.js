@@ -30,7 +30,7 @@ const InventoryDashboard = () => {
     <div className="inventory-dashboard">
       <header className="content-header">
         <h1 className="inventory-title" >Inventory</h1>
-        <img src={locationImage} alt="Location" className="location-icon"/>
+        <img src={locationImage} alt="Location" className="location-icon-inventory"/>
       </header>
       <div className="search-and-sort">
         <div className="sort-options">
@@ -56,10 +56,10 @@ const InventoryDashboard = () => {
         <tbody>
           {filteredProducts.map((product) => (
             <tr key={product.ID} onClick={() => handleRowClick(product)}>
-              <td>{product.ID}</td>
-              <td>{product.CATEGORY}</td>
-              <td>{product.BRAND}</td>
-              <td>{product.TYPE}</td>
+              <td className='text-content'>{product.ID}</td>
+              <td className='text-content'>{product.CATEGORY}</td>
+              <td className='text-content'>{product.BRAND}</td>
+              <td className='text-content'>{product.TYPE}</td>
               <td className={`stock-level ${product.CURRENTSTOCK <= product.FULLSTOCK ? 'low-stock' : ''}`}>
                 {product.CURRENTSTOCK}/{product.FULLSTOCK}
               </td>

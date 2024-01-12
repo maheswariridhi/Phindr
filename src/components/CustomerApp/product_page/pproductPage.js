@@ -4,12 +4,17 @@ import './productPage.css';
 import location from '../navbar/location.png';
 import productsArray from '../store_page/products';
 import categoryImages from '../mapfinder/categoryimage';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 function PharmacistProductPage() {
   const [pproduct, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showMap, setShowMap] = useState(false); // State to control map visibility
 
+  const toggleMapVisibility = () => {
+    setShowMap(!showMap);
+  };
+  
   let match = useRouteMatch("/pproduct/:ProductId");
   let ProductId = match?.params?.ProductId;
 
@@ -34,9 +39,7 @@ function PharmacistProductPage() {
     fetchData();
   }, [ProductId]);
 
-  const toggleMapVisibility = () => {
-    setShowMap(!showMap); // Toggle the state to show/hide the map
-  };
+
 
   if (loading) {
     return <p>Loading...</p>;
@@ -64,10 +67,13 @@ function PharmacistProductPage() {
           <h3 className="text-product">{`£${pproduct.SPRICE.toFixed(2)}`}</h3>
           <p className="text-product">{`Available: ${pproduct.STOCK}`} </p>
 
-          <p className="text-product" style={{paddingTop: 10}} onClick={toggleMapVisibility}>
-            <img src={location} className="location-product" alt="location" />
-            Find in store 
-          </p>
+          <Link key={pproduct.CATEGORY} to={`/pharmacist-map/${pproduct.CATEGORY}`}>
+            <p className="text-product" style={{ paddingTop: 10 }} onClick={toggleMapVisibility}>
+              <img src={location} className="location-product" alt="location" />
+              Find in store
+            </p>
+          </Link>
+          
         </div>
       </div>
 

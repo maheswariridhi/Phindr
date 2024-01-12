@@ -1,0 +1,119 @@
+.quantity-slide {
+    position: relative;
+    top: 150px;
+    left: 100px;
+
+    padding-left: 50px;
+
+    background-color: rgba(239, 238, 238);
+    width: 929px;
+    height: auto;
+    flex-shrink: 0;
+
+    padding-top: 25px;
+    display: flex;
+}
+
+.Basket-Container h1 {
+    position: absolute;
+    left: 50%;
+    top: 230px;
+
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.prod-info {
+    /* Remove flex-direction: column; */
+}
+
+.prod-info h2 {
+    padding: 0px;
+    margin: 0px;
+
+    color: #000;
+
+    text-align: left; /* Align to the left */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.prod-info h3 {
+    padding: 0px;
+    margin: 0px;
+
+    color: #000;
+
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+
+    /* Move it to a new line */
+    display: block;
+}
+
+.prod-info h4 {
+    color: #000;
+
+    align-items: start;
+    
+    text-align: left; /* Align to the left */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.prod-info h5 {
+    padding: 0px;
+    margin: 0px;
+
+    padding-left: 10px; /* Adjusted padding */
+    margin-top: 8px; /* Added margin top for better spacing */
+
+    color: #000;
+
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.row-1 {
+    display: flex; /* Add display: flex; */
+    flex-direction: row;
+    align-items: baseline; /* Corrected typo to "baseline" */
+}
+
+.sub-row {
+    display: flex; /* Add display: flex; */
+    flex-direction: row;
+    align-items: baseline; /* Corrected typo to "baseline" */
+    width: 700px;
+}
+
+.qty-input {
+    width: 73px;
+    height: 26px;
+    flex-shrink: 0;
+    border: 4px solid #000;
+    background: #FFF;
+    margin-left: 10px;
+}

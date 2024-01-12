@@ -1,5 +1,5 @@
 .inventory-dashboard {
-    font-family: Arial, sans-serif;
+    font-family: Inter;
     padding: 20px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -10,8 +10,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  
     
   }
   
@@ -19,25 +17,28 @@
     color:black;
   }
   .inventory-title {
-    position: relative;
-    top: 0;
-    left: 35%;
-    display: flex;
-    align-items: center;
-    margin-top:2%;
-    padding: 0px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: black;
+    margin-top: 4%;
+    padding-left: 42%; 
   }
 
 
-  .location-icon {
-    position: relative;
+  .location-icon-inventory {
+    position: absolute;
     top: 0;
-    left: 70%;;
-    text-align: right;
+    right: 0;
     display: flex;
-     /* Adjust padding as needed */
-    width: 15%; /* Adjust the width as needed */
-    height: auto; /* Adjust the height as needed */
+    align-self: right;
+    padding-right: 7%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Adjust padding as needed */
+    width: auto; /* Adjust the width as needed */
+    height: 40%; /* Adjust the height as needed */
   }
   
   .search-and-sort {
@@ -64,11 +65,12 @@
   .sort-options label {
     margin-right: 10px; /* Space between each sort option */
     color: #2C3E50; /* Text color for the sort labels */
-    font-size: 16px; /* Font size for the sort labels */
+    font-size: 18px; /* Font size for the sort labels */
   }
   
   .sort-options input[type="checkbox"] {
-    margin-right: 5px; /* Space to the left of the checkbox label text */
+   
+    margin-right: 10px; /* Space to the left of the checkbox label text */
   }
   
   .sort-by-text {
@@ -82,29 +84,31 @@
     width: 50%; /* Adjust the width as needed */
     border-collapse: collapse;
     background-color: #ECF0F1;
-    margin: 0 auto; /* Centers the table in the parent container */
+    margin: 10; /* Centers the table in the parent container */
   }
   
 
   .inventory-table tbody tr {
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color  0.3s ease;
     width:50%
   }
   
   .inventory-table tbody tr:hover {
-    background-color: #f2f2f2; /* Light grey background on hover */
+    background-color: rgba(1, 186, 254, 0.30); /* Light grey background on hover */
   }
   
   .inventory-table th, .inventory-table td {
     text-align: left;
+    font-size: large;
+    font-family: Inter;
     padding: 12px 8px; /* Padding inside each table cell */
     border-bottom: 1px solid #ddd; /* Border color for the bottom of each cell */
     border-color: black;
   }
   
   .inventory-table th {
-    background-color: #B3CED9; /* Background color for table headers */
+    background-color: rgba(254, 1, 140, 0.722); /* Background color for table headers */
     color: black; /* Text color for table headers */
     width: 50px;
     border-color: black;
@@ -114,6 +118,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     color: black; /* Text color for stock levels */
+    font-weight: 600;
   }
   
   .low-stock {
@@ -138,5 +143,15 @@
     border: 1px solid #ccc; /* Border color for the search input */
     border-radius: 4px; /* Border radius for the search input */
     margin-left: 10px; /* Space to the left of the search input */
+  }
+
+  .text-content {
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    color: black;
   }
   

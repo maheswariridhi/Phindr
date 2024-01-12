@@ -31,6 +31,8 @@ import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/
 import AdminHomepage from './components/AdminApp/home_page/AdminHomepage';
 
 
+
+
 import { Helmet } from 'react-helmet';
 // Import the logo for the favicon
 import PhindrLogo from './phindr.png';
@@ -39,6 +41,7 @@ import PhindrLogo from './phindr.png';
 import './App.css';
 import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
 import { SalesProvider } from './components/SalesContext';
+import CategoryMapImage from './components/CustomerApp/mapfinder/categoryimage';
 
 
 function App() {
@@ -102,6 +105,11 @@ function App() {
                 <MapPage />
               </Route>
 
+              <Route path="/pharmacist-map/:ProductCategory" component={CategoryMapImage}>
+                <PharmacistNavbar />
+                <CategoryMapImage />
+              </Route>
+
               <Route path="/product/:ProductId" component={ProductPage}>
                 <Navbar />
                 <ProductPage />
@@ -138,15 +146,17 @@ function App() {
               </Route>
               
               <Route exact path="/admin-home">
-            <div className='AdminLayout'>
-              <div className="AdminNavbar">
-                <AdminNavbar />  
-              </div>
-              <div className="AdminPages">
-                <AdminHomepage/>
-              </div>
-            </div>
-          </Route>
+                <div className='AdminLayout'>
+                  <div className="AdminNavbar">
+                    <AdminNavbar />  
+                  </div>
+                  <div className="AdminPages">
+                    <div className='scrollable'>
+                      <AdminHomepage/>
+                    </div>
+                  </div>
+                </div>
+              </Route>
 
           <Route exact path="/admin-transactions">
             <div className='AdminLayout'>
@@ -154,7 +164,9 @@ function App() {
                 <AdminNavbar />  
               </div>
               <div className="AdminPages">
-                <AdminDashboard/>  
+                <div className='scrollable'>
+                  <AdminDashboard/>  
+                </div>
               </div>
             </div>
           </Route>
