@@ -34,7 +34,21 @@ margin-bottom: 5px;
   background-color: #0E6B8D;
   font-size: 18px;
   font-family: Inter;
+
+  align-self: start;
   
+}
+
+.addbasket {
+  position: relative;
+  left: -150px;
+
+
+  padding: 0px;
+  margin: 0px;
+
+  flex-wrap: wrap;
+  width: 500px;
 }
 
 .container-product {
