@@ -41,14 +41,17 @@ margin-bottom: 5px;
 
 .addbasket {
   position: relative;
-  left: -150px;
-
 
   padding: 0px;
   margin: 0px;
 
-  flex-wrap: wrap;
-  width: 500px;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  text-decoration: underline;
 }
 
 .container-product {

@@ -50,7 +50,7 @@ const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
               <h4>£{product.SPRICE.toFixed(2)}</h4>
 
               {itemAddedToBasket[product.ID] ? (
-                <h4 className='addbasket'>Item Added to Basket</h4>
+                <h4 className='home-addbasket'>Item Added to Basket</h4>
               ) : (
                 <button onClick={() => onAddToBasket(product.ID)}>Add to Basket</button>
               )}
