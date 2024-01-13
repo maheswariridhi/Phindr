@@ -11,12 +11,12 @@ import searchIcon from './searchIcon.png'
 
 function PharmacistNavbar() {
   return (
-    <div className="navbar-main">
-      <div className="navbar-top">
+    <div >
+      <div className="pnavbar-top">
         <h3>
         </h3>
         <h4>
-          <img src={locationImage} alt="Location" className='location-icon'/>
+          <img src={locationImage} alt="Location" className='location-icon-pnavbar'/>
           Paddington
         </h4>
       </div>
@@ -24,12 +24,12 @@ function PharmacistNavbar() {
       <div className='navbar-2'>
         <div>
           <Link to = "../pharmacist-home">
-            <img src={phindrLogo} alt="phindr" className='phindr-logo'/>
+            <img src={phindrLogo} alt="phindr" className='phindr-logo-pnavbar'/>
           </Link>
         </div>
 
         <form className='drug-form'>
-          <input type="text" id="username" name="username" placeholder='Search Drug' className='input-field'/>
+          <input type="text" id="username" name="username" placeholder='Search Drug' className='input-field-pnavbar'/>
           <div className='search-icon'>
             <img src={searchIcon} alt="Search" />
           </div>

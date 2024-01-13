@@ -13,7 +13,7 @@ import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
 import ConfirmationPage from './components/CustomerApp/checkout_page/confirmationPage';
 import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
-import PharmacistNavbar from './components/CustomerApp/pharmacist-navbar/pNavbar';
+import PharmacistNavbar from './components/PharmacistApp/pharmacist-navbar/pNavbar';
 import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
 
 import MapPage from './components/CustomerApp/store_page/basket_components/map';

@@ -71,6 +71,6 @@ const CategoryMapImage = () => {
       {image && <img src={image} alt="image" />}
     </div>
   );
-};
+}; 
 
 export default CategoryMapImage;

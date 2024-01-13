@@ -1,4 +1,4 @@
-.navbar-top {
+.pnavbar-top {
     background-color: #D9D9D9;
     border: #000 solid 2px;
     display: flex;
@@ -21,12 +21,15 @@
     align-items: center; /* Align items vertically in the center */
 }
 
-.location-icon {
-    height: 40px;
+.location-icon-pnavbar {
+    height: 30px;
+    width: auto;
     margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-.navbar-top h4 {
+.pnavbar-top h4 {
     padding: 0;
     margin: 0;
     margin-right: 15px;
@@ -47,9 +50,12 @@
     height: 50px;
 }
 
-.phindr-logo {
-    padding-left: 20px;
-    height: 80px;
+.phindr-logo-pnavbar {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 75px;
     width: auto;
 }
 
@@ -64,8 +70,8 @@
     width: 100%;
   }
   
-  .input-field {
-    width: 90%;
+  .input-field-pnavbar {
+    width: 80%;
     height: 30px;
     padding: 10px;
     border: 2px solid #000;
@@ -83,7 +89,7 @@
   }
   
   .search-icon {
-    position: absolute;
+    position:absolute;
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
