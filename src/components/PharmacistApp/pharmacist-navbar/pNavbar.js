@@ -36,11 +36,13 @@ function PharmacistNavbar() {
         </form>
 
         <div className='container'>
-          <div className='LoginIcon'>
-            <img src={loginImg} alt='Login' className='login-img' />
-            <h5> Login/Register </h5>
-          </div>
-
+          <Link to = "../">
+            <div className='LoginIcon'>
+              <img src={loginImg} alt='Login' className='login-img' />
+              <h5> Logout </h5>
+            </div>
+          </Link>
+          
         </div>
       </div>
 

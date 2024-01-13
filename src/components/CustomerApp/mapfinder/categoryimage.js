@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useRouteMatch } from 'react-router-dom';
 import productsArray from '../store_page/products'; // Import your products array
+import './categoryimages.css';
 
 import A from './A.png';
 import B from './B.png';
@@ -12,7 +13,7 @@ import F from './F.png';
 const categoryImages = {
   'Cold and Flu': F,
   'Skincare': B,
-  'First Aid': A,
+  'First aid': A,
   'Headaches and pain relief': C,
   'Digestion': D,
   'Allergy': E,
@@ -67,8 +68,8 @@ const CategoryMapImage = () => {
 
   return (
     <div>
-      <h2>{`Map for ${ProductCategory}`}</h2>
-      {image && <img src={image} alt="image" />}
+      <h2 className='map-title'>{`Map for ${ProductCategory}`}</h2>
+      {image && <img src={image} alt="image" className='cat-map-image' />}
     </div>
   );
 }; 
