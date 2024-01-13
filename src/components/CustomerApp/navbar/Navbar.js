@@ -5,6 +5,7 @@ import locationImage from './location.png';
 import phindrLogo from './phindrlogo.png';
 import loginImg from './loginicon.png';
 import basketImg from './basketicon.png';
+import homeIcon from './homeIcon.png'
 import searchIcon from './searchIcon.png';
 import { AuthContext } from '../authContext';
 
@@ -74,13 +75,20 @@ function Navbar({ onSearchChange }) {
 
         <div className='container'>
 
+        <div className='HomeIcon'>
+            <img src={homeIcon} alt='Home' className='home-img' />
+            <Link to = "../home">
+              <h5> Home </h5>
+            </Link>
+          </div>
+
         <div className='LoginIcon'>
       <img src={loginImg} alt='Login' className='login-img' />
       {user ? (
         <h5 onClick={logout}>Logout</h5>
       ) : (
         <Link to="/login">
-          <h5>Login/Register</h5>
+          <h5>Logout</h5>
         </Link>
       )}
     </div>
