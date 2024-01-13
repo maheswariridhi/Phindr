@@ -20,8 +20,6 @@ function Navbar({ onSearchChange }) {
     history.push('');
   };
 
-  
-  
   // Function to handle changes in the search input
   const handleSearchChange = (event) => {
     const newValue = event.target.value;
@@ -42,19 +40,20 @@ function Navbar({ onSearchChange }) {
 
   return (
     <div className="navbar-main">
-      <div className="navbar-top">
+      <div className="pnavbar-top">
+        <h3>
+        </h3>
+        <h4>
 
-        <Link to="/map" className="store-map-lookup-button">
-          <h3>Store Map Lookup</h3>
-          <img src={locationImage} alt="Location" className='location-icon'/>
-        </Link>
-        <div className="vl"></div>
+          <img src={locationImage} alt="Location" className='location-icon-pnavbar'/>
+        
+        </h4>
       </div>
 
       <div className='navbar-2'>
         <div>
           <Link to = "../home">
-            <img src={phindrLogo} alt="phindr" className='phindr-logo'/>
+            <img src={phindrLogo} alt="phindr" className='phindr-logo-pnavbar'/>
           </Link>
         </div>
 

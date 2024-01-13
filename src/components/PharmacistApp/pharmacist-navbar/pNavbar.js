@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import './pNavbar.css';
 
@@ -9,7 +9,29 @@ import loginImg from './loginicon.png';
 import basketImg from './basketicon.png';
 import searchIcon from './searchIcon.png'
 
-function PharmacistNavbar() {
+
+function PharmacistNavbar({ onSearchChange }) {
+    const [searchValue, setSearchValue] = useState('');    
+    const history = useHistory();
+
+    // Function to handle changes in the search input
+    const handleSearchChange = (event) => {
+      const newValue = event.target.value;
+      setSearchValue(newValue);
+  
+      // Invoke the callback to lift the search value state
+      if (onSearchChange) {
+        onSearchChange(newValue);
+      }
+    };
+  
+    // Function to handle form submission (you can customize this)
+    const handleSearchSubmit = (event) => {
+      event.preventDefault();
+      // Add your logic for handling the search, for example, navigating to a search results page
+      // console.log('Search submitted:', searchValue);
+    };
+
   return (
     <div >
       <div className="pnavbar-top">
@@ -20,6 +42,7 @@ function PharmacistNavbar() {
           Paddington
         </h4>
       </div>
+      
 
       <div className='navbar-2'>
         <div>
@@ -28,8 +51,16 @@ function PharmacistNavbar() {
           </Link>
         </div>
 
-        <form className='drug-form'>
-          <input type="text" id="username" name="username" placeholder='Search Drug' className='input-field-pnavbar'/>
+        <form className='drug-form' onSubmit={handleSearchSubmit}>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder='Search Drug'
+            className='input-field'
+            value={searchValue}
+            onChange={handleSearchChange}
+          />
           <div className='search-icon'>
             <img src={searchIcon} alt="Search" />
           </div>

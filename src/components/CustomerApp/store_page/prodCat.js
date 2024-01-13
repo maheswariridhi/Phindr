@@ -7,6 +7,9 @@ import useFetch from '../../../customFunctions/useFetch';
 
 const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
   const { data } = useFetch('http://localhost:8000/products');  // Get drug data from database
+  
+  console.log(data)
+
   const { itemAddedToBasket, onAddToBasket } = useAppState();
 
   console.log("Hello" + searchValue);

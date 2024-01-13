@@ -3,7 +3,9 @@ import './storePage.css';
 import ProdCat from './prodCat';
 import Sidebar from './sidebar';
 
-function StorePage() {
+function StorePage({searchValue}) {
+
+
   const brands = ['Cold and Flu', 'Skincare', 'Headaches and pain relief', 'Digestion', 'Allergy', 'First aid'];
   const initialCheckedState = brands.reduce((acc, brand) => {
     acc[brand] = false;
@@ -11,7 +13,6 @@ function StorePage() {
   }, {});
 
   const [isChecked, setIsChecked] = useState(initialCheckedState);
-  console.log(isChecked);
 
   const handleCheckboxChange = (brand) => {
     setIsChecked((prevChecked) => ({
@@ -26,7 +27,7 @@ function StorePage() {
 
       <div className="prod-cat-container">
         {/* Pass the state and functions to ProdCat */}
-        <ProdCat isChecked={isChecked} handleCheckboxChange={handleCheckboxChange} />
+        <ProdCat isChecked={isChecked} handleCheckboxChange={handleCheckboxChange} searchValue = {searchValue}/>
       </div>
     </div>
   );

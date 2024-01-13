@@ -4,8 +4,11 @@ import './prodCat.css';
 import { useAppState } from './AppStateContext';
 import productArray from './products';
 
-const ProdCat = ({ isChecked, handleCheckboxChange }) => {
+const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
   const { itemAddedToBasket, onAddToBasket } = useAppState();
+
+  console.log("Pharmacist: " + searchValue);
+  const searchInput = searchValue;
 
   const brands = ['Cold and Flu', 'Skincare', 'Headaches and pain relief', 'Digestion', 'Allergy', 'First aid'];
 

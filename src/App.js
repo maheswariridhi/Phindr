@@ -91,8 +91,9 @@ function App() {
               </Route>
 
               <Route path="/pharmacist-home">
-                <PharmacistNavbar />
-                <PharmacistStorePage />
+                <PharmacistNavbar onSearchChange={handleSearchChange}/>
+                
+                <PharmacistStorePage searchValue={searchValue}/>
               </Route>
 
               <Route path="/pproduct/:ProductId" component={PharmacistProductPage}>
