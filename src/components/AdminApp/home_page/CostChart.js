@@ -13,7 +13,7 @@ const CostChart = () => {
       ];
 
   return (
-    <BarChart width={600} height={400} data={uniqueData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    <BarChart width={400} height={400} data={uniqueData} margin={{ top: 5, right: 30, left: 30, bottom: 5 }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis />

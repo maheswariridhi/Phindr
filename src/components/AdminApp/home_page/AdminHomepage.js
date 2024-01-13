@@ -11,14 +11,14 @@ import CostChart from "./CostChart";
 const AdminHomepage = () => {
     return (
         <div >
-            
+            <div className="location-container">
+                <img src={locationImage} alt="Location" className="location-icon-admin" />
+            </div>
             <h3 className="dashboard-title">Dashboard</h3>
-            <img src={locationImage} alt="Location" className="location-icon-admin"/>
             <div className="lowest_stock">
                 <p className="dashboard-title-box">Lowest stock</p>
                 <div className="low-container">
                     <LowStock className="low-stock"/>
-
                 </div>
             </div>
 
@@ -42,10 +42,8 @@ const AdminHomepage = () => {
                         <div className="transaction-history-container">
                             <p className="dashboard-title-box">Total Balance</p>
                             <p className="dashboard-title-box">£XXX,XXX</p>
-                            <div className="in-out-container">
-                                <p className="text1>">Income</p>
-                                <p className="text2">Expenses</p>
-                            </div>
+                            <p className="text1">Income: £YY,YY</p>
+                            <p className="text1">Expenses: £Z,ZZ</p>
                         </div>
                     </div>
 

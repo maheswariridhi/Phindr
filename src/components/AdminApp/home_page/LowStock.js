@@ -30,7 +30,7 @@ const MyChart = () => {
   }, []);
 
   return (
-    <BarChart width={1200} height={600} data={uniqueData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    <BarChart width={800} height={600} data={uniqueData} margin={{ top: 5, right: 30, left: 30, bottom: 5 }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
       <YAxis />

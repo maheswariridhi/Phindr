@@ -18,10 +18,10 @@ const TrendingStock = () => {
 
   return (
     <LineChart
-      width={600}
+      width={400}
       height={400}
       data={data}
-      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+      margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
     >
       <XAxis dataKey="name" />
       <YAxis />
