@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './storePage.css';
+import './pStorePage.css';
 import ProdCat from './pprodCat';
-import Sidebar from './sidebar';
+import Sidebar from '../../CustomerApp/store_page/sidebar';
 
 function StorePage({searchValue}) {
 

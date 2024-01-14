@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './prodCat.css';
-import { useAppState } from './AppStateContext';
-import productArray from './products';
+import './pprodCat.css';
+import { useAppState } from '../../CustomerApp/store_page/AppStateContext';
+import productArray from '../../CustomerApp/store_page/products';
 import useFetch from '../../../customFunctions/useFetch';
 
 const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
@@ -35,7 +35,7 @@ const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
             <div className='item-container'>
               <Link key={product.ID} to={`/pproduct/${product.ID}`}>
                 <img
-                  src={require(`./product-inventory/phab_img/${product.ID}.jpg`)}
+                  src={require(`../../CustomerApp/store_page/product-inventory/phab_img/${product.ID}.jpg`)}
                   alt={product.BRAND}
                   className='item-image'
                 />

@@ -12,9 +12,9 @@ import ProductPage from './components/CustomerApp/product_page/productPage';
 import CheckoutPage from './components/CustomerApp/checkout_page/checkoutPage';
 import BasketPage from './components/CustomerApp/store_page/basket_components/basket'
 import ConfirmationPage from './components/CustomerApp/checkout_page/confirmationPage';
-import PharmacistStorePage from './components/CustomerApp/store_page/pStorePage';
+import PharmacistStorePage from './components/PharmacistApp/store_page/pStorePage';
 import PharmacistNavbar from './components/PharmacistApp/pharmacist-navbar/pNavbar';
-import PharmacistProductPage from './components/CustomerApp/product_page/pproductPage';
+import PharmacistProductPage from './components/PharmacistApp/product_page/pproductPage';
 
 import MapPage from './components/CustomerApp/store_page/basket_components/map';
 import StoreCheckoutPage from './components/CustomerApp/checkout_page/storeCheckout';

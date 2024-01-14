@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import './productPage.css';
-import location from '../navbar/location.png';
-import productsArray from '../store_page/products';
-import categoryImages from '../mapfinder/categoryimage';
+import './pproductPage.css';
+import location from '../pharmacist-navbar/location.png';
+import productsArray from '../../CustomerApp/store_page/products';
+import categoryImages from '../../CustomerApp/mapfinder/categoryimage';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 function PharmacistProductPage() {
@@ -56,7 +56,7 @@ function PharmacistProductPage() {
       <div className="grid-top-product">
         <div>
           <img
-            src={require(`../store_page/product-inventory/phab_img/${pproduct.ID}.jpg`)}
+            src={require(`../../CustomerApp/store_page/product-inventory/phab_img/${pproduct.ID}.jpg`)}
             alt={pproduct.BRAND}
             className='image'
           />
