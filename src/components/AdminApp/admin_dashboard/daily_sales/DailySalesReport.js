@@ -15,21 +15,25 @@ const DailySalesReport = () => {
     }
   }, [data]);
 
-  // Function to group sales by hour and calculate the total for each hour
   const groupSalesByHour = (sales) => {
     const salesByHour = {};
     sales.forEach((sale) => {
-      console.log("Timestamp:", sale.timestamp); // Debugging
-      const hour = new Date(sale.timestamp).getHours();
-      console.log("Hour:", hour); // Debugging
-      if (!salesByHour[hour]) {
-        salesByHour[hour] = 0;
+      if(sale.date) {
+        const hour = new Date(sale.date).getHours();
+        if(!isNaN(hour)) {
+          if (!salesByHour[hour]) {
+            salesByHour[hour] = 0;
+          }
+          salesByHour[hour] += parseFloat(sale.totalCost);
+        }
       }
-      salesByHour[hour] += parseFloat(sale.totalCost);
     });
     return salesByHour;
   };
 
+  const formatHourPeriod = (hour) => {
+    return `${hour.toString().padStart(2, '0')}:00-${(hour + 1).toString().padStart(2, '0')}:00`;
+  };
 
   return (
     <div className="daily-sales-report">
@@ -47,7 +51,7 @@ const DailySalesReport = () => {
         <tbody>
           {Object.entries(salesByHour).map(([hour, total], index) => (
             <tr key={index}>
-              <td>{`${hour}:00-${(hour + 1).toString().padStart(2, '0')}:00`}</td>
+              <td>{formatHourPeriod(parseInt(hour, 10))}</td>
               <td>£{total.toFixed(2)}</td>
             </tr>
           ))}

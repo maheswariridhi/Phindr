@@ -8,6 +8,20 @@
   padding: 20px;
 }
 
+.location-icon-admin-dashboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-self: right;
+  padding-right: 7%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* Adjust padding as needed */
+  width: auto; /* Adjust the width as needed */
+  height: 40%; /* Adjust the height as needed */
+}
+
 .daily-sales-report-table {
   width: 100%;
   border-collapse: collapse;
