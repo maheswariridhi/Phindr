@@ -5,40 +5,8 @@
     padding-bottom: 0px;
   }
   
-  .content-header {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    
-  }
-  
   .stock-level{
     color:black;
-  }
-  .inventory-title {
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    color: black;
-    margin-top: 4%;
-    padding-left: 42%; 
-  }
-
-
-  .location-icon-inventory {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-self: right;
-    padding-right: 7%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    /* Adjust padding as needed */
-    width: auto; /* Adjust the width as needed */
-    height: 40%; /* Adjust the height as needed */
   }
   
   .search-and-sort {

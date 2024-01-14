@@ -3,19 +3,9 @@
     padding: 20px;
   }
   
-  .inventory-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
   
   .place-order-button {
     font-size: 16px; /* Adjust the font size as needed */
-  }
-  
-  .inventory-title {
-    margin-top:2%;
   }
   
   .back-button {

@@ -3,31 +3,6 @@
     font-family: 'Arial', sans-serif;
   }
   
-  .header-title-container {
-    display: flex;
-    justify-content: space-between; /* Add space between flex items */
-    padding: 15px; /* Adjust padding as needed */
-  }
-  
-  .transaction-history-title {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-  }
-  
-  .location-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    padding: 22px; /* Adjust padding as needed */
-    width: 20; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
-  }
 
   .admin-icon{
     position: absolute;
@@ -99,12 +74,6 @@
     padding: 20px;
   }
   
-  .content-header {
-    display: flex;
-    /*justify-content: space-between;*/
-    padding-right: 90px;
-    margin-bottom: 5%;
-  }
 
 
   .table-container {

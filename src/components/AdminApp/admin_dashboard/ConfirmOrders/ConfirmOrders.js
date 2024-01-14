@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'; // Import useHistory
 import './ConfirmOrders.css';
 import { OrdersContext } from '../orderinventory/OrdersContext';
+import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
+import '../AdminDashboard.css'
 
 const ConfirmOrders = () => {
   const { orders, removeOrder, addTransaction } = useContext(OrdersContext); // Add addTransaction
@@ -40,8 +42,9 @@ const ConfirmOrders = () => {
 
   return (
     <div className="confirm-orders">
-      <header className="confirm-orders-header">
-        <h1>Orders to be Confirmed</h1>
+      <header className="content-header">
+        <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
+        <h1 className='admin-dashboard-title'>Orders to be Confirmed</h1>
       </header>
       <table className="confirm-orders-table">
         <thead>

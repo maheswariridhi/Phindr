@@ -5,24 +5,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 85%; /* Adjust width as needed */
-  background-color: #ECF0F1;
   padding: 20px;
-}
-
-.daily-sales-report-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-}
-
-.daily-sales-report-title {
-  font-size: 24px; /* Adjust size as needed */
-}
-
-.location-icon {
-  width: 13%; /* Adjust the width as needed */
-  height: 5%; /* Adjust the height as needed */
 }
 
 .daily-sales-report-table {

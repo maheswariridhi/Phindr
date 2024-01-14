@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'; // Added useContext here
 import './OrderInventory.css'; 
+import '../AdminDashboard.css'; // CSS for styling
 import { useHistory, useLocation } from 'react-router-dom';
 import backButtonImage from './back-button.png'; // Ensure this path is correct
 import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
@@ -44,10 +45,10 @@ const OrderInventory = () => {
 
   return (
     <div className="order-inventory">
-      <header className="inventory-header">
+      <header className="content-header">
         <img src={backButtonImage} alt="Back" className="back-button" onClick={handleBack} />
-        <img src={locationImage} alt="Location" className="location-icon" />
-        <h1 className="inventory-title">Order Inventory</h1>
+        <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
+        <h1 className="admin-dashboard-title">Order Inventory</h1>
         {/* User info could be shown here */}
       </header>
       <div className="inventory-details">

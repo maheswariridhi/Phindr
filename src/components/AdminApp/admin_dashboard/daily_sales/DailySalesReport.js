@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useFetch from '../../../../customFunctions/useFetch';
 import './DailySalesReport.css'; // CSS for styling
+import '../AdminDashboard.css'; // CSS for styling
 import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
 
 const DailySalesReport = () => {
@@ -29,9 +30,9 @@ const DailySalesReport = () => {
 
   return (
     <div className="daily-sales-report">
-      <header className="daily-sales-report-header">
-        <h1 className="daily-sales-report-title">Daily Sales Report</h1>
-        <img src={locationImage} alt="Location" className="location-icon" />
+      <header className="content-header">
+        <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
+        <h1 className="admin-dashboard-title">Daily Sales Report</h1>
       </header>
       <table>
         <thead>
