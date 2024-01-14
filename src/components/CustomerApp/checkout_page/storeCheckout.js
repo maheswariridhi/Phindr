@@ -7,22 +7,14 @@ import { useAppState } from '../store_page/AppStateContext';
 import { useHistory } from 'react-router-dom';
 
 const StoreCheckoutPage = () => {
-
-    const [quantities, setQuantities] = useState(() => {
-        const initialQuantities = {};
     
-        productsArray.forEach((product) => {
-          initialQuantities[product.ID] = 0;
-        });
-    
-        return initialQuantities;
-      });
-    
-      const { itemAddedToBasket } = useAppState();
-    
+      const { itemAddedToBasket, quantities, onAddToBasket, onSetQuantities } = useAppState();
+      console.log(quantities)
+      
       const indexesArray = Object.keys(itemAddedToBasket).map(Number);
       const products = productsArray.filter((product) => indexesArray.includes(product.ID));
-    
+
+
       const history = useHistory();
 
       const handleClick = () => {

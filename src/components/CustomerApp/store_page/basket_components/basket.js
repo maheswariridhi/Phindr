@@ -19,9 +19,10 @@ function Basket() {
   useEffect(() => {
     // When the itemAddedToBasket is empty, reset quantities
     if (Object.keys(itemAddedToBasket).length === 0) {
-      setQuantities({...initialQuantities}); // Use spread operator to create a new object
+      setQuantities({...initialQuantities});
     }
-  }, [itemAddedToBasket]);
+  }, [itemAddedToBasket, quantities]);
+
 
   const indexesArray = Object.keys(itemAddedToBasket).map(Number);
   const products = productsArray.filter((product) => indexesArray.includes(product.ID));
@@ -40,6 +41,7 @@ function Basket() {
       return newQuantities;
     });
   };
+
 
   return (
     <div className='Basket-Container'>

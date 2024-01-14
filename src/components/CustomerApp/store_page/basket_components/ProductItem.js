@@ -3,6 +3,8 @@
 import React from 'react';
 
 const ProductItem = ({ product, quantity, handleQuantityChange }) => {
+  console.log(product);
+
   return (
     <div className='quantity-slide' key={product.ID}>
       <div className='prod-info-container'>

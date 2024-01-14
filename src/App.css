@@ -2,12 +2,9 @@
     width: auto;
     max-width: 1980px;
     margin: auto;
+    
+}
 
-    overflow: hidden;
-}
-body {
-    overflow-x: hidden;
-}
 
 .AdminLayout {
     display: flex;

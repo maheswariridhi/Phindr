@@ -10,6 +10,8 @@ function InvoiceCopy({ products, quantities }) {
     return '100537' + randomNumber;
   }
 
+  console.log(quantities);
+
   const randomSerialNumber = generateRandomSerialNumber();
 
   const today = new Date();
