@@ -102,3 +102,18 @@
     bottom: 10px; /* Adjust the value as needed for your desired vertical position */
     right: 10px; /* Adjust the value as needed for your desired horizontal position */
   }
+
+  /* Style for full stock */
+.full-stock {
+  background-color: #2ecc71; /* Green color */
+}
+
+/* Style for mid stock */
+.mid-stock {
+  background-color: #f1c40f; /* Yellow color */
+}
+
+/* Style for low stock */
+.low-stock {
+  background-color: #e74c3c; /* Red color */
+}

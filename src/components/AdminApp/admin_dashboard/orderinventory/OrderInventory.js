@@ -20,6 +20,16 @@ const OrderInventory = () => {
     history.push('/admin-confirm-orders'); // Replace '/confirm-orders' with the actual path of your ConfirmOrders page
   };
   
+    // Function to determine stock level class
+    const getStockLevelClass = (currentStock, fullStock) => {
+      if (currentStock <= fullStock / 2) {
+        return 'low-stock'; // Low stock
+      } else if (currentStock === fullStock) {
+        return 'full-stock'; // Full stock
+      } else {
+        return 'mid-stock'; // Mid stock
+      }
+    };
   
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
@@ -72,8 +82,8 @@ const OrderInventory = () => {
             </tr>
             <tr>
             <th>Stock Levels</th>
-            <td className={`stock-level ${product.STOCK <= product.FULLSTOCK ? 'low-stock' : ''}`}>
-              {product.STOCK}/{product.FULLSTOCK}
+            <td className={`stock-level ${getStockLevelClass(product.CURRENTSTOCK, product.FULLSTOCK)}`}>
+        {product.CURRENTSTOCK}/{product.FULLSTOCK}
             </td>
           </tr>
           <tr> {/* Add this row */}

@@ -89,9 +89,7 @@
     font-weight: 600;
   }
   
-  .low-stock {
-    background-color: #e74c3c; /* Background color indicating low stock */
-  }
+
   
   /* Style for other stock level indicators */
   .normal-stock {
@@ -123,3 +121,20 @@
     color: black;
   }
   
+/* Style for full stock */
+.full-stock {
+  background-color: #2ecc71; /* Green color */
+  color: white;
+}
+
+/* Style for mid stock */
+.mid-stock {
+  background-color: #f1c40f; /* Yellow color */
+  color: white;
+}
+
+/* Style for low stock */
+.low-stock {
+  background-color: #e74c3c; /* Red color */
+  color: white;
+}

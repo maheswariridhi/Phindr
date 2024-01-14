@@ -1,46 +1,101 @@
-import React, { useState } from 'react';
-import './InventoryDashboard.css'; 
-import locationImage from '../../admin_dashboard/location.png'; 
-import products from './products'; // Assuming this contains your product data
+import React, { useState, useEffect } from 'react';
+import './InventoryDashboard.css';
+import locationImage from '../../admin_dashboard/location.png';
+import products from './products'; // This should include initial stock levels
+import useFetch from '../../../../customFunctions/useFetch';
 import { useHistory } from 'react-router-dom';
-import '../AdminDashboard.css'
 
 const InventoryDashboard = () => {
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [sortByLowStock, setSortByLowStock] = useState(false); // State variable for sorting
+
+  // Fetch customer orders
+  const { data: customerOrders } = useFetch('http://localhost:8000/customerOrderRecords');
+
+  // Function to determine stock level class
+  const getStockLevelClass = (currentStock, fullStock) => {
+    if (currentStock <= fullStock / 2) {
+      return 'low-stock'; // Low stock
+    } else if (currentStock === fullStock) {
+      return 'full-stock'; // Full stock
+    } else {
+      return 'mid-stock'; // Mid stock
+    }
+  };
+
+  useEffect(() => {
+    // Initialize each product's current stock to its full stock
+    let updatedProducts = products.map(product => {
+      return { ...product, CURRENTSTOCK: product.FULLSTOCK };
+    });
+
+    if (customerOrders) {
+      // Create a map to store total quantities sold for each product
+      const totalSoldMap = {};
+
+      // Aggregate quantities sold for each product
+      customerOrders.forEach(order => {
+        Object.entries(order.quantities).forEach(([productId, quantitySold]) => {
+          totalSoldMap[productId] = (totalSoldMap[productId] || 0) + quantitySold;
+        });
+      });
+
+      // Update the current stock in the products list
+      updatedProducts = updatedProducts.map(product => {
+        const soldQuantity = totalSoldMap[product.ID.toString()] || 0;
+        return { ...product, CURRENTSTOCK: Math.max(product.CURRENTSTOCK - soldQuantity, 0) };
+      });
+    }
+
+    // Sort by low stock levels relative to each other
+    if (sortByLowStock) {
+      updatedProducts.sort((a, b) => (a.CURRENTSTOCK / a.FULLSTOCK) - (b.CURRENTSTOCK / b.FULLSTOCK));
+    }
+
+    setFilteredProducts(updatedProducts);
+  }, [customerOrders, sortByLowStock]);
 
   const handleRowClick = (product) => {
     history.push('/admin-order-inventory', { product });
-  };  
+  };
 
   const handleSearchChange = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     setSearchTerm(searchTerm);
-
-    // Filter products based on the search term (type or brand)
-    const filteredProducts = products.filter(product => 
+    const updatedProducts = products.filter(product =>
       product.TYPE.toLowerCase().includes(searchTerm) ||
       product.BRAND.toLowerCase().includes(searchTerm)
     );
+    setFilteredProducts(updatedProducts);
+  };
 
-    setFilteredProducts(filteredProducts);
+  const handleLowStockFilterChange = (event) => {
+    setSortByLowStock(event.target.checked);
   };
 
   return (
     <div className="inventory-dashboard">
       <header className="content-header">
         <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
-        <h1 className="admin-dashboard-title" >Inventory</h1>
+        <h1 className="admin-dashboard-title">Inventory</h1>
       </header>
       <div className="search-and-sort">
         <div className="sort-options">
-          <label><input type="checkbox" /> Low Stock Levels</label>
+          <label>
+            <input
+              type="checkbox"
+              checked={sortByLowStock}
+              onChange={handleLowStockFilterChange}
+            />{' '}
+            Low Stock Levels
+          </label>
         </div>
-        <input 
-          type="search" 
+        <input
+          type="search"
           placeholder="Search..."
-          onChange={handleSearchChange} 
+          onChange={handleSearchChange}
           value={searchTerm} // Bind the input value to the searchTerm state
         />
       </div>
@@ -61,7 +116,7 @@ const InventoryDashboard = () => {
               <td className='text-content'>{product.CATEGORY}</td>
               <td className='text-content'>{product.BRAND}</td>
               <td className='text-content'>{product.TYPE}</td>
-              <td className={`stock-level ${product.CURRENTSTOCK <= product.FULLSTOCK ? 'low-stock' : ''}`}>
+              <td className={`stock-level ${getStockLevelClass(product.CURRENTSTOCK, product.FULLSTOCK)}`}>
                 {product.CURRENTSTOCK}/{product.FULLSTOCK}
               </td>
             </tr>
