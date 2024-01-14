@@ -20,9 +20,7 @@ const AdminNavbar = () => {
         <a href="../admin-inventory" className="navbar-text">Inventory</a>
         <a href="../admin-confirm-orders" className="navbar-text">Pending Orders</a>
         <a href="../admin-transactions" className="navbar-text">Transaction History</a>
-        <a href="../admin-daily-sales" className="navbar-text">Sales Report</a>
-        <a href="../admin-delivery-status" className="navbar-text">Delivery Status</a>
-        
+        <a href="../admin-daily-sales" className="navbar-text">Sales Report</a>        
      
         <Link to = "../login">
           <img src={adminIcon} alt="admin" className='admin_icon'/>

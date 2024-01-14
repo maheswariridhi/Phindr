@@ -1,43 +1,28 @@
-// DailySalesReport.js
-import React, { useContext, useState, useEffect } from 'react';
-import { SalesContext } from '../../../SalesContext';
-import './DailySalesReport.css'; 
-import locationImage from '../../admin_dashboard/location.png';
+import React, { useEffect, useState } from 'react';
 import useFetch from '../../../../customFunctions/useFetch';
-
+import './DailySalesReport.css'; // CSS for styling
+import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
 
 const DailySalesReport = () => {
-  const { sales } = useContext(SalesContext);
-  const [salesByHour, setSalesByHour] = useState({}); // State for sales data grouped by hour
+  const { data } = useFetch('http://localhost:8000/customerOrderRecords'); // Fetch data from database
+  const [salesByHour, setSalesByHour] = useState({});
 
   useEffect(() => {
-    const fetchSalesData = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/customerOrderRecords'); // Your API endpoint
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const salesData = await response.json();
-        const groupedData = groupSalesByHour(salesData);
-        setSalesByHour(groupedData);
-      } catch (error) {
-        console.error('Fetch error:', error);
-      }
-    };
-
-    fetchSalesData();
-  }, []); // Empty dependency array means this runs once on mount
+    if (data && data.length > 0) {
+      const groupedSales = groupSalesByHour(data);
+      setSalesByHour(groupedSales);
+    }
+  }, [data]);
 
   // Function to group sales by hour and calculate the total for each hour
-  const groupSalesByHour = (salesData) => {
+  const groupSalesByHour = (sales) => {
     const salesByHour = {};
-    salesData.forEach((sale) => {
-      // Assuming sale.timestamp is a string in ISO format
+    sales.forEach((sale) => {
       const hour = new Date(sale.timestamp).getHours();
       if (!salesByHour[hour]) {
         salesByHour[hour] = 0;
       }
-      salesByHour[hour] += sale.totalCost;
+      salesByHour[hour] += parseFloat(sale.totalCost);
     });
     return salesByHour;
   };
@@ -56,19 +41,16 @@ const DailySalesReport = () => {
           </tr>
         </thead>
         <tbody>
-        {Object.entries(salesByHour).map(([hour, total], index) => (
-          <tr key={index}>
-            <td>{`${hour}:00-${parseInt(hour, 10) + 1}:00`}</td>
-            <td>£{total.toFixed(2)}</td>
-          </tr>
-        ))}
-      </tbody>
+          {Object.entries(salesByHour).map(([hour, total], index) => (
+            <tr key={index}>
+              <td>{`${hour}:00-${parseInt(hour, 10) + 1}:00`}</td>
+              <td>£{total.toFixed(2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
-            </table>
-            </div>
-          );
-        };
-        
-        export default DailySalesReport;
-                    
-            
+export default DailySalesReport;

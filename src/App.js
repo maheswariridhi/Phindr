@@ -24,12 +24,9 @@ import AdminDashboard from './components/AdminApp/admin_dashboard/transaction_pa
 import InventoryDashboard from './components/AdminApp/admin_dashboard/inventory_page/InventoryDashboard';
 import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinventory/OrdersContext'; 
 import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
-import AdminTransactions from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 //import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
 import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/DailySalesReport';
 import AdminHomepage from './components/AdminApp/home_page/AdminHomepage';
-
-
 
 
 import { Helmet } from 'react-helmet';
