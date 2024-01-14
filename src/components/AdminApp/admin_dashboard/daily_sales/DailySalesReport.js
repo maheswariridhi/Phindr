@@ -1,19 +1,39 @@
 // DailySalesReport.js
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { SalesContext } from '../../../SalesContext';
-import './DailySalesReport.css'; // CSS for styling
-import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
+import './DailySalesReport.css'; 
+import locationImage from '../../admin_dashboard/location.png';
 import useFetch from '../../../../customFunctions/useFetch';
+
 
 const DailySalesReport = () => {
   const { sales } = useContext(SalesContext);
-  const { data } = useFetch('http://localhost:8000/customerOrderRecords');  // Fetch data from database
-  
+  const [salesByHour, setSalesByHour] = useState({}); // State for sales data grouped by hour
+
+  useEffect(() => {
+    const fetchSalesData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/customerOrderRecords'); // Your API endpoint
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const salesData = await response.json();
+        const groupedData = groupSalesByHour(salesData);
+        setSalesByHour(groupedData);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
+
+    fetchSalesData();
+  }, []); // Empty dependency array means this runs once on mount
+
   // Function to group sales by hour and calculate the total for each hour
-  const groupSalesByHour = (sales) => {
+  const groupSalesByHour = (salesData) => {
     const salesByHour = {};
-    sales.forEach((sale) => {
-      const hour = sale.timestamp.getHours();
+    salesData.forEach((sale) => {
+      // Assuming sale.timestamp is a string in ISO format
+      const hour = new Date(sale.timestamp).getHours();
       if (!salesByHour[hour]) {
         salesByHour[hour] = 0;
       }
@@ -22,34 +42,33 @@ const DailySalesReport = () => {
     return salesByHour;
   };
 
-  const salesByHour = groupSalesByHour(sales);
-
   return (
     <div className="daily-sales-report">
       <header className="daily-sales-report-header">
         <h1 className="daily-sales-report-title">Daily Sales Report</h1>
         <img src={locationImage} alt="Location" className="location-icon" />
       </header>
-      {/* Generate the table rows for each hour */}
       <table>
         <thead>
           <tr>
             <th>Date/Time</th>
-            <th>Sales</th>
+            <th>Sales (£)</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(salesByHour).map(([hour, total], index) => (
-            <tr key={index}>
-              <td>{`${hour}:00-${parseInt(hour) + 1}:00`}</td>
-              <td>£{total.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {/* You can add a row for total sales of the day if needed */}
-    </div>
-  );
-};
+        {Object.entries(salesByHour).map(([hour, total], index) => (
+          <tr key={index}>
+            <td>{`${hour}:00-${parseInt(hour, 10) + 1}:00`}</td>
+            <td>£{total.toFixed(2)}</td>
+          </tr>
+        ))}
+      </tbody>
 
-export default DailySalesReport;
+            </table>
+            </div>
+          );
+        };
+        
+        export default DailySalesReport;
+                    
+            
