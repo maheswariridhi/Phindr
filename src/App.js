@@ -92,7 +92,6 @@ function App() {
 
               <Route path="/pharmacist-home">
                 <PharmacistNavbar onSearchChange={handleSearchChange}/>
-                
                 <PharmacistStorePage searchValue={searchValue}/>
               </Route>
 

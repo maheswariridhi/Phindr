@@ -33,7 +33,7 @@ const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
         {filteredProducts.map((product) => (
           <div key={product.ID} className='product-container'>
             <div className='item-container'>
-              <Link key={product.ID} to={`/product/${product.ID}`}>
+              <Link key={product.ID} to={`/pproduct/${product.ID}`}>
                 <img
                   src={require(`./product-inventory/phab_img/${product.ID}.jpg`)}
                   alt={product.BRAND}
@@ -43,17 +43,12 @@ const ProdCat = ({ isChecked, handleCheckboxChange, searchValue }) => {
             </div>
 
             <div className='item-info'>
-              <Link key={product.ID} to={`/product/${product.ID}`}>
+              <Link key={product.ID} to={`/pproduct/${product.ID}`}>
                 <h3>{`${product.BRAND} ${product.TYPE}`}</h3>
               </Link>
               <p>{product.QTY}</p>
               <h4>£{product.SPRICE.toFixed(2)}</h4>
 
-              {itemAddedToBasket[product.ID] ? (
-                <h4 className='addbasket'>Item Added to Basket</h4>
-              ) : (
-                <button onClick={() => onAddToBasket(product.ID)}>Add to Basket</button>
-              )}
             </div>
           </div>
         ))}

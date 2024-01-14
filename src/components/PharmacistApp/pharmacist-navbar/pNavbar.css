@@ -51,8 +51,8 @@
 }
 
 .phindr-logo-pnavbar {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 15px;
+    margin-right: 5px;
     margin-top: auto;
     margin-bottom: auto;
     height: 75px;
@@ -67,16 +67,17 @@
 
 .drug-form {
     position: relative;
-    width: 100%;
+    width: 60%;
   }
   
   .input-field-pnavbar {
-    width: 80%;
+    width: 60%;
+    max-width: 500px;
     height: 30px;
     padding: 10px;
     border: 2px solid #000;
     border-radius: 20px;
-    padding-right: 40px;
+    padding-right: 20px;
     outline: none;
 
     font-size: 20px; /* Adjust the font size as needed */
@@ -91,7 +92,7 @@
   .search-icon {
     position:absolute;
     top: 50%;
-    right: 15%;
+    right: 1%;
     transform: translateY(-50%);
   }
   
