@@ -8,7 +8,6 @@ export const OrdersProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    // Load orders and transactions from localStorage when the component mounts
     const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
     const storedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
@@ -17,7 +16,6 @@ export const OrdersProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // Save orders and transactions to localStorage whenever they change
     localStorage.setItem('orders', JSON.stringify(orders));
     localStorage.setItem('transactions', JSON.stringify(transactions));
   }, [orders, transactions]);
@@ -25,16 +23,6 @@ export const OrdersProvider = ({ children }) => {
   const addOrder = (order) => {
     const updatedOrders = [...orders, order];
     setOrders(updatedOrders);
-
-    const newTransaction = {
-      transactionId: Date.now(),
-      date: new Date().toLocaleDateString(),
-      items: [order],
-      totalCost: order.cost,
-      status: 'Pending',
-    };
-
-    setTransactions([...transactions, newTransaction]);
   };
 
   const removeOrder = (index) => {
@@ -47,8 +35,17 @@ export const OrdersProvider = ({ children }) => {
     setTransactions([...transactions, transaction]);
   };
 
+  const updateTransactionStatus = (transactionId, newStatus) => {
+    const updatedTransactions = transactions.map(transaction => 
+      transaction.transactionId === transactionId 
+        ? { ...transaction, status: newStatus }
+        : transaction
+    );
+    setTransactions(updatedTransactions);
+  };
+
   return (
-    <OrdersContext.Provider value={{ orders, addOrder, removeOrder, transactions, addTransaction }}>
+    <OrdersContext.Provider value={{ orders, addOrder, removeOrder, transactions, addTransaction, updateTransactionStatus }}>
       {children}
     </OrdersContext.Provider>
   );

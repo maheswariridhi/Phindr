@@ -1,8 +1,8 @@
+// AdminTransactions.js
 import React, { useContext } from 'react';
 import './admintransactions.css';
 import locationImage from '../../admin_dashboard/location.png';
 import { OrdersContext } from '../orderinventory/OrdersContext';
-
 
 const AdminTransactions = () => {
   const { transactions } = useContext(OrdersContext);

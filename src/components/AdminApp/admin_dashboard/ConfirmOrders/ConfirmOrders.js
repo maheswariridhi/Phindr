@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory
-import './ConfirmOrders.css';
+import { useHistory } from 'react-router-dom';
 import { OrdersContext } from '../orderinventory/OrdersContext';
-import locationImage from '../../admin_dashboard/location.png';
+import './ConfirmOrders.css';
 
 const ConfirmOrders = () => {
   const { orders, removeOrder, addTransaction } = useContext(OrdersContext);
@@ -11,34 +10,25 @@ const ConfirmOrders = () => {
   const history = useHistory();
 
   useEffect(() => {
+    // Calculate the total cost of orders
     const newTotalCost = orders.reduce((sum, order) => sum + order.cost, 0);
     setTotalCost(newTotalCost);
   }, [orders]);
 
   const handleConfirm = () => {
-    if (orders.length === 0) {
-      alert('No orders to confirm.');
-      return;
-    }
-
+    // Create a new transaction
     const transaction = {
       date: new Date().toLocaleDateString(),
-      transactionId: `trans-${Date.now()}`,
-      items: [],
-      totalCost: totalCost,
-      status: 'Confirmed',
+      transactionId: Math.floor(Math.random() * 100000),
+      items: orders,
+      totalCost,
+      status: 'Pending',
     };
 
-    orders.forEach((order, index) => {
-      transaction.items.push({
-        name: order.name,
-        quantity: order.quantity,
-        cost: order.cost,
-      });
-      removeOrder(index);
-    });
-
     addTransaction(transaction);
+
+    // Remove all orders
+    orders.forEach((_, index) => removeOrder(index));
     setIsConfirmed(true);
   };
 
@@ -52,9 +42,8 @@ const ConfirmOrders = () => {
 
   return (
     <div className="confirm-orders">
-      <header className="content-header">
-        <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
-        <h1 className="admin-dashboard-title">Orders to be Confirmed</h1>
+      <header className="confirm-orders-header">
+        <h1>Orders to be Confirmed</h1>
       </header>
       <table className="confirm-orders-table">
         <thead>
@@ -79,7 +68,7 @@ const ConfirmOrders = () => {
         </tbody>
       </table>
       <div className="confirm-orders-total">
-        <strong>Total Cost:</strong> ${totalCost.toFixed(2)}
+        <strong>Total Cost:</strong> £{totalCost.toFixed(2)}
       </div>
       {!isConfirmed ? (
         <button onClick={handleConfirm} className="confirm-orders-confirm-btn">
