@@ -12,17 +12,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
-    gap: 20px;
+    gap: 5%;
     margin-top: 50px;
-
-    width: 800px;
-
-    padding-left: 100px;
+    width: auto;
+    padding-left: 5%;
 }
 
 .map-label {
     height: auto;
     width: 100%;
+    min-width: 40px;
     box-sizing: border-box;
 }
 
@@ -30,36 +29,42 @@
     background-color: #fff;
     border: solid #7ED957 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 .map-labelB {
     background-color: #fff;
     border: solid #FF5757 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 .map-labelC {
     background-color: #fff;
     border: solid #5271FF 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 .map-labelD {
     background-color: #fff;
     border: solid #FF914D 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 .map-labelE {
     background-color: #fff;
     border: solid #A27AF1 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 .map-labelF {
     background-color: #fff;
     border: solid #F4D94C 5px;
     border-radius: 15px;
+    min-width: 200px;
 }
 
 /* Adjust the top and left positions if needed */
@@ -107,8 +112,10 @@
 }
 
 .map-img {
+    display: flex;
     margin-top: 50px;
-    width: 700px;
+    width: 50%;
+    min-width: 200px;
 
-    padding-left: 70%;
+    padding-left: 10%;
 }

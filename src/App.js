@@ -85,7 +85,6 @@ function App() {
               {/* Navbar is common for all routes */}
               <Route path="/home">
                 <Navbar onSearchChange={handleSearchChange} />
-
                 <StorePage searchValue={searchValue} />
                 
               </Route>
