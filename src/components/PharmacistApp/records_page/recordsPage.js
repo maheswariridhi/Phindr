@@ -2,6 +2,7 @@ import { format } from "date-fns";
 
 import './recordsPage.css';
 import useFetch from "../../../customFunctions/useFetch";
+import { useEffect } from "react";
 
 const RecordsPage = () => {
 
@@ -19,6 +20,25 @@ const RecordsPage = () => {
                 '\n'
             ); 
     }
+
+    
+
+    useEffect(() => {
+        fetch('https://phabservice-129311a14694.herokuapp.com/wholesaler/products')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
+            .then(apiData => {
+                console.log('hi');
+                console.log(apiData);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }, []);
 
 
     return ( 
