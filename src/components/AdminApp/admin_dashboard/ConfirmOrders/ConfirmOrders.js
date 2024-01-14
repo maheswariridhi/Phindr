@@ -2,49 +2,59 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'; // Import useHistory
 import './ConfirmOrders.css';
 import { OrdersContext } from '../orderinventory/OrdersContext';
-import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
-import '../AdminDashboard.css'
+import locationImage from '../../admin_dashboard/location.png';
 
 const ConfirmOrders = () => {
-  const { orders, removeOrder, addTransaction } = useContext(OrdersContext); // Add addTransaction
+  const { orders, removeOrder, addTransaction } = useContext(OrdersContext);
   const [totalCost, setTotalCost] = useState(0);
-  const [isConfirmed, setIsConfirmed] = useState(false); // State to track confirmation
-  const history = useHistory(); // Initialize history
-
-  const handleConfirm = () => {
-    const transaction = {
-      date: new Date().toLocaleDateString(),
-      transactionId: Math.floor(Math.random() * 100000), // Generate a unique ID
-      items: orders,
-      totalCost: totalCost,
-      status: 'Pending', // Set the status to 'pending'
-    };
-    addTransaction(transaction); // Add the transaction to the context
-
-    orders.forEach((_, index) => {
-      removeOrder(index);
-    });
-    setIsConfirmed(true);
-  };
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     const newTotalCost = orders.reduce((sum, order) => sum + order.cost, 0);
     setTotalCost(newTotalCost);
   }, [orders]);
 
+  const handleConfirm = () => {
+    if (orders.length === 0) {
+      alert('No orders to confirm.');
+      return;
+    }
+
+    const transaction = {
+      date: new Date().toLocaleDateString(),
+      transactionId: `trans-${Date.now()}`,
+      items: [],
+      totalCost: totalCost,
+      status: 'Confirmed',
+    };
+
+    orders.forEach((order, index) => {
+      transaction.items.push({
+        name: order.name,
+        quantity: order.quantity,
+        cost: order.cost,
+      });
+      removeOrder(index);
+    });
+
+    addTransaction(transaction);
+    setIsConfirmed(true);
+  };
+
   const handleDeleteOrder = (index) => {
     removeOrder(index);
   };
 
   const handleGoToTransactions = () => {
-    history.push('/admin-transactions'); // Navigate to the Transactions page
+    history.push('/admin-transactions');
   };
 
   return (
     <div className="confirm-orders">
       <header className="content-header">
         <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
-        <h1 className='admin-dashboard-title'>Orders to be Confirmed</h1>
+        <h1 className="admin-dashboard-title">Orders to be Confirmed</h1>
       </header>
       <table className="confirm-orders-table">
         <thead>

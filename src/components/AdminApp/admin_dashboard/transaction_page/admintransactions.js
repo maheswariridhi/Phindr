@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import './admintransactions.css';
-import '../AdminDashboard.css'
 import locationImage from '../../admin_dashboard/location.png';
 import { OrdersContext } from '../orderinventory/OrdersContext';
 
@@ -12,7 +11,7 @@ const AdminTransactions = () => {
     <div className="content">
       <header className="content-header">
         <img src={locationImage} alt="Location" className="location-icon-admin-dashboard" />
-          <h1 className="admin-dashboard-title">Transaction History</h1>
+        <h1 className="admin-dashboard-title">Transaction History</h1>
       </header>
 
       <div className="table-container">
