@@ -26,7 +26,6 @@ import { OrdersProvider } from './components/AdminApp/admin_dashboard/orderinven
 import ConfirmOrders from './components/AdminApp/admin_dashboard/ConfirmOrders/ConfirmOrders';
 import AdminTransactions from './components/AdminApp/admin_dashboard/transaction_page/admintransactions';
 //import OrderInventory from './components/AdminApp/admin_dashboard/orderinventory/OrderInventory';
-import ItemSales from './components/AdminApp/admin_dashboard/item_sales/ItemSalesReport';
 import DailySalesReport from './components/AdminApp/admin_dashboard/daily_sales/DailySalesReport';
 import AdminHomepage from './components/AdminApp/home_page/AdminHomepage';
 
@@ -223,19 +222,6 @@ function App() {
             </div>
           </Route>
 
-          <Route exact path="/admin-item-sales">
-            <div className='AdminLayout'>
-              <div className="AdminNavbar">
-                <AdminNavbar />  
-              </div>
-              <div className="AdminPages">
-                <div className='scrollable'>
-                  <ItemSales/>  
-                </div>
-              </div>
-            </div>
-          </Route>
-
           <Route exact path="/admin-inventory" >
             <div className='AdminLayout'>
               <div className="AdminNavbar">
@@ -249,18 +235,6 @@ function App() {
             </div>
           </Route>
 
-          <Route exact path="/admin-inventory" >
-            <div className='AdminLayout'>
-              <div className="AdminNavbar">
-                <AdminNavbar />  
-              </div>
-              <div className="AdminPages">
-                <div className='scrollable'>
-                  <ItemSales/>  
-                </div>
-              </div>
-            </div>
-          </Route>
           
           <Route path="/login" component={LoginPage} />
 
