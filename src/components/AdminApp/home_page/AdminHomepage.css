@@ -18,13 +18,24 @@
     
 }
 
+.stacked-boxes {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    margin: 0;
+}
+
 .grid-row {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next line */
     
 }
 
+.transaction-history-container{
+    display: flex;
+    flex-direction: column;
 
+  }
 
 .dashboard-title{
     font-family: Inter;
@@ -120,12 +131,6 @@
 
   }
 
-  .vertical-line {
-    height: 100%; /* Make the line span the full height */
-    width: 10px; /* Set the width of the vertical line */
-    background-color: #000; /* Set the color of the line */
-    margin: 0; /* Adjust the margin as needed */
-}
 
 .lowest_stock{
     display: flex;

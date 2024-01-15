@@ -41,6 +41,28 @@ const AdminHomepage = () => {
                 </div>
                 
             </div>
+
+            <div className="stacked-boxes">
+                    <div className="smallest_boxes">
+                        <div className="transaction-history-container">
+                            <p className="dashboard-title-box">Total Balance</p>
+                            <p className="dashboard-title-box">£XXX,XXX</p>
+                            <p className="text1">Income: £YY,YY</p>
+                            <p className="text1">Expenses: £Z,ZZ</p>
+                        </div>
+                    </div>
+
+                    <div className="smallest_boxes">
+                        <div className="transaction-history-container">
+                            <p className="dashboard-title-box">Transaction History</p>
+                            <Link to = "../admin-transactions">
+                                <p className="view-all"> View all </p>
+                            </Link>    
+                        </div>
+
+
+                    </div>
+                </div>
         </div> 
     );
 }
