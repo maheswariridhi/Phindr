@@ -2,11 +2,9 @@ import React, { useState, useContext } from 'react';
 import './OrderInventory.css'; 
 import '../AdminDashboard.css'; 
 import { useHistory, useLocation } from 'react-router-dom';
-import backButtonImage from './back-button.png'; // Ensure this path is correct
-import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
-import { OrdersContext } from './OrdersContext'; // Since OrdersContext is in the same directory
-
-// ... rest of your OrderInventory component
+import backButtonImage from './back-button.png'; 
+import locationImage from '../../admin_dashboard/location.png';
+import { OrdersContext } from './OrdersContext'; 
 
 const OrderInventory = () => {
   const [quantity, setQuantity] = useState('');
