@@ -6,7 +6,9 @@ import backButtonImage from './back-button.png'; // Ensure this path is correct
 import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
 import { OrdersContext } from './OrdersContext'; // Since OrdersContext is in the same directory
 
-// ... rest of your OrderInventory component
+//Displays data of the drug being ordered
+// Can input data to order more stock
+//Works with the local host database
 
 const OrderInventory = () => {
   const [quantity, setQuantity] = useState('');

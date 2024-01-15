@@ -8,6 +8,9 @@ import LowStock from './LowStock';
 import TrendingStock from "./TrendStock";
 import CostChart from "./CostChart";
 
+//Displays all the key daily data for the admin
+//Currently just a placeholder
+
 const AdminHomepage = () => {
     return (
         <div >
@@ -16,7 +19,7 @@ const AdminHomepage = () => {
             </div>
             <h3 className="dashboard-title">Dashboard</h3>
             <div className="lowest_stock">
-                <p className="dashboard-title-box">Lowest stock</p>
+                <p className="dashboard-title-box">Lowest stock</p> 
                 <div className="low-container">
                     <LowStock className="low-stock"/>
                 </div>

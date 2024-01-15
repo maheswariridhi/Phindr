@@ -82,5 +82,5 @@ test('login button click with incorrect credentials', () => {
 });
 
 
-//declartion or state expected problem
+//'declartion or state expected' in PROBLEMS
 //still needs fixing

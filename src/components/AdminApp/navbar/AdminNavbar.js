@@ -4,6 +4,9 @@ import phindrLogo from './phindrlogo.png';
 import adminIcon from './Adminicon.png';
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
+
+// Navbar for the admin dashboard
+// Links to all the admin pages
 const AdminNavbar = () => {
   return (
     <div className="vertical-navbar">

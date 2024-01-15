@@ -5,6 +5,11 @@ import products from './products'; // This should include initial stock levels
 import useFetch from '../../../../customFunctions/useFetch';
 import { useHistory } from 'react-router-dom';
 
+
+// Determines the stock level class based on the current stock and full stock
+// Can filter by the lowest stock levels
+// Works with the local host database
+
 const InventoryDashboard = () => {
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState('');
