@@ -43,8 +43,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
-    "json-server": "^1.0.0-alpha.12"
+    "@types/jest": "^29.5.11",
+    "jest-dom": "^4.0.0",
+    "json-server": "^1.0.0-alpha.12",
+    "react-test-renderer": "^18.2.0"
   }
 }

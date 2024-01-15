@@ -20,9 +20,15 @@ function Login() {
 
   const handleLogin = () => {
     if (email === 'customer@email.com' && password === 'customer1') {
-      console.log('Login successful!');
+      console.log('Customer login successful!');
       history.push('/home');
-    } else {
+    } else if (email === 'admin@email.com' && password === 'admin1') {
+      console.log('Admin login successful!');
+      history.push('/admin-home');
+    }else if (email === 'pharmacist@email.com' && password === 'pharmacist1') {
+      console.log('Pharmacist login successful!');
+      history.push('/pharmacist-home'); 
+    }else {
       setErrorMessage('Incorrect username/password. Please try again.');
     }
   };
