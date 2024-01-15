@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './InventoryDashboard.css';
 import locationImage from '../../admin_dashboard/location.png';
-import products from './products'; // This should include initial stock levels
+import products from './products'; 
 import useFetch from '../../../../customFunctions/useFetch';
 import { useHistory } from 'react-router-dom';
 

@@ -1,12 +1,11 @@
-import React, { useState, useContext } from 'react'; // Added useContext here
+import React, { useState, useContext } from 'react';
 import './OrderInventory.css'; 
-import '../AdminDashboard.css'; // CSS for styling
+import '../AdminDashboard.css'; 
 import { useHistory, useLocation } from 'react-router-dom';
-import backButtonImage from './back-button.png'; // Ensure this path is correct
-import locationImage from '../../admin_dashboard/location.png'; // Ensure this path is correct
-import { OrdersContext } from './OrdersContext'; // Since OrdersContext is in the same directory
+import backButtonImage from './back-button.png'; 
+import locationImage from '../../admin_dashboard/location.png'; 
+import { OrdersContext } from './OrdersContext'; 
 
-// ... rest of your OrderInventory component
 
 const OrderInventory = () => {
   const [quantity, setQuantity] = useState('');
@@ -17,7 +16,7 @@ const OrderInventory = () => {
   const { addOrder } = useContext(OrdersContext);
 
   const handleGoToPendingOrders = () => {
-    history.push('/admin-confirm-orders'); // Replace '/confirm-orders' with the actual path of your ConfirmOrders page
+    history.push('/admin-confirm-orders');
   };
   
     // Function to determine stock level class

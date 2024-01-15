@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import useFetch from '../../../../customFunctions/useFetch';
 import './DailySalesReport.css'; // CSS for styling
 import '../AdminDashboard.css'; // CSS for styling
-import locationImage from '../../admin_dashboard/location.png'; // Adjust the path as per your file structure
+import locationImage from '../../admin_dashboard/location.png'; 
 
 const DailySalesReport = () => {
   const { data } = useFetch('http://localhost:8000/customerOrderRecords'); // Fetch data from database
-  const [salesByHour, setSalesByHour] = useState({});
-
+  const [salesByHour, setSalesByHour] = useState({});  // State to store sales data grouped by hour
+ 
+  // useEffect to update salesByHour when data changes
   useEffect(() => {
     if (data && data.length > 0) {
       const groupedSales = groupSalesByHour(data);
@@ -15,6 +16,7 @@ const DailySalesReport = () => {
     }
   }, [data]);
 
+    // Function to group sales data by hour
   const groupSalesByHour = (sales) => {
     const salesByHour = {};
     sales.forEach((sale) => {
@@ -31,6 +33,7 @@ const DailySalesReport = () => {
     return salesByHour;
   };
 
+    // Function to format the hour period
   const formatHourPeriod = (hour) => {
     return `${hour.toString().padStart(2, '0')}:00-${(hour + 1).toString().padStart(2, '0')}:00`;
   };
