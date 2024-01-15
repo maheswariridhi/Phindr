@@ -24,28 +24,23 @@
     flex-direction: column;
     margin: 0;
 }
-
 .grid-row {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next line */
     
 }
 
-.transaction-history-container{
-    display: flex;
-    flex-direction: column;
 
-  }
 
 .dashboard-title{
     font-family: Inter;
-    font-size: 32px;
+    font-size: 30px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
 
     color: black;
-    margin-top: 2%;
+    margin-top: 4%;
     text-align: center;  
 
 }
@@ -59,12 +54,12 @@
 
 .text1 {
     margin-left: 5%; /* Remove default margins */
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
 }
 
+.text2 {
+    margin-left: 70%; /* Remove default margins */
+    margin-right: 5%;
+}
 
 .line-balance {
     align-self: center;
@@ -78,9 +73,9 @@
 .smallest_boxes {
     display: flex;
     width: 115%;       
-    height: auto;
+    height: 35%;
     padding-bottom: 10%;        /* Adjust the padding as needed later on */
-    margin-bottom: 10%;
+    margin-bottom: 4%;
     margin-right: 2%;
     margin-left: 2%;
     border: 1px solid rgba(1, 187, 254, 0.722);
@@ -92,8 +87,9 @@
 .daily_stats {
     display: flex;
     width: 70%;
-    padding-bottom: 5%;        /* Adjust the padding as needed later on */
-    margin-bottom: 5%;
+    height: 100%;
+    padding-bottom: 35%;        /* Adjust the padding as needed later on */
+    margin-bottom: 10%;
     margin-left: 2%;
     margin-right: 2%;
     border: 1px solid rgba(1, 187, 254, 0.722);
@@ -101,19 +97,20 @@
     border-radius: 10px;
 }
 
-.location-container {
+.location-icon-admin{
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
-    justify-content: flex-end; /* Align the location image to the right */
-    align-items: center; /* Align items vertically in the center */
-    margin-right: 20px;
-}
+    align-self: right;
+    padding-right: 0%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Adjust padding as needed */
+    width: auto; /* Adjust the width as needed */
+    height: 4%; /* Adjust the height as needed */
+  }
 
-.location-icon-admin {
-    width: auto;
-    height: 4%;
-    padding: 15px;
-    padding-bottom: 0%;
-}
 
 
   .view-all{
@@ -122,15 +119,27 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    justify-self: center;
 
     color: black;
+    padding-left: 20%;
     bottom: 0; 
     text-align: center;
-    padding-top: 50px;
+    margin-top: 60%;
 
   }
 
+  .transaction-history-container{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .vertical-line {
+    height: 100%; /* Make the line span the full height */
+    width: 10px; /* Set the width of the vertical line */
+    background-color: #000; /* Set the color of the line */
+    margin: 0; /* Adjust the margin as needed */
+}
 
 .lowest_stock{
     display: flex;
@@ -162,10 +171,10 @@
 .daily_stats {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     height: 100%;
-    padding-bottom: 35%;        /* Adjust the padding as needed later on */
-    margin-bottom: 10%;
+    padding-bottom: 0%;        /* Adjust the padding as needed later on */
+    margin-bottom: 0%;
     margin-left: 2%;
     margin-right: 2%;
     border: 1px solid rgba(1, 187, 254, 0.722);
@@ -181,7 +190,6 @@
 
     color: black;
     margin-top: 15px;
-    margin-bottom: 30px;
     padding: 0px;
     margin-bottom: 0px;
     padding-left: 15px;
