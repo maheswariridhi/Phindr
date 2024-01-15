@@ -67,6 +67,7 @@ function Navbar({ onSearchChange }) {
             className='input-field'
             value={searchValue}
             onChange={handleSearchChange}
+            data-testid = "nav-1"
           />
           <div className='search-icon'>
             <img src={searchIcon} alt="Search" />

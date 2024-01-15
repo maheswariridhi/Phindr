@@ -11,7 +11,7 @@ import searchIcon from './searchIcon.png'
 
 function Navbar() {
   return (
-    <div className="navbar-main">
+    <div className="navbar123">
       <div className="navbar-top">
         <h3>
           Store Map Lookup
