@@ -4,6 +4,9 @@ import './admintransactions.css';
 import locationImage from '../../admin_dashboard/location.png';
 import { OrdersContext } from '../orderinventory/OrdersContext';
 
+
+//Displays all the transactions made by the admin
+//Functional page on the local host database
 const AdminTransactions = () => {
   const { transactions } = useContext(OrdersContext);
 

@@ -3,6 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { OrdersContext } from '../orderinventory/OrdersContext';
 import './ConfirmOrders.css';
 
+//Page for admin to confirm orders
+//Functional page on the local host database
+
 const ConfirmOrders = () => {
   const { orders, removeOrder, addTransaction } = useContext(OrdersContext);
   const [totalCost, setTotalCost] = useState(0);

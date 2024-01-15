@@ -4,6 +4,9 @@ import './DailySalesReport.css'; // CSS for styling
 import '../AdminDashboard.css'; // CSS for styling
 import locationImage from '../../admin_dashboard/location.png'; 
 
+//Daily sales report including time period and sales
+//Works with the local host database
+
 const DailySalesReport = () => {
   const { data } = useFetch('http://localhost:8000/customerOrderRecords'); // Fetch data from database
   const [salesByHour, setSalesByHour] = useState({});  // State to store sales data grouped by hour
