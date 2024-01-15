@@ -22,7 +22,7 @@ const ConfirmOrders = () => {
       transactionId: Math.floor(Math.random() * 100000),
       items: orders,
       totalCost,
-      status: 'Pending',
+      status: 'In Progress',
     };
 
     addTransaction(transaction);
